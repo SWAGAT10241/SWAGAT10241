@@ -13,6 +13,12 @@
   <a href="https://github.com/SWAGAT10241"><img src="https://img.shields.io/badge/Status-Open%20to%20work-2ea44f?style=flat-square" alt="Open to work" /></a>
 </p>
 
+<p>
+  <img src="https://img.shields.io/github/actions/workflow/status/SWAGAT10241/SWAGAT10241/ci.yml?branch=main&style=flat-square&label=CI" alt="CI" />
+  <img src="https://img.shields.io/github/license/SWAGAT10241/SWAGAT10241?style=flat-square" alt="License" />
+  <img src="https://img.shields.io/badge/security-policy-blue?style=flat-square" alt="Security policy" />
+</p>
+
 </div>
 
 ---
@@ -84,7 +90,7 @@ Browser arcade demo (canvas + Web Audio). A fun portfolio experiment — **not**
 - Optional Gamepad vibration API
 - Keyboard + on-screen touch controls
 
-For a permanent URL, enable **GitHub Pages** on this repo (Settings → Pages → Deploy from branch → `main` / root). Then the demo will also be at `https://swagat10241.github.io/SWAGAT10241/`.
+For a permanent URL, use **GitHub Pages** (workflow included). After the first Pages deploy, the demo will also be at `https://swagat10241.github.io/SWAGAT10241/`.
 
 </details>
 
@@ -114,6 +120,23 @@ For a permanent URL, enable **GitHub Pages** on this repo (Settings → Pages �
 | **Design** | Fusion 360 (learning), UI prototyping |
 
 > Icons mark tools I use or am learning — not a claim of expert mastery in every one.
+
+---
+
+### Repo automation & security
+
+This profile repository includes:
+
+| Item | Purpose |
+| :--- | :--- |
+| [CI workflow](.github/workflows/ci.yml) | Validates README/demo structure on every push & PR |
+| [CodeQL](.github/workflows/codeql.yml) | Security scanning for JavaScript |
+| [Pages deploy](.github/workflows/pages.yml) | Publishes the demo via GitHub Pages |
+| [Dependabot](.github/dependabot.yml) | Keeps Actions up to date |
+| [SECURITY.md](SECURITY.md) | Vulnerability reporting process |
+| [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | Community standards |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | How to propose changes |
+| MIT [LICENSE](LICENSE) | Open usage terms |
 
 ---
 

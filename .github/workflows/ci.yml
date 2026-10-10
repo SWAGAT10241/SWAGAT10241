@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Required files exist
+        run: |
+          set -euo pipefail
+          test -f README.md
+          test -f index.html
+          test -f SECURITY.md
+          test -f LICENSE
+          echo "Required files present."
+
+      - name: README sanity checks
+        run: |
+          set -euo pipefail
+          # Basic integrity
+          test "$(wc -c < README.md)" -gt 500
+          grep -q "SWAGAT SOURAV DHAR" README.md
+          grep -q "Smart-Wearable" README.md
+          echo "README checks passed."
+
+      - name: HTML structure check
+        run: |
+          set -euo pipefail
+          grep -qi "<!DOCTYPE html>" index.html
+          grep -q "<html" index.html
+          grep -q "</html>" index.html
+          grep -q "game-canvas" index.html
+          echo "index.html structure looks valid."
+
+      - name: No obvious secrets in tracked text files
+        run: |
+          set -euo pipefail
+          # Fail if common secret patterns appear in text sources
+          if git grep -nI -E '(api[_-]?key\s*=\s*["'\''][^"'\'']+["'\'\']|secret[_-]?key\s*=\s*["'\''][^"'\'']+["'\'\']|BEGIN (RSA |OPENSSH )?PRIVATE KEY)' -- ':!*.md' ':!LICENSE' 2>/dev/null; then
+            echo "Possible secret pattern detected."
+            exit 1
+          fi
+          echo "No obvious secret patterns found."
