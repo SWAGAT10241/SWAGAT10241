@@ -5,12 +5,15 @@ const FEATURES = [
   'Optional gamepad rumble',
 ];
 
+const PREVIEW =
+  'https://raw.githubusercontent.com/SWAGAT10241/SWAGAT10241/main/assets/gameplay-demo.gif';
+
 export default function Dashboard({ onPlay }) {
   return (
     <section className="hero-card">
       <div className="hero-visual">
         <img
-          src={`${import.meta.env.BASE_URL}gameplay-demo.gif`}
+          src={PREVIEW}
           alt="Cyber-Pulse gameplay preview"
           onError={(e) => {
             e.currentTarget.style.display = 'none';
@@ -23,9 +26,8 @@ export default function Dashboard({ onPlay }) {
         <span className="badge">BROWSER ARCADE · VITE + REACT</span>
         <h1>CYBER-PULSE: VOID BREAKER</h1>
         <p>
-          Pilot the Interceptor against the Omega Dreadnought. Built as a small
-          portfolio playground — canvas game loop, procedural SFX, and optional
-          DualSense-compatible vibration. Not a commercial game engine.
+          Pilot the Interceptor against the Omega Dreadnought. Portfolio playground —
+          canvas game loop, procedural SFX, optional gamepad vibration. Not a commercial engine.
         </p>
         <div className="feature-grid">
           {FEATURES.map((f) => (

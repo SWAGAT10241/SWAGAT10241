@@ -36,4 +36,6 @@ jobs:
         run: |
           set -euo pipefail
           test -f dist/index.html
+          test -f src/components/GameView.jsx
+          test -f src/App.jsx
           echo "Build OK"
