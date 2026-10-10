@@ -1,5 +1,9 @@
 name: Deploy GitHub Pages
 
+# Requires one-time setup:
+#   Repo → Settings → Pages → Source: GitHub Actions → Save
+# Until then, deploy will 404. CI build job still validates the app.
+
 on:
   push:
     branches: [main]
