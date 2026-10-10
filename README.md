@@ -1,6 +1,6 @@
 <div align="center">
 
-<!-- Accurate dynamic header (no fake senior/architect titles) -->
+<!-- Accurate dynamic header -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:000a18,50:0070d1,100:00f0ff&height=180&section=header&text=SWAGAT%20SOURAV%20DHAR&fontSize=36&fontColor=ffffff&fontAlignY=35&desc=IoT%20Developer%20%C2%B7%20Full-Stack%20%C2%B7%20TrailGuard%20%2F%20SWAAS&descSize=14&descAlignY=55&animation=fadeIn" width="100%" alt="Swagat Sourav Dhar — IoT Developer" />
 
 <br/>
@@ -80,7 +80,7 @@ ESP32 wearable + Node.js/Express backend + React/Vite dashboard for real-time he
 
 ### Playground — Cyber-Pulse: Void Breaker
 
-Small browser arcade demo (canvas + Web Audio). Portfolio experiment — **not** a commercial game engine.
+Small **Vite + React** browser arcade (canvas + Web Audio). Portfolio experiment — **not** a commercial game engine.
 
 <div align="center">
 
@@ -88,13 +88,21 @@ Small browser arcade demo (canvas + Web Audio). Portfolio experiment — **not**
 
 <br/><br/>
 
-[![Open demo](https://img.shields.io/badge/▶_Open_demo-0070D1?style=for-the-badge&logo=html5&logoColor=white)](https://htmlpreview.github.io/?https://github.com/SWAGAT10241/SWAGAT10241/blob/main/index.html)
-[![Source](https://img.shields.io/badge/Source-index.html-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SWAGAT10241/SWAGAT10241/blob/main/index.html)
+[![Live](https://img.shields.io/badge/▶_Live_demo-0070D1?style=for-the-badge&logo=github&logoColor=white)](https://swagat10241.github.io/SWAGAT10241/)
+[![Source](https://img.shields.io/badge/Source-src/-181717?style=for-the-badge&logo=react&logoColor=white)](https://github.com/SWAGAT10241/SWAGAT10241/tree/main/src)
 
 </div>
 
-**Controls:** `A`/`D` or arrows · `Space` fire · `E` parry · touch buttons on mobile  
-Vite + React app source also lives under `src/` — see [APP.md](./APP.md).
+**Run locally**
+
+```bash
+npm install
+npm run dev
+```
+
+**Controls:** `A`/`D` or arrows · `Space` fire · `E` parry · touch on mobile  
+
+Enable **GitHub Pages** (Settings → Pages → Source: **GitHub Actions**) so the live link works after CI deploy. Details: [APP.md](./APP.md).
 
 ---
 
@@ -137,6 +145,8 @@ Vite + React app source also lives under `src/` — see [APP.md](./APP.md).
 ![Profile views](https://komarev.com/ghpvc/?username=SWAGAT10241&label=Profile%20views&color=0070D1&style=flat-square)
 
 </div>
+
+<!-- LAST_UPDATED -->Last updated on 11 October 2026<!-- /LAST_UPDATED -->
 
 ---
 
