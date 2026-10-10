@@ -38,6 +38,7 @@ jobs:
 
   deploy:
     needs: build
+    if: ${{ github.event.repository.has_pages == true }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
