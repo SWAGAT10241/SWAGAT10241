@@ -68,21 +68,23 @@ Browser arcade demo (canvas + Web Audio). A fun portfolio experiment — **not**
 
 <div align="center">
 
-[![Play Demo](https://img.shields.io/badge/▶_Play_demo_in_browser-0070D1?style=for-the-badge&logo=playstation&logoColor=white)](https://swagat10241.github.io/SWAGAT10241/)
+[![Open demo](https://img.shields.io/badge/▶_Open_game_demo-0070D1?style=for-the-badge&logo=html5&logoColor=white)](https://htmlpreview.github.io/?https://github.com/SWAGAT10241/SWAGAT10241/blob/main/index.html)
+
+[![View source](https://img.shields.io/badge/Source-index.html-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SWAGAT10241/SWAGAT10241/blob/main/index.html)
 
 </div>
 
 **Controls:** `A`/`D` or arrows move · `Space` fire · `E` parry · touch buttons on mobile
 
 <details>
-<summary><b>What this demo actually is</b></summary>
+<summary><b>What this demo is (and is not)</b></summary>
 
 - HTML5 Canvas game loop
 - Procedural Web Audio SFX
-- Optional Gamepad vibration API (DualSense-compatible browsers)
+- Optional Gamepad vibration API
 - Keyboard + on-screen touch controls
 
-Source: [`index.html`](./index.html) in this profile repo.
+For a permanent URL, enable **GitHub Pages** on this repo (Settings → Pages → Deploy from branch → `main` / root). Then the demo will also be at `https://swagat10241.github.io/SWAGAT10241/`.
 
 </details>
 
