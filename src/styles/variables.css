@@ -1,0 +1,27 @@
+/**
+ * @fileoverview CSS Custom Property Design Tokens
+ */
+:root {
+  --ps-blue: #0070d1;
+  --ps-blue-hover: #0088ff;
+  --ps-cyan: #00f0ff;
+  --ps-dark: #000a18;
+  --ps-dark-surface: #020816;
+  --ps-card: rgba(4, 18, 40, 0.92);
+  --ps-border: rgba(0, 150, 255, 0.35);
+  --ps-glow: rgba(0, 112, 209, 0.45);
+  --ps-glow-cyan: rgba(0, 240, 255, 0.35);
+  --ps-text: #e8f1ff;
+  --ps-muted: #8bb2e8;
+  --danger: #ff3b56;
+  --gold: #ffd700;
+  --success: #00ff7f;
+
+  --font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+}
+

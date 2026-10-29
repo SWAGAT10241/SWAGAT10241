@@ -80,7 +80,7 @@ ESP32 wearable + Node.js/Express backend + React/Vite dashboard for real-time he
 
 ### Playground — Cyber-Pulse: Void Breaker
 
-Small browser arcade demo (canvas + Web Audio). Portfolio experiment — **not** a commercial game engine.
+Modern browser arcade simulation & PlayStation Console OS experience built with **React 18**, **Vite 5**, **Canvas 2D**, and **Web Audio API**.
 
 <div align="center">
 
@@ -88,13 +88,19 @@ Small browser arcade demo (canvas + Web Audio). Portfolio experiment — **not**
 
 <br/><br/>
 
-[![Open demo](https://img.shields.io/badge/▶_Open_demo-0070D1?style=for-the-badge&logo=html5&logoColor=white)](https://htmlpreview.github.io/?https://github.com/SWAGAT10241/SWAGAT10241/blob/main/index.html)
-[![Source](https://img.shields.io/badge/Source-index.html-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SWAGAT10241/SWAGAT10241/blob/main/index.html)
+[![Vite App Docs](https://img.shields.io/badge/Architecture-docs%2FARCHITECTURE.md-0070D1?style=for-the-badge&logo=react&logoColor=white)](./docs/ARCHITECTURE.md)
+[![API Design](https://img.shields.io/badge/API_Specs-docs%2FAPI.md-00f0ff?style=for-the-badge&logo=swagger&logoColor=black)](./docs/API.md)
+[![App Guide](https://img.shields.io/badge/Guide-APP.md-181717?style=for-the-badge&logo=markdown&logoColor=white)](./APP.md)
+[![Standalone Demo](https://img.shields.io/badge/Legacy_Standalone-legacy%2Fstandalone.html-gray?style=for-the-badge&logo=html5&logoColor=white)](./legacy/standalone.html)
 
 </div>
 
-**Controls:** `A`/`D` or arrows · `Space` fire · `E` parry · touch buttons on mobile  
-Vite + React app source also lives under `src/` — see [APP.md](./APP.md).
+- **Architecture:** Clean architecture separating business logic (`GameEngine`, `CollisionSystem`) from UI components.
+- **State Management:** Centralized `GameContext` with state reducer, high score caching, and notification dispatching.
+- **Resilient API:** Extensible REST client with request interceptors, timeout aborts, and offline caching.
+- **Controls:** `A`/`D` or arrows · `Space` fire · `E` parry · touch buttons on mobile · DualSense vibration  
+
+See [APP.md](./APP.md) and [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md) for full implementation details.
 
 ---
 
