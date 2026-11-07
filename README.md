@@ -1,6 +1,6 @@
 <div align="center">
 
-<!-- PlayStation OS Dynamic Seasonal Weather Banner -->
+<!-- PlayStation OS Dynamic Seamless Seasonal Weather Header -->
 <a href="https://swagat10241.github.io/SWAGAT10241/">
   <img src="./assets/seasonal-weather.svg" width="100%" alt="Swagat Sourav Dhar — PlayStation OS Atmosphere" />
 </a>
@@ -19,7 +19,7 @@
 
 </div>
 
----
+<img src="./assets/seasonal-divider.svg" width="100%" alt="Seasonal Divider" />
 
 ### 👨‍💻 About Me
 
@@ -29,7 +29,7 @@ I'm **Swagat Sourav Dhar**, an IoT developer and full-stack engineer from **Bhub
 - 🎮 **Creating:** [Cyber-Pulse: Void Breaker](https://swagat10241.github.io/SWAGAT10241/) — PlayStation OS browser arcade with Web Audio & dynamic seasonal weather  
 - 🎯 **Focus:** IoT architectures, embedded systems (ESP32), Node.js backends, React frontends  
 
----
+<img src="./assets/seasonal-divider.svg" width="100%" alt="Seasonal Divider" />
 
 ### 🚀 Flagship Project — TrailGuard / SWAAS
 
@@ -47,7 +47,7 @@ I'm **Swagat Sourav Dhar**, an IoT developer and full-stack engineer from **Bhub
 | **Backend & Telemetry** | Node.js, Express, MongoDB, WebSockets, JWT, Google OAuth |
 | **Frontend Dashboard** | React 18, Vite, Tailwind CSS, MapLibre GL |
 
----
+<img src="./assets/seasonal-divider.svg" width="100%" alt="Seasonal Divider" />
 
 ### 🕹️ Interactive Playground — Cyber-Pulse: Void Breaker
 
@@ -67,7 +67,7 @@ A high-performance browser arcade simulation and PlayStation-themed console OS p
 
 </div>
 
----
+<img src="./assets/seasonal-divider.svg" width="100%" alt="Seasonal Divider" />
 
 ### 🛠️ Tech Stack & Tools
 
@@ -82,7 +82,7 @@ A high-performance browser arcade simulation and PlayStation-themed console OS p
 
 </div>
 
----
+<img src="./assets/seasonal-divider.svg" width="100%" alt="Seasonal Divider" />
 
 ### 📊 GitHub Activity
 
@@ -97,7 +97,7 @@ A high-performance browser arcade simulation and PlayStation-themed console OS p
 
 </div>
 
----
+<img src="./assets/seasonal-divider.svg" width="100%" alt="Seasonal Divider" />
 
 <div align="center">
   <sub>Designed &amp; maintained by <a href="https://github.com/SWAGAT10241">Swagat Sourav Dhar</a></sub>

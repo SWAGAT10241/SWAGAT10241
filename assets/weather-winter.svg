@@ -1,25 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 240" width="100%" height="240">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 220" width="100%" height="220" fill="none">
   <defs>
-    <!-- Background Gradients -->
-    <linearGradient id="bgGradWinter" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#000a18"/>
-      <stop offset="50%" stop-color="#021430"/>
-      <stop offset="100%" stop-color="#002244"/>
-    </linearGradient>
-
-    <linearGradient id="waveGradWinter1" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#0070d1" stop-opacity="0.3"/>
+    <linearGradient id="waveWinter1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0070d1" stop-opacity="0.25"/>
       <stop offset="50%" stop-color="#00f0ff" stop-opacity="0.45"/>
       <stop offset="100%" stop-color="#80d8ff" stop-opacity="0.2"/>
     </linearGradient>
 
-    <linearGradient id="waveGradWinter2" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="waveWinter2" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#0091ea" stop-opacity="0.2"/>
-      <stop offset="50%" stop-color="#00b0ff" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#00e5ff" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#00e5ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#0070d1" stop-opacity="0.25"/>
     </linearGradient>
 
-    <!-- Crystal Snowflake Definition -->
+    <!-- Crystal Snowflake -->
     <g id="crystalFlake">
       <circle cx="0" cy="0" r="2.5" fill="#ffffff" />
       <line x1="-8" y1="0" x2="8" y2="0" stroke="#e1f5fe" stroke-width="1.2" />
@@ -28,143 +21,101 @@
       <line x1="-6" y1="6" x2="6" y2="-6" stroke="#b3e5fc" stroke-width="1" />
     </g>
 
-    <!-- Soft Snow Dot Definition -->
     <g id="softFlake">
       <circle cx="0" cy="0" r="3" fill="#ffffff" />
     </g>
-
-    <filter id="glowWinter">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
 
   <style>
-    @keyframes waveFlowWinter {
+    @keyframes waveFloatWinter {
       0% { transform: translateX(0); }
-      50% { transform: translateX(-40px); }
+      50% { transform: translateX(-35px); }
       100% { transform: translateX(0); }
     }
 
-    @keyframes snowFall1 {
+    @keyframes snowDrift1 {
       0% { transform: translate(50px, -20px); opacity: 0; }
+      15% { opacity: 0.95; }
+      85% { opacity: 0.95; }
+      100% { transform: translate(80px, 240px); opacity: 0; }
+    }
+    @keyframes snowDrift2 {
+      0% { transform: translate(180px, -20px); opacity: 0; }
       15% { opacity: 0.9; }
       85% { opacity: 0.9; }
-      100% { transform: translate(80px, 260px); opacity: 0; }
+      100% { transform: translate(140px, 240px); opacity: 0; }
     }
-
-    @keyframes snowFall2 {
-      0% { transform: translate(180px, -20px); opacity: 0; }
-      15% { opacity: 0.85; }
-      85% { opacity: 0.85; }
-      100% { transform: translate(140px, 260px); opacity: 0; }
-    }
-
-    @keyframes snowFall3 {
+    @keyframes snowDrift3 {
       0% { transform: translate(320px, -20px); opacity: 0; }
       15% { opacity: 0.95; }
       85% { opacity: 0.95; }
-      100% { transform: translate(370px, 260px); opacity: 0; }
+      100% { transform: translate(370px, 240px); opacity: 0; }
     }
-
-    @keyframes snowFall4 {
+    @keyframes snowDrift4 {
       0% { transform: translate(460px, -20px); opacity: 0; }
-      15% { opacity: 0.8; }
-      85% { opacity: 0.8; }
-      100% { transform: translate(430px, 260px); opacity: 0; }
-    }
-
-    @keyframes snowFall5 {
-      0% { transform: translate(600px, -20px); opacity: 0; }
-      15% { opacity: 0.9; }
-      85% { opacity: 0.9; }
-      100% { transform: translate(650px, 260px); opacity: 0; }
-    }
-
-    @keyframes snowFall6 {
-      0% { transform: translate(720px, -20px); opacity: 0; }
       15% { opacity: 0.85; }
       85% { opacity: 0.85; }
-      100% { transform: translate(690px, 260px); opacity: 0; }
+      100% { transform: translate(430px, 240px); opacity: 0; }
     }
-
-    @keyframes snowFall7 {
-      0% { transform: translate(850px, -20px); opacity: 0; }
+    @keyframes snowDrift5 {
+      0% { transform: translate(600px, -20px); opacity: 0; }
+      15% { opacity: 0.95; }
+      85% { opacity: 0.95; }
+      100% { transform: translate(650px, 240px); opacity: 0; }
+    }
+    @keyframes snowDrift6 {
+      0% { transform: translate(720px, -20px); opacity: 0; }
       15% { opacity: 0.9; }
       85% { opacity: 0.9; }
-      100% { transform: translate(880px, 260px); opacity: 0; }
+      100% { transform: translate(690px, 240px); opacity: 0; }
+    }
+    @keyframes snowDrift7 {
+      0% { transform: translate(850px, -20px); opacity: 0; }
+      15% { opacity: 0.95; }
+      85% { opacity: 0.95; }
+      100% { transform: translate(880px, 240px); opacity: 0; }
     }
 
-    @keyframes snowFall8 {
-      0% { transform: translate(250px, -20px); opacity: 0; }
-      15% { opacity: 0.75; }
-      85% { opacity: 0.75; }
-      100% { transform: translate(280px, 260px); opacity: 0; }
-    }
+    .s1 { animation: snowDrift1 5.5s linear infinite; }
+    .s2 { animation: snowDrift2 6.8s linear infinite 1.2s; }
+    .s3 { animation: snowDrift3 4.8s linear infinite 0.5s; }
+    .s4 { animation: snowDrift4 7.2s linear infinite 2.5s; }
+    .s5 { animation: snowDrift5 5.2s linear infinite 1.8s; }
+    .s6 { animation: snowDrift6 6.2s linear infinite 3.1s; }
+    .s7 { animation: snowDrift7 5.8s linear infinite 2.2s; }
 
-    .snow1 { animation: snowFall1 5.5s linear infinite; }
-    .snow2 { animation: snowFall2 6.8s linear infinite 1.2s; }
-    .snow3 { animation: snowFall3 4.8s linear infinite 0.5s; }
-    .snow4 { animation: snowFall4 7.2s linear infinite 2.5s; }
-    .snow5 { animation: snowFall5 5.2s linear infinite 1.8s; }
-    .snow6 { animation: snowFall6 6.2s linear infinite 3.1s; }
-    .snow7 { animation: snowFall7 5.8s linear infinite 2.2s; }
-    .snow8 { animation: snowFall8 7.5s linear infinite 4.0s; }
-
-    .wave-anim-winter { animation: waveFlowWinter 8s ease-in-out infinite; }
+    .wave-float-winter { animation: waveFloatWinter 9s ease-in-out infinite; }
   </style>
 
-  <!-- Background Base -->
-  <rect width="920" height="240" rx="14" fill="url(#bgGradWinter)" />
-  <rect width="920" height="240" rx="14" fill="none" stroke="rgba(0, 240, 255, 0.4)" stroke-width="1.5" />
-
-  <!-- Ambient Glacial Waves -->
-  <g class="wave-anim-winter">
-    <path d="M -50 170 Q 180 130 460 175 T 970 160 L 970 240 L -50 240 Z" fill="url(#waveGradWinter1)" />
-    <path d="M -50 185 Q 220 150 490 190 T 970 175 L 970 240 L -50 240 Z" fill="url(#waveGradWinter2)" />
+  <!-- Ambient Wave Ribbons (Borderless, Transparent) -->
+  <g class="wave-float-winter">
+    <path d="M -40 150 Q 180 110 460 155 T 960 140" stroke="url(#waveWinter1)" stroke-width="3" fill="none" />
+    <path d="M -40 168 Q 220 130 490 170 T 960 155" stroke="url(#waveWinter2)" stroke-width="2.5" fill="none" />
   </g>
 
-  <!-- Animated Falling Snowflakes -->
-  <g class="snow1"><use href="#crystalFlake"/></g>
-  <g class="snow2"><use href="#softFlake"/></g>
-  <g class="snow3"><use href="#crystalFlake"/></g>
-  <g class="snow4"><use href="#softFlake"/></g>
-  <g class="snow5"><use href="#crystalFlake"/></g>
-  <g class="snow6"><use href="#softFlake"/></g>
-  <g class="snow7"><use href="#crystalFlake"/></g>
-  <g class="snow8"><use href="#softFlake"/></g>
+  <!-- Animated Snowflakes Across Full Width -->
+  <g class="s1"><use href="#crystalFlake"/></g>
+  <g class="s2"><use href="#softFlake"/></g>
+  <g class="s3"><use href="#crystalFlake"/></g>
+  <g class="s4"><use href="#softFlake"/></g>
+  <g class="s5"><use href="#crystalFlake"/></g>
+  <g class="s6"><use href="#softFlake"/></g>
+  <g class="s7"><use href="#crystalFlake"/></g>
 
-  <!-- Top PlayStation OS Brand Mark -->
-  <rect x="36" y="24" width="30" height="30" rx="6" fill="#0070d1" filter="url(#glowWinter)"/>
-  <text x="51" y="44" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="14" fill="#ffffff" text-anchor="middle">PS</text>
-
-  <!-- Title & Description Header -->
-  <text x="76" y="44" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="13" fill="#00f0ff" letter-spacing="1.5">
-    CYBER-PULSE OS // WINTER SEASON ACTIVE
-  </text>
-
-  <g transform="translate(884, 38)">
-    <circle cx="-12" cy="0" r="4" fill="#00ff7f"/>
-    <text x="-24" y="4" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="11" fill="#8bb2e8" text-anchor="end">ONLINE</text>
+  <!-- PlayStation OS Pill Header -->
+  <g transform="translate(460, 42)">
+    <rect x="-170" y="-14" width="340" height="28" rx="14" fill="rgba(0, 112, 209, 0.25)" stroke="#00f0ff" stroke-width="1.2"/>
+    <text x="0" y="4.5" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="11" fill="#e0f7fa" text-anchor="middle" letter-spacing="1.2">
+      ❄️ WINTER SEASON // SNOWFALL ACTIVE
+    </text>
   </g>
 
   <!-- Main Hero Titles -->
-  <text x="460" y="108" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-weight="900" font-size="34" fill="#ffffff" text-anchor="middle" letter-spacing="2">
+  <text x="460" y="110" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-weight="900" font-size="38" fill="#ffffff" text-anchor="middle" letter-spacing="2">
     SWAGAT SOURAV DHAR
   </text>
 
-  <text x="460" y="142" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="14" fill="#80d8ff" text-anchor="middle" letter-spacing="1">
+  <text x="460" y="146" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="14" fill="#80d8ff" text-anchor="middle" letter-spacing="1.2">
     IoT Developer · Full-Stack Engineer · TrailGuard / SWAAS · Cyber-Pulse
   </text>
-
-  <!-- Season Status Tag Pill -->
-  <g transform="translate(460, 184)">
-    <rect x="-140" y="-14" width="280" height="28" rx="14" fill="rgba(0, 112, 209, 0.3)" stroke="#00f0ff" stroke-width="1.2"/>
-    <text x="0" y="4" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="11" fill="#e0f7fa" text-anchor="middle" letter-spacing="0.8">
-      ❄️ WINTER FROST (SNOW FALL) ACTIVE
-    </text>
-  </g>
 </svg>

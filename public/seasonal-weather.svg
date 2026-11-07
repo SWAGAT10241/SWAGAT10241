@@ -1,25 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 240" width="100%" height="240">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 220" width="100%" height="220" fill="none">
   <defs>
-    <!-- Background Gradients -->
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#020816"/>
-      <stop offset="50%" stop-color="#0a1224"/>
-      <stop offset="100%" stop-color="#140c06"/>
+    <!-- Wave Gradients with Soft Transparency -->
+    <linearGradient id="waveAutumn1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff5722" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#ff9800" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ffb300" stop-opacity="0.15"/>
     </linearGradient>
 
-    <linearGradient id="waveGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ff5722" stop-opacity="0.3"/>
-      <stop offset="50%" stop-color="#ff9800" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#ffb300" stop-opacity="0.2"/>
+    <linearGradient id="waveAutumn2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0070d1" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#ff9100" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0.15"/>
     </linearGradient>
 
-    <linearGradient id="waveGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#0070d1" stop-opacity="0.25"/>
-      <stop offset="50%" stop-color="#ff9100" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0.2"/>
-    </linearGradient>
-
-    <!-- Maple Leaf Definition -->
+    <!-- Maple Leaf -->
     <g id="mapleLeaf">
       <path d="M 0,-16 C 5,-10 11,-8 14,0 C 9,4 5,9 0,14 C -5,9 -9,4 -14,0 C -11,-8 -5,-10 0,-16 Z" />
       <path d="M 0,-12 L 0,15" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" fill="none" />
@@ -27,13 +21,13 @@
       <path d="M 0,-4 L -6,1" stroke="rgba(255,255,255,0.3)" stroke-width="0.8" fill="none" />
     </g>
 
-    <!-- Oak Leaf Definition -->
+    <!-- Oak Leaf -->
     <g id="oakLeaf">
       <ellipse cx="0" cy="0" rx="6" ry="12" />
       <line x1="0" y1="-10" x2="0" y2="13" stroke="rgba(255,255,255,0.35)" stroke-width="1" />
     </g>
 
-    <filter id="glow">
+    <filter id="glowAutumn">
       <feGaussianBlur stdDeviation="3" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
@@ -43,128 +37,110 @@
   </defs>
 
   <style>
-    @keyframes waveFlow {
+    @keyframes waveFloat {
       0% { transform: translateX(0); }
-      50% { transform: translateX(-40px); }
+      50% { transform: translateX(-35px); }
       100% { transform: translateX(0); }
     }
 
-    @keyframes leafFall1 {
-      0% { transform: translate(60px, -30px) rotate(0deg) scale(0.9); opacity: 0; }
+    @keyframes leafDrift1 {
+      0% { transform: translate(50px, -30px) rotate(0deg) scale(0.9); opacity: 0; }
+      15% { opacity: 0.95; }
+      85% { opacity: 0.95; }
+      100% { transform: translate(150px, 250px) rotate(280deg) scale(0.9); opacity: 0; }
+    }
+
+    @keyframes leafDrift2 {
+      0% { transform: translate(210px, -30px) rotate(45deg) scale(1.1); opacity: 0; }
       15% { opacity: 0.9; }
       85% { opacity: 0.9; }
-      100% { transform: translate(160px, 270px) rotate(280deg) scale(0.9); opacity: 0; }
+      100% { transform: translate(320px, 250px) rotate(390deg) scale(1.1); opacity: 0; }
     }
 
-    @keyframes leafFall2 {
-      0% { transform: translate(220px, -30px) rotate(45deg) scale(1.1); opacity: 0; }
-      15% { opacity: 0.85; }
-      85% { opacity: 0.85; }
-      100% { transform: translate(340px, 270px) rotate(390deg) scale(1.1); opacity: 0; }
+    @keyframes leafDrift3 {
+      0% { transform: translate(430px, -30px) rotate(20deg) scale(0.85); opacity: 0; }
+      15% { opacity: 0.95; }
+      85% { opacity: 0.95; }
+      100% { transform: translate(360px, 250px) rotate(-220deg) scale(0.85); opacity: 0; }
     }
 
-    @keyframes leafFall3 {
-      0% { transform: translate(450px, -30px) rotate(20deg) scale(0.85); opacity: 0; }
+    @keyframes leafDrift4 {
+      0% { transform: translate(630px, -30px) rotate(-30deg) scale(1); opacity: 0; }
       15% { opacity: 0.9; }
       85% { opacity: 0.9; }
-      100% { transform: translate(370px, 270px) rotate(-220deg) scale(0.85); opacity: 0; }
+      100% { transform: translate(740px, 250px) rotate(240deg) scale(1); opacity: 0; }
     }
 
-    @keyframes leafFall4 {
-      0% { transform: translate(640px, -30px) rotate(-30deg) scale(1); opacity: 0; }
-      15% { opacity: 0.85; }
-      85% { opacity: 0.85; }
-      100% { transform: translate(750px, 270px) rotate(240deg) scale(1); opacity: 0; }
+    @keyframes leafDrift5 {
+      0% { transform: translate(810px, -30px) rotate(10deg) scale(0.95); opacity: 0; }
+      15% { opacity: 0.95; }
+      85% { opacity: 0.95; }
+      100% { transform: translate(890px, 250px) rotate(320deg) scale(0.95); opacity: 0; }
     }
 
-    @keyframes leafFall5 {
-      0% { transform: translate(820px, -30px) rotate(10deg) scale(0.95); opacity: 0; }
-      15% { opacity: 0.9; }
-      85% { opacity: 0.9; }
-      100% { transform: translate(910px, 270px) rotate(320deg) scale(0.95); opacity: 0; }
-    }
-
-    @keyframes leafFall6 {
-      0% { transform: translate(140px, -30px) rotate(100deg) scale(0.8); opacity: 0; }
-      20% { opacity: 0.8; }
-      80% { opacity: 0.8; }
-      100% { transform: translate(40px, 270px) rotate(360deg) scale(0.8); opacity: 0; }
-    }
-
-    @keyframes leafFall7 {
-      0% { transform: translate(520px, -30px) rotate(0deg) scale(1.15); opacity: 0; }
-      20% { opacity: 0.9; }
-      80% { opacity: 0.9; }
-      100% { transform: translate(620px, 270px) rotate(310deg) scale(1.15); opacity: 0; }
-    }
-
-    @keyframes leafFall8 {
-      0% { transform: translate(730px, -30px) rotate(-50deg) scale(0.75); opacity: 0; }
+    @keyframes leafDrift6 {
+      0% { transform: translate(120px, -30px) rotate(100deg) scale(0.8); opacity: 0; }
       20% { opacity: 0.85; }
       80% { opacity: 0.85; }
-      100% { transform: translate(820px, 270px) rotate(210deg) scale(0.75); opacity: 0; }
+      100% { transform: translate(30px, 250px) rotate(360deg) scale(0.8); opacity: 0; }
     }
 
-    .leaf1 { animation: leafFall1 7s ease-in-out infinite; }
-    .leaf2 { animation: leafFall2 8.5s ease-in-out infinite 1.5s; }
-    .leaf3 { animation: leafFall3 6.8s ease-in-out infinite 0.7s; }
-    .leaf4 { animation: leafFall4 9s ease-in-out infinite 2.2s; }
-    .leaf5 { animation: leafFall5 7.5s ease-in-out infinite 3s; }
-    .leaf6 { animation: leafFall6 8.2s ease-in-out infinite 4s; }
-    .leaf7 { animation: leafFall7 6.5s ease-in-out infinite 3.5s; }
-    .leaf8 { animation: leafFall8 7.8s ease-in-out infinite 5s; }
+    @keyframes leafDrift7 {
+      0% { transform: translate(510px, -30px) rotate(0deg) scale(1.15); opacity: 0; }
+      20% { opacity: 0.95; }
+      80% { opacity: 0.95; }
+      100% { transform: translate(600px, 250px) rotate(310deg) scale(1.15); opacity: 0; }
+    }
 
-    .wave-anim { animation: waveFlow 8s ease-in-out infinite; }
+    @keyframes leafDrift8 {
+      0% { transform: translate(710px, -30px) rotate(-50deg) scale(0.75); opacity: 0; }
+      20% { opacity: 0.9; }
+      80% { opacity: 0.9; }
+      100% { transform: translate(800px, 250px) rotate(210deg) scale(0.75); opacity: 0; }
+    }
+
+    .l1 { animation: leafDrift1 7s ease-in-out infinite; }
+    .l2 { animation: leafDrift2 8.5s ease-in-out infinite 1.5s; }
+    .l3 { animation: leafDrift3 6.8s ease-in-out infinite 0.7s; }
+    .l4 { animation: leafDrift4 9s ease-in-out infinite 2.2s; }
+    .l5 { animation: leafDrift5 7.5s ease-in-out infinite 3s; }
+    .l6 { animation: leafDrift6 8.2s ease-in-out infinite 4s; }
+    .l7 { animation: leafDrift7 6.5s ease-in-out infinite 3.5s; }
+    .l8 { animation: leafDrift8 7.8s ease-in-out infinite 5s; }
+
+    .wave-float { animation: waveFloat 9s ease-in-out infinite; }
   </style>
 
-  <!-- Background Base -->
-  <rect width="920" height="240" rx="14" fill="url(#bgGrad)" />
-  <rect width="920" height="240" rx="14" fill="none" stroke="rgba(255, 145, 0, 0.4)" stroke-width="1.5" />
-
-  <!-- Ambient Autumn Waves -->
-  <g class="wave-anim">
-    <path d="M -50 170 Q 180 130 460 175 T 970 160 L 970 240 L -50 240 Z" fill="url(#waveGrad1)" />
-    <path d="M -50 185 Q 220 150 490 190 T 970 175 L 970 240 L -50 240 Z" fill="url(#waveGrad2)" />
+  <!-- Ambient Wave Ribbons (Borderless, Transparent) -->
+  <g class="wave-float">
+    <path d="M -40 150 Q 180 110 460 155 T 960 140" stroke="url(#waveAutumn1)" stroke-width="3" fill="none" />
+    <path d="M -40 168 Q 220 130 490 170 T 960 155" stroke="url(#waveAutumn2)" stroke-width="2.5" fill="none" />
   </g>
 
-  <!-- Animated Falling Autumn Leaves -->
-  <g class="leaf1" fill="#d84315"><use href="#mapleLeaf"/></g>
-  <g class="leaf2" fill="#ff8f00"><use href="#mapleLeaf"/></g>
-  <g class="leaf3" fill="#ef6c00"><use href="#oakLeaf"/></g>
-  <g class="leaf4" fill="#ffb300"><use href="#mapleLeaf"/></g>
-  <g class="leaf5" fill="#c25920"><use href="#oakLeaf"/></g>
-  <g class="leaf6" fill="#bf360c"><use href="#mapleLeaf"/></g>
-  <g class="leaf7" fill="#ff9800"><use href="#oakLeaf"/></g>
-  <g class="leaf8" fill="#e65100"><use href="#mapleLeaf"/></g>
+  <!-- Animated Falling Autumn Leaves Across Full Width -->
+  <g class="l1" fill="#d84315"><use href="#mapleLeaf"/></g>
+  <g class="l2" fill="#ff8f00"><use href="#mapleLeaf"/></g>
+  <g class="l3" fill="#ef6c00"><use href="#oakLeaf"/></g>
+  <g class="l4" fill="#ffb300"><use href="#mapleLeaf"/></g>
+  <g class="l5" fill="#c25920"><use href="#oakLeaf"/></g>
+  <g class="l6" fill="#bf360c"><use href="#mapleLeaf"/></g>
+  <g class="l7" fill="#ff9800"><use href="#oakLeaf"/></g>
+  <g class="l8" fill="#e65100"><use href="#mapleLeaf"/></g>
 
-  <!-- Top PlayStation OS Brand Mark -->
-  <rect x="36" y="24" width="30" height="30" rx="6" fill="#ff5722" filter="url(#glow)"/>
-  <text x="51" y="44" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="14" fill="#ffffff" text-anchor="middle">PS</text>
-
-  <!-- Title & Description Header -->
-  <text x="76" y="44" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="13" fill="#ffb74d" letter-spacing="1.5">
-    CYBER-PULSE OS // AUTUMN SEASON ACTIVE
-  </text>
-
-  <g transform="translate(884, 38)">
-    <circle cx="-12" cy="0" r="4" fill="#00ff7f"/>
-    <text x="-24" y="4" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="11" fill="#8bb2e8" text-anchor="end">ONLINE</text>
+  <!-- PlayStation OS Pill Header -->
+  <g transform="translate(460, 42)">
+    <rect x="-170" y="-14" width="340" height="28" rx="14" fill="rgba(255, 112, 67, 0.2)" stroke="#ff9100" stroke-width="1.2"/>
+    <text x="0" y="4.5" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="11" fill="#ffe0b2" text-anchor="middle" letter-spacing="1.2">
+      🍂 AUTUMN SEASON // FOLIAGE DRIFT ACTIVE
+    </text>
   </g>
 
   <!-- Main Hero Titles -->
-  <text x="460" y="108" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-weight="900" font-size="34" fill="#ffffff" text-anchor="middle" letter-spacing="2">
+  <text x="460" y="110" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-weight="900" font-size="38" fill="#ffffff" text-anchor="middle" letter-spacing="2">
     SWAGAT SOURAV DHAR
   </text>
 
-  <text x="460" y="142" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="14" fill="#ffd180" text-anchor="middle" letter-spacing="1">
+  <text x="460" y="146" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="14" fill="#ffd180" text-anchor="middle" letter-spacing="1.2">
     IoT Developer · Full-Stack Engineer · TrailGuard / SWAAS · Cyber-Pulse
   </text>
-
-  <!-- Season Status Tag Pill -->
-  <g transform="translate(460, 184)">
-    <rect x="-140" y="-14" width="280" height="28" rx="14" fill="rgba(255, 112, 67, 0.25)" stroke="#ff9100" stroke-width="1.2"/>
-    <text x="0" y="4" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="11" fill="#ffe0b2" text-anchor="middle" letter-spacing="0.8">
-      🍂 AUTUMN FOLIAGE (LEAF FALL) ACTIVE
-    </text>
-  </g>
 </svg>
