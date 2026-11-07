@@ -7,7 +7,7 @@
 
 <br/><br/>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&duration=2600&pause=1100&color=00F0FF&center=true&vCenter=true&width=640&lines=Building+TrailGuard+%2F+SWAAS+wearable+ecosystem;ESP32+%E2%80%A2+React+%E2%80%A2+Node.js+%E2%80%A2+Vite;B.Tech+CSE+(IoT)+%C2%B7+Bhubaneswar;Open+to+collaborations+%26+internships)](https://github.com/SWAGAT10241)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&duration=2600&pause=1100&color=00F0FF&center=true&vCenter=true&width=640&lines=Building+TrailGuard+%2F+SWAAS+wearable+ecosystem;ESP32+%E2%80%A2+React+%E2%80%A2+Node.js+%E2%80%A2+Vite;B.Tech+CSE+(Internet+of+Things);Hardware+%E2%80%A2+Full-Stack+%E2%80%A2+Creative+Code;Open+to+collaborations+%26+internships)](https://github.com/SWAGAT10241)
 
 <p>
   <a href="https://www.linkedin.com/in/swagat-sourav-dhar"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
@@ -23,11 +23,13 @@
 
 ### 👨‍💻 About Me
 
-I'm **Swagat Sourav Dhar**, an IoT developer and full-stack engineer from **Bhubaneswar**, specializing in systems where hardware telemetry, responsive web interfaces, and intelligent automation intersect.
+I'm **Swagat Sourav Dhar**, a Computer Science engineer specializing in **IoT & Embedded Systems**, full-stack architecture, and interactive web software. I focus on bridging physical microcontrollers with real-time cloud backends and responsive user interfaces.
 
-- 🛠️ **Building:** [TrailGuard / SWAAS](https://github.com/SWAGAT10241/Smart-Wearable) — smart wearable safety & vitals monitoring ecosystem  
-- 🎮 **Creating:** [Cyber-Pulse: Void Breaker](https://swagat10241.github.io/SWAGAT10241/) — PlayStation OS browser arcade with Web Audio & dynamic seasonal weather  
-- 🎯 **Focus:** IoT architectures, embedded systems (ESP32), Node.js backends, React frontends  
+- 🎓 **Education:** B.Tech in Computer Science & Engineering (Specialization in Internet of Things)
+- 🛠️ **Embedded & Hardware:** ESP32 firmware, biometric/environmental sensor telemetry, GPS logging, 3D CAD modeling
+- 💻 **Full-Stack Engineering:** High-performance React 18 & Node.js/Express architectures, WebSockets streaming, MongoDB
+- 🚀 **Flagship Platform:** [TrailGuard / SWAAS](https://github.com/SWAGAT10241/Smart-Wearable) — smart wearable assistance, fall detection & health monitoring ecosystem
+- 🎮 **Creative Code:** [Cyber-Pulse: Void Breaker](https://swagat10241.github.io/SWAGAT10241/) — PlayStation OS browser arcade with procedural Web Audio & seasonal weather
 
 <img src="./assets/seasonal-divider.svg" width="100%" alt="Seasonal Divider" />
 
@@ -41,11 +43,11 @@ I'm **Swagat Sourav Dhar**, an IoT developer and full-stack engineer from **Bhub
 
 </div>
 
-| Layer | Technologies |
+| Layer | Technologies & Scope |
 | :--- | :--- |
-| **Embedded & Hardware** | ESP32, heart-rate/SpO₂, motion & environment sensors, GPS |
-| **Backend & Telemetry** | Node.js, Express, MongoDB, WebSockets, JWT, Google OAuth |
-| **Frontend Dashboard** | React 18, Vite, Tailwind CSS, MapLibre GL |
+| **Embedded & Hardware** | ESP32, heart-rate/SpO₂, motion & environment sensors, GPS integration |
+| **Backend & Telemetry** | Node.js, Express, MongoDB, WebSocket live data streams, JWT auth |
+| **Frontend Dashboard** | React 18, Vite, Tailwind CSS, MapLibre GL live telemetry map |
 
 <img src="./assets/seasonal-divider.svg" width="100%" alt="Seasonal Divider" />
 
