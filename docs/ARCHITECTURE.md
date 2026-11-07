@@ -48,6 +48,7 @@ SWAGAT10241/
 │   ├── config/                 # Environment & game tuning configs
 │   │   ├── env.js              # Type-safe environment validation
 │   │   ├── game.config.js      # Gameplay mechanics tuning
+│   │   ├── season.config.js    # Seasonal presets (Winter, Fall, Rain, Spring, Summer)
 │   │   └── theme.config.js     # PlayStation design system tokens
 │   ├── context/                # Centralized state management
 │   │   ├── GameContext.jsx     # Context provider with localStorage sync
@@ -55,6 +56,7 @@ SWAGAT10241/
 │   ├── game/                   # Decoupled business & simulation logic
 │   │   ├── audio/              # Procedural Web Audio API sound generator
 │   │   ├── core/               # Canvas 2D engine, collision & particles
+│   │   ├── effects/            # Seasonal weather engines (Snow, Leaves, Raindrops)
 │   │   ├── entities/           # Ship, Boss, and Projectiles
 │   │   └── input/              # Unified keyboard, touch & gamepad controller
 │   ├── hooks/                  # Reusable custom React hooks
@@ -64,7 +66,7 @@ SWAGAT10241/
 │   ├── components/             # Reusable UI components
 │   │   ├── common/             # Primitives: Button, Badge, Modal, Toast, ErrorBoundary
 │   │   ├── layout/             # Shell: Header, Footer, BackgroundWaves
-│   │   ├── dashboard/          # Views: Dashboard, HeroCard, LeaderboardModal
+│   │   ├── dashboard/          # Views: Dashboard, HeroCard, LeaderboardModal, SeasonModal
 │   │   └── game/               # In-Game: GameView, GameHUD, VirtualControls, GameOverModal
 │   ├── styles/                 # Modular CSS architecture
 │   │   ├── variables.css       # CSS custom properties

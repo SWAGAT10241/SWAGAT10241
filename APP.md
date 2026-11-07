@@ -30,6 +30,7 @@ SWAGAT10241/
 │   ├── config/                      # Environment & Game configurations
 │   │   ├── env.js                   # Type-safe, validated environment variables
 │   │   ├── game.config.js           # Gameplay parameters, physics & scoring
+│   │   ├── season.config.js         # Seasonal weather presets & calendar auto-detect
 │   │   └── theme.config.js          # Design system & console UI theme tokens
 │   ├── context/                     # Centralized state management
 │   │   ├── GameContext.jsx          # Context provider with localStorage sync
@@ -42,6 +43,8 @@ SWAGAT10241/
 │   │   │   ├── GameEngine.js        # Decoupled Canvas 2D engine & game loop
 │   │   │   ├── CollisionSystem.js   # Bounding box & distance collision checks
 │   │   │   └── ParticleSystem.js    # Spark & explosion effects
+│   │   ├── effects/
+│   │   │   └── SeasonalParticles.js # 60FPS weather engine (Snow, Leaves, Rain, Sakura, Fireflies)
 │   │   ├── entities/
 │   │   │   ├── PlayerShip.js        # Player state, movement, parry bubble
 │   │   │   ├── BossDreadnought.js   # Boss movement patterns, HP, phases
@@ -60,13 +63,14 @@ SWAGAT10241/
 │   │   │   ├── Modal.jsx            # Accessible dialog shell
 │   │   │   └── Toast.jsx            # PlayStation trophy notification
 │   │   ├── layout/                  # Shell & ambient layout
-│   │   │   ├── Header.jsx           # PlayStation OS top navigation bar
+│   │   │   ├── Header.jsx           # PlayStation OS top navigation bar with Season pill
 │   │   │   ├── Footer.jsx           # Controller hints & footer bar
-│   │   │   └── BackgroundWaves.jsx  # Ambient procedural light ribbons
+│   │   │   └── BackgroundWaves.jsx  # Ambient procedural light ribbons & weather canvas
 │   │   ├── dashboard/               # Dashboard view
 │   │   │   ├── Dashboard.jsx        # Main console dashboard
 │   │   │   ├── HeroCard.jsx         # Enhanced hero game launch card
-│   │   │   └── LeaderboardModal.jsx # Live leaderboard & score viewer
+│   │   │   ├── LeaderboardModal.jsx # Live leaderboard & score viewer
+│   │   │   └── SeasonModal.jsx      # Interactive weather & season switcher dialog
 │   │   └── game/                    # Game view UI
 │   │       ├── GameView.jsx         # Game canvas container & engine lifecycle
 │   │       ├── GameHUD.jsx          # Health bars, stage info, score & FPS counter

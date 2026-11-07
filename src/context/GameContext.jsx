@@ -5,9 +5,11 @@ import { createContext, useReducer, useEffect, useCallback, useMemo } from 'reac
 import { gameReducer, initialState, ACTION_TYPES, SCREENS } from './gameReducer.js';
 import { storage } from '../utils/storage.js';
 import { audioEngine } from '../game/audio/AudioEngine.js';
+import { SEASONS, resolveActiveSeason } from '../config/season.config.js';
 
 const STORAGE_KEY_HIGH_SCORE = 'swagat_cyberpulse_highscore';
 const STORAGE_KEY_AUDIO_MUTED = 'swagat_cyberpulse_audiomuted';
+const STORAGE_KEY_SEASON = 'swagat_cyberpulse_season';
 
 export const GameContext = createContext(null);
 
@@ -15,10 +17,12 @@ export function GameProvider({ children }) {
   const [state, dispatch] = useReducer(gameReducer, initialState, (init) => {
     const savedHighScore = storage.get(STORAGE_KEY_HIGH_SCORE, 0);
     const audioMuted = storage.get(STORAGE_KEY_AUDIO_MUTED, false);
+    const savedSeason = storage.get(STORAGE_KEY_SEASON, SEASONS.AUTO);
     return {
       ...init,
       highScore: savedHighScore,
       audioEnabled: !audioMuted,
+      season: savedSeason,
     };
   });
 
@@ -32,6 +36,11 @@ export function GameProvider({ children }) {
     audioEngine.setEnabled(state.audioEnabled);
     storage.set(STORAGE_KEY_AUDIO_MUTED, !state.audioEnabled);
   }, [state.audioEnabled]);
+
+  // Sync season preference to local storage
+  useEffect(() => {
+    storage.set(STORAGE_KEY_SEASON, state.season);
+  }, [state.season]);
 
   // Navigation actions
   const navigateTo = useCallback((screen) => {
@@ -87,9 +96,20 @@ export function GameProvider({ children }) {
     dispatch({ type: ACTION_TYPES.GAME_OVER, payload: data });
   }, []);
 
+  const setSeason = useCallback((season) => {
+    dispatch({ type: ACTION_TYPES.SET_SEASON, payload: season });
+  }, []);
+
+  const activeSeason = useMemo(
+    () => resolveActiveSeason(state.season),
+    [state.season]
+  );
+
   const value = useMemo(
     () => ({
       ...state,
+      activeSeason,
+      setSeason,
       navigateTo,
       openModal,
       closeModal,
@@ -104,6 +124,8 @@ export function GameProvider({ children }) {
     }),
     [
       state,
+      activeSeason,
+      setSeason,
       navigateTo,
       openModal,
       closeModal,

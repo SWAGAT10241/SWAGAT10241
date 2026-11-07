@@ -15,6 +15,7 @@ export const ACTION_TYPES = Object.freeze({
   TOGGLE_AUDIO: 'TOGGLE_AUDIO',
   SET_GAMEPAD_STATUS: 'SET_GAMEPAD_STATUS',
   GAME_OVER: 'GAME_OVER',
+  SET_SEASON: 'SET_SEASON',
 });
 
 export const SCREENS = Object.freeze({
@@ -30,10 +31,11 @@ export const initialState = {
   playerHp: { current: 100, max: 100 },
   bossHp: { current: 5000, max: 5000 },
   toast: { show: false, title: '', message: '' },
-  activeModal: null, // 'LEADERBOARD' | 'GAME_OVER' | null
+  activeModal: null, // 'LEADERBOARD' | 'GAME_OVER' | 'SEASON_SELECT' | null
   audioEnabled: true,
   isGamepadConnected: false,
   gameOverData: null,
+  season: 'auto',
 };
 
 export function gameReducer(state, action) {
@@ -117,6 +119,12 @@ export function gameReducer(state, action) {
         ...state,
         gameOverData: action.payload,
         activeModal: 'GAME_OVER',
+      };
+
+    case ACTION_TYPES.SET_SEASON:
+      return {
+        ...state,
+        season: action.payload,
       };
 
     default:

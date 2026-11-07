@@ -618,6 +618,148 @@
   color: var(--ps-muted);
 }
 
+/* ==========================================================================
+   Atmospheric Weather & Season Selector
+   ========================================================================== */
+.season-selector-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.season-auto-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background: rgba(0, 112, 209, 0.18);
+  border: 1px solid var(--ps-cyan);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.15);
+}
+
+.season-auto-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.season-auto-info .auto-icon {
+  font-size: 1.8rem;
+}
+
+.season-auto-info h4 {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--ps-cyan);
+  margin-bottom: 3px;
+}
+
+.season-auto-info p {
+  font-size: 0.78rem;
+  color: var(--ps-text);
+  line-height: 1.4;
+}
+
+.season-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.season-card {
+  background: rgba(2, 10, 24, 0.75);
+  border: 1.5px solid rgba(0, 150, 255, 0.25);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #fff;
+  font-family: inherit;
+  position: relative;
+  overflow: hidden;
+}
+
+.season-card:hover {
+  border-color: var(--ps-cyan);
+  background: rgba(0, 112, 209, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 0 16px rgba(0, 112, 209, 0.35);
+}
+
+.season-card.selected {
+  border-color: var(--ps-cyan);
+  background: rgba(0, 112, 209, 0.35);
+  box-shadow: 0 0 20px var(--ps-glow-cyan);
+}
+
+.season-card.rendering::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ps-blue), var(--ps-cyan), var(--success));
+}
+
+.season-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.season-card-icon {
+  font-size: 1.8rem;
+}
+
+.season-card-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.season-card-desc {
+  font-size: 0.76rem;
+  color: var(--ps-muted);
+  line-height: 1.45;
+}
+
+.season-card-status {
+  margin-top: auto;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.status-selected {
+  color: var(--ps-cyan);
+}
+
+.status-auto {
+  color: var(--success);
+}
+
+.season-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+  .season-grid {
+    grid-template-columns: 1fr;
+  }
+  .season-auto-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 /* Game Over Debrief */
 .game-over-content {
   display: flex;

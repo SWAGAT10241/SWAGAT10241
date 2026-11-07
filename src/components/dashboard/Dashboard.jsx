@@ -4,12 +4,21 @@
 import React from 'react';
 import { HeroCard } from './HeroCard.jsx';
 import { LeaderboardModal } from './LeaderboardModal.jsx';
+import { SeasonModal } from './SeasonModal.jsx';
 import { useGame } from '../../hooks/useGame.js';
 import { SCREENS } from '../../context/gameReducer.js';
 import { audioEngine } from '../../game/audio/AudioEngine.js';
 
 export function Dashboard() {
-  const { navigateTo, openModal, closeModal, activeModal, highScore, triggerToast } = useGame();
+  const {
+    navigateTo,
+    openModal,
+    closeModal,
+    activeModal,
+    highScore,
+    triggerToast,
+    activeSeason,
+  } = useGame();
 
   const handleLaunchGame = () => {
     audioEngine.init();
@@ -25,14 +34,20 @@ export function Dashboard() {
       <HeroCard
         onPlay={handleLaunchGame}
         onOpenLeaderboard={() => openModal('LEADERBOARD')}
+        onOpenSeasons={() => openModal('SEASON_SELECT')}
         highScore={highScore}
+        activeSeason={activeSeason}
       />
 
       <LeaderboardModal
         isOpen={activeModal === 'LEADERBOARD'}
         onClose={closeModal}
       />
+
+      <SeasonModal
+        isOpen={activeModal === 'SEASON_SELECT'}
+        onClose={closeModal}
+      />
     </section>
   );
 }
-

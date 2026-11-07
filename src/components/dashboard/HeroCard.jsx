@@ -6,6 +6,7 @@ import { Badge } from '../common/Badge.jsx';
 import { Button } from '../common/Button.jsx';
 import { ENV } from '../../config/env.js';
 import { formatScore } from '../../utils/formatters.js';
+import { SEASON_PRESETS } from '../../config/season.config.js';
 
 const HIGHLIGHTS = [
   'Cursor & Mouse Reticle Tracking',
@@ -13,11 +14,12 @@ const HIGHLIGHTS = [
   'Real-Time Web Audio Synthesizer',
   'Phase-Shift Shield Deflection (Parry)',
   'DualSense Vibration & Haptics',
-  'Unified Touch, Keys & Mouse Controls',
+  'Dynamic Seasonal Weather Engine',
 ];
 
-export function HeroCard({ onPlay, onOpenLeaderboard, highScore }) {
+export function HeroCard({ onPlay, onOpenLeaderboard, onOpenSeasons, highScore, activeSeason }) {
   const previewImgUrl = `${ENV.BASE_URL}gameplay-demo.gif`;
+  const seasonInfo = SEASON_PRESETS[activeSeason];
 
   return (
     <article className="hero-game-card">
@@ -41,7 +43,14 @@ export function HeroCard({ onPlay, onOpenLeaderboard, highScore }) {
 
       <div className="hero-game-info">
         <div className="hero-meta">
-          <Badge variant="primary">PLAYSTATION® 5 PRO ENHANCED</Badge>
+          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+            <Badge variant="primary">PLAYSTATION® 5 PRO ENHANCED</Badge>
+            {seasonInfo && (
+              <Badge variant="secondary">
+                {seasonInfo.icon} {seasonInfo.label.toUpperCase()}
+              </Badge>
+            )}
+          </div>
           <h1 className="game-title">CYBER-PULSE: VOID BREAKER</h1>
           <p className="game-description">
             Command the cybernetic Interceptor against the colossal Omega Dreadnought in
@@ -63,11 +72,13 @@ export function HeroCard({ onPlay, onOpenLeaderboard, highScore }) {
             ▶ LAUNCH SIMULATION
           </Button>
           <Button variant="secondary" size="lg" onClick={onOpenLeaderboard}>
-            🏆 VIEW LEADERBOARD
+            🏆 LEADERBOARD
+          </Button>
+          <Button variant="secondary" size="lg" onClick={onOpenSeasons}>
+            {seasonInfo?.icon || '❄️'} SEASONS
           </Button>
         </div>
       </div>
     </article>
   );
 }
-

@@ -1,10 +1,26 @@
 /**
- * @fileoverview Ambient Dynamic PlayStation Wave Canvas
+ * @fileoverview Ambient Dynamic PlayStation Wave Canvas & Seasonal Weather
+ * Renders procedural light ribbons alongside interactive seasonal particles
+ * (Winter Snow, Autumn Leaves, Rain Water Drops & Ripples, Sakura Petals, Summer Fireflies).
  */
 import React, { useEffect, useRef } from 'react';
+import { useGame } from '../../hooks/useGame.js';
+import { SeasonalParticles } from '../../game/effects/SeasonalParticles.js';
+import { SEASON_PRESETS, SEASONS } from '../../config/season.config.js';
 
 export function BackgroundWaves() {
   const canvasRef = useRef(null);
+  const particleEngineRef = useRef(null);
+  const { activeSeason } = useGame();
+  const seasonRef = useRef(activeSeason);
+
+  // Update ref and particle engine whenever active season changes
+  useEffect(() => {
+    seasonRef.current = activeSeason;
+    if (particleEngineRef.current) {
+      particleEngineRef.current.setSeason(activeSeason);
+    }
+  }, [activeSeason]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -19,15 +35,26 @@ export function BackgroundWaves() {
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+      if (particleEngineRef.current) {
+        particleEngineRef.current.resize(canvas.width, canvas.height);
+      }
     };
 
     resize();
     window.addEventListener('resize', resize);
 
+    const particles = new SeasonalParticles(canvas.width, canvas.height, seasonRef.current);
+    particleEngineRef.current = particles;
+
     const render = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       step += 0.015;
 
+      const currentSeason = seasonRef.current;
+      const currentPreset = SEASON_PRESETS[currentSeason] || SEASON_PRESETS[SEASONS.WINTER];
+      const colors = currentPreset.waveColors;
+
+      // 1. Draw PlayStation Ambient Light Ribbons
       for (let layer = 0; layer < 4; layer++) {
         ctx.beginPath();
         const freq = 0.0025 + layer * 0.001;
@@ -40,10 +67,14 @@ export function BackgroundWaves() {
           else ctx.lineTo(x, y);
         }
 
-        ctx.strokeStyle = `rgba(0, ${110 + layer * 35}, 255, ${0.12 + layer * 0.07})`;
+        ctx.strokeStyle = colors[layer] || colors[0];
         ctx.lineWidth = 2.5;
         ctx.stroke();
       }
+
+      // 2. Update and Draw Seasonal Particles (Snow, Autumn Leaves, Rain Water Drops)
+      particles.update();
+      particles.draw(ctx);
 
       rafId = requestAnimationFrame(render);
     };
@@ -58,4 +89,3 @@ export function BackgroundWaves() {
 
   return <canvas ref={canvasRef} className="bg-canvas" aria-hidden="true" />;
 }
-

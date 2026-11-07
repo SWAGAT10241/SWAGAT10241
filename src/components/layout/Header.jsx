@@ -4,10 +4,14 @@
 import React from 'react';
 import { useGame } from '../../hooks/useGame.js';
 import { useClock } from '../../hooks/useClock.js';
+import { SEASON_PRESETS, SEASONS } from '../../config/season.config.js';
 
 export function Header() {
-  const { audioEnabled, toggleAudio, openModal } = useGame();
+  const { audioEnabled, toggleAudio, openModal, season, activeSeason } = useGame();
   const timeString = useClock();
+
+  const currentIcon = SEASON_PRESETS[activeSeason]?.icon || '❄️';
+  const isAuto = season === SEASONS.AUTO;
 
   return (
     <header className="ps-header">
@@ -25,6 +29,14 @@ export function Header() {
             onClick={() => openModal('LEADERBOARD')}
           >
             LEADERBOARD
+          </button>
+          <button
+            type="button"
+            className="nav-tab"
+            onClick={() => openModal('SEASON_SELECT')}
+            title="Configure Ambient Weather & Seasons"
+          >
+            {currentIcon} {isAuto ? 'SEASON: AUTO' : `SEASON: ${SEASON_PRESETS[activeSeason]?.tag.toUpperCase()}`}
           </button>
           <button
             type="button"
@@ -52,4 +64,3 @@ export function Header() {
     </header>
   );
 }
-
