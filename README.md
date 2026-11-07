@@ -1,191 +1,104 @@
 <div align="center">
 
-<!-- Dynamic PlayStation OS Seasonal Weather Banner (Auto-synced with calendar season) -->
+<!-- PlayStation OS Dynamic Seasonal Weather Banner -->
 <a href="https://swagat10241.github.io/SWAGAT10241/">
-  <img src="./assets/seasonal-weather.svg" width="100%" alt="Swagat Sourav Dhar — PlayStation OS Seasonal Atmosphere" />
+  <img src="./assets/seasonal-weather.svg" width="100%" alt="Swagat Sourav Dhar — PlayStation OS Atmosphere" />
 </a>
-
-<br/>
-
-# SWAGAT SOURAV DHAR
-### IoT Developer · Full-Stack Engineer · AI Explorer
-
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&duration=2600&pause=1100&color=00A2FF&center=true&vCenter=true&width=640&lines=Building+TrailGuard+%2F+SWAAS+wearable+ecosystem;ESP32+%E2%80%A2+React+%E2%80%A2+Node.js+%E2%80%A2+MongoDB;B.Tech+CSE+(IoT)+%C2%B7+Bhubaneswar;Open+to+internships+%26+collaborations)](https://github.com/SWAGAT10241)
-
-<p>
-  <a href="https://github.com/SWAGAT10241"><img src="https://img.shields.io/badge/GitHub-SWAGAT10241-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" /></a>
-  <a href="https://www.linkedin.com/in/swagat-sourav-dhar"><img src="https://img.shields.io/badge/LinkedIn-swagat--sourav--dhar-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-  <a href="https://x.com/Swagat10241"><img src="https://img.shields.io/badge/X-@Swagat10241-000000?style=flat-square&logo=x&logoColor=white" alt="X" /></a>
-  <a href="https://grabcad.com/swagat.sourav.dhar-1"><img src="https://img.shields.io/badge/GrabCAD-Models-00A3E0?style=flat-square" alt="GrabCAD" /></a>
-  <a href="mailto:swagatsourav10241@gmail.com"><img src="https://img.shields.io/badge/Email-Contact-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Email" /></a>
-</p>
-
-<p>
-  <img src="https://img.shields.io/badge/Focus-IoT%20%2B%20Wearables-0070D1?style=flat-square" alt="Focus" />
-  <img src="https://img.shields.io/badge/Flagship-TrailGuard%20%2F%20SWAAS-00C853?style=flat-square" alt="Flagship" />
-  <img src="https://img.shields.io/badge/Status-Open%20to%20work-2ea44f?style=flat-square" alt="Open to work" />
-</p>
-
-</div>
-
----
-
-### About
-
-I’m **Swagat Sourav Dhar** — a student developer focused on systems where **hardware, software, and AI** meet. Based in **Bhubaneswar**, building practical IoT and full-stack projects.
-
-- **Building:** [TrailGuard / SWAAS](https://github.com/SWAGAT10241/Smart-Wearable) — smart wearable safety & health monitoring  
-- **Learning:** Linux, Java, Python, embedded systems, backend design  
-- **Interests:** IoT, real-time systems, AI-assisted safety, full-stack development  
-- **Open to:** Internships, hackathons, collaborations, open-source  
-
----
-
-### Flagship — TrailGuard / SWAAS
-
-<div align="center">
-
-**Smart Wearable Assistance & Alert System**
-
-[![Repo](https://img.shields.io/badge/GitHub-Smart--Wearable-0070D1?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SWAGAT10241/Smart-Wearable)
-
-</div>
-
-ESP32 wearable + Node.js/Express backend + React/Vite dashboard for real-time health monitoring, GPS, fall detection, and emergency-oriented workflows.
-
-| Layer | Stack |
-| :--- | :--- |
-| **Hardware** | ESP32, heart-rate / SpO₂, motion, environment sensors, GPS |
-| **Backend** | Node.js, Express, MongoDB, WebSockets, JWT, Google OAuth |
-| **Frontend** | React, Vite, Tailwind, MapLibre GL |
-| **Focus** | Telemetry pipeline, auth, live dashboard, testing |
-
-**Implemented (software):** vitals & environment telemetry, GPS history, fall events, WebSocket live updates, JWT + Google OAuth, device registration, simulator, backend/frontend tests.  
-**In progress:** hardware validation, optional Twilio SMS, production hardening.
-
-> Active R&D platform — not a certified medical device. Capabilities depend on sensors and configuration.
-
----
-
-### Other public projects
-
-| Project | Description |
-| :--- | :--- |
-| **[Smart-Home-Energy-Advisor-Agent](https://github.com/SWAGAT10241/Smart-Home-Energy-Advisor-Agent)** | AI-oriented home energy guidance experiments |
-| **[Assistant](https://github.com/SWAGAT10241/Assistant)** | Full-stack assistant (JavaScript) |
-| **[AICTE_IDEA_Lab](https://github.com/SWAGAT10241/AICTE_IDEA_Lab)** | Lab work — Jupyter notebooks, applied AI / embedded |
-| **[Fashion_Design](https://github.com/SWAGAT10241/Fashion_Design)** | Jupyter-based design / ML exploration |
-| **[python](https://github.com/SWAGAT10241/python)** | Python practice and coursework |
-| **[ADSD](https://github.com/SWAGAT10241/ADSD)** | Additional coursework / design work |
-
----
-
-### Playground — Cyber-Pulse: Void Breaker
-
-Modern browser arcade simulation & PlayStation Console OS experience built with **React 18**, **Vite 5**, **Canvas 2D**, and **Web Audio API**.
-
-<div align="center">
-
-<img src="./assets/gameplay-demo.gif" alt="Cyber-Pulse gameplay" width="100%" style="max-width: 560px; border-radius: 8px; border: 2px solid #0070D1;" />
 
 <br/><br/>
 
-[![Vite App Docs](https://img.shields.io/badge/Architecture-docs%2FARCHITECTURE.md-0070D1?style=for-the-badge&logo=react&logoColor=white)](./docs/ARCHITECTURE.md)
-[![API Design](https://img.shields.io/badge/API_Specs-docs%2FAPI.md-00f0ff?style=for-the-badge&logo=swagger&logoColor=black)](./docs/API.md)
-[![App Guide](https://img.shields.io/badge/Guide-APP.md-181717?style=for-the-badge&logo=markdown&logoColor=white)](./APP.md)
-[![Standalone Demo](https://img.shields.io/badge/Legacy_Standalone-legacy%2Fstandalone.html-gray?style=for-the-badge&logo=html5&logoColor=white)](./legacy/standalone.html)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&duration=2600&pause=1100&color=00F0FF&center=true&vCenter=true&width=640&lines=Building+TrailGuard+%2F+SWAAS+wearable+ecosystem;ESP32+%E2%80%A2+React+%E2%80%A2+Node.js+%E2%80%A2+Vite;B.Tech+CSE+(IoT)+%C2%B7+Bhubaneswar;Open+to+collaborations+%26+internships)](https://github.com/SWAGAT10241)
+
+<p>
+  <a href="https://www.linkedin.com/in/swagat-sourav-dhar"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+  <a href="https://github.com/SWAGAT10241"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+  <a href="https://x.com/Swagat10241"><img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X" /></a>
+  <a href="https://grabcad.com/swagat.sourav.dhar-1"><img src="https://img.shields.io/badge/GrabCAD-00A3E0?style=for-the-badge&logo=autodesk&logoColor=white" alt="GrabCAD" /></a>
+  <a href="mailto:swagatsourav10241@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+</p>
 
 </div>
 
-- **Architecture:** Clean architecture separating business logic (`GameEngine`, `CollisionSystem`) from UI components.
-- **State Management:** Centralized `GameContext` with state reducer, high score caching, and notification dispatching.
-- **Resilient API:** Extensible REST client with request interceptors, timeout aborts, and offline caching.
-- **Controls:** `A`/`D` or arrows · `Space` fire · `E` parry · touch buttons on mobile · DualSense vibration  
+---
 
-See [APP.md](./APP.md) and [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md) for full implementation details.
+### 👨‍💻 About Me
+
+I'm **Swagat Sourav Dhar**, an IoT developer and full-stack engineer from **Bhubaneswar**, specializing in systems where hardware telemetry, responsive web interfaces, and intelligent automation intersect.
+
+- 🛠️ **Building:** [TrailGuard / SWAAS](https://github.com/SWAGAT10241/Smart-Wearable) — smart wearable safety & vitals monitoring ecosystem  
+- 🎮 **Creating:** [Cyber-Pulse: Void Breaker](https://swagat10241.github.io/SWAGAT10241/) — PlayStation OS browser arcade with Web Audio & dynamic seasonal weather  
+- 🎯 **Focus:** IoT architectures, embedded systems (ESP32), Node.js backends, React frontends  
 
 ---
 
-### 🌐 Atmospheric Seasonal Weather Engine
+### 🚀 Flagship Project — TrailGuard / SWAAS
 
-The profile and console web application include an ambient seasonal weather system that automatically adapts to the real-world calendar:
-
-| Season | Weather Simulation | Banner & Atmosphere |
-| :--- | :--- | :--- |
-| **❄️ Winter** | Crystalline snowfall & glacial light ribbons | [View Winter Atmosphere](./assets/weather-winter.svg) |
-| **🍂 Autumn** | Tumbling golden amber & crimson leaves *(Current)* | [View Autumn Atmosphere](./assets/weather-autumn.svg) |
-| **🌧️ Rain** | Slanted cyber raindrops & surface ripple splashes | [View Rain Atmosphere](./assets/weather-rain.svg) |
-| **🌸 Spring** | Swaying cherry blossom sakura petals | [View Spring Atmosphere](./assets/weather-spring.svg) |
-
----
-
-### Tech & skills
+> **Smart Wearable Assistance & Alert System** — Connected ESP32 wearable hardware coupled with a real-time Express backend and React telemetry dashboard for health vitals, GPS tracking, and automated fall detection.
 
 <div align="center">
 
-<p>
-  <img src="https://skillicons.dev/icons?i=java,python,js,cpp,c,html,css" alt="Languages" />
-</p>
-<p>
-  <img src="https://skillicons.dev/icons?i=react,nodejs,express,mongodb,vite,git,github,linux" alt="Web & tools" />
-</p>
+[![Repository](https://img.shields.io/badge/GitHub-Smart--Wearable-0070D1?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SWAGAT10241/Smart-Wearable)
 
 </div>
 
-| Area | Working with |
+| Layer | Technologies |
 | :--- | :--- |
-| **Embedded / IoT** | ESP32, sensors, telemetry, GPS |
-| **Backend** | Node.js, Express, REST, WebSockets, JWT |
-| **Frontend** | React, Vite, Tailwind, MapLibre |
-| **Data** | MongoDB |
-| **AI** | Exploring intelligent monitoring & energy tools |
-| **Systems** | Linux basics, Git, GitHub Actions |
-| **CAD** | GrabCAD models · learning Fusion 360 |
-
-> Icons mark tools I use or am learning — not expert-level claims for every tool.
+| **Embedded & Hardware** | ESP32, heart-rate/SpO₂, motion & environment sensors, GPS |
+| **Backend & Telemetry** | Node.js, Express, MongoDB, WebSockets, JWT, Google OAuth |
+| **Frontend Dashboard** | React 18, Vite, Tailwind CSS, MapLibre GL |
 
 ---
 
-### GitHub activity
+### 🕹️ Interactive Playground — Cyber-Pulse: Void Breaker
+
+A high-performance browser arcade simulation and PlayStation-themed console OS playground featuring **real-time seasonal weather** (snowfall, falling leaves, raindrops), **Web Audio synthesizer**, and **DualSense vibration**.
 
 <div align="center">
 
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=SWAGAT10241&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&cache_seconds=86400" alt="GitHub stats" />
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=SWAGAT10241&layout=compact&theme=tokyonight&hide_border=true&cache_seconds=86400" alt="Top languages" />
+<a href="https://swagat10241.github.io/SWAGAT10241/">
+  <img src="./assets/gameplay-demo.gif" alt="Cyber-Pulse gameplay" width="100%" style="max-width: 580px; border-radius: 10px; border: 2px solid #0070D1; box-shadow: 0 0 20px rgba(0, 112, 209, 0.35);" />
+</a>
 
-<img src="https://streak-stats.demolab.com?user=SWAGAT10241&theme=tokyonight&hide_border=true&cache_seconds=86400" alt="Contribution streak" />
+<br/><br/>
 
-![Profile views](https://komarev.com/ghpvc/?username=SWAGAT10241&label=Profile%20views&color=0070D1&style=flat-square)
+[![Play Demo](https://img.shields.io/badge/▶_Launch_Simulation-0070D1?style=for-the-badge&logo=playstation&logoColor=white)](https://swagat10241.github.io/SWAGAT10241/)
+[![App Documentation](https://img.shields.io/badge/Documentation-APP.md-181717?style=for-the-badge&logo=markdown&logoColor=white)](./APP.md)
+[![Architecture Specs](https://img.shields.io/badge/Architecture-docs%2FARCHITECTURE.md-00f0ff?style=for-the-badge&logo=react&logoColor=black)](./docs/ARCHITECTURE.md)
 
 </div>
 
 ---
 
-### Learning roadmap
-
-- [ ] Strengthen Java & Python fundamentals  
-- [ ] Data structures & algorithms practice  
-- [ ] Deeper Linux / shell skills  
-- [ ] Reliable embedded & IoT pipelines  
-- [ ] Stronger API design & security  
-- [ ] CI/CD and automated testing  
-- [ ] More Fusion 360 / hardware prototyping  
-- [ ] Meaningful open-source contributions  
-
----
-
-### Let’s connect
-
-Open to internships, collaborations, and conversations around **IoT**, **embedded systems**, **AI**, and **full-stack** work.
+### 🛠️ Tech Stack & Tools
 
 <div align="center">
 
-**Build. Test. Learn. Ship.**
-
-[GitHub](https://github.com/SWAGAT10241) · [LinkedIn](https://www.linkedin.com/in/swagat-sourav-dhar) · [X](https://x.com/Swagat10241) · [GrabCAD](https://grabcad.com/swagat.sourav.dhar-1) · [Email](mailto:swagatsourav10241@gmail.com)
+<p>
+  <img src="https://skillicons.dev/icons?i=c,cpp,java,python,js,html,css" alt="Programming Languages" />
+</p>
+<p>
+  <img src="https://skillicons.dev/icons?i=react,nodejs,express,mongodb,vite,git,github,linux" alt="Frameworks & Tools" />
+</p>
 
 </div>
 
-<!---
-SWAGAT10241/SWAGAT10241 — profile README
---->
+---
+
+### 📊 GitHub Activity
+
+<div align="center">
+
+<img height="160" src="https://github-readme-stats.vercel.app/api?username=SWAGAT10241&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub stats" />
+<img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=SWAGAT10241&layout=compact&theme=tokyonight&hide_border=true" alt="Top languages" />
+
+<br/>
+
+<img src="https://streak-stats.demolab.com?user=SWAGAT10241&theme=tokyonight&hide_border=true" alt="Contribution streak" />
+
+</div>
+
+---
+
+<div align="center">
+  <sub>Designed &amp; maintained by <a href="https://github.com/SWAGAT10241">Swagat Sourav Dhar</a></sub>
+</div>
