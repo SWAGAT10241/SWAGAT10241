@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 240" width="100%" height="240">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGradRain" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020816"/>
+      <stop offset="50%" stop-color="#021228"/>
+      <stop offset="100%" stop-color="#041a36"/>
+    </linearGradient>
+
+    <linearGradient id="waveGradRain1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0077b6" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#00b4d8" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#90e0ef" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <linearGradient id="waveGradRain2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#03045e" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#0096c7" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#48cae4" stop-opacity="0.25"/>
+    </linearGradient>
+
+    <!-- Raindrop Definition -->
+    <g id="rainStreak">
+      <line x1="0" y1="0" x2="-4" y2="28" stroke="#00f0ff" stroke-width="1.6" stroke-linecap="round" />
+    </g>
+
+    <!-- Splash Ripple Definition -->
+    <g id="splashRipple">
+      <ellipse cx="0" cy="0" rx="14" ry="4" fill="none" stroke="#48cae4" stroke-width="1.2" />
+      <circle cx="-5" cy="-3" r="1.5" fill="#00f0ff" />
+      <circle cx="5" cy="-4" r="1.2" fill="#90e0ef" />
+    </g>
+
+    <filter id="glowRain">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes waveFlowRain {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(-40px); }
+      100% { transform: translateX(0); }
+    }
+
+    @keyframes rainFall1 {
+      0% { transform: translate(60px, -40px); opacity: 0; }
+      20% { opacity: 0.85; }
+      90% { opacity: 0.85; }
+      100% { transform: translate(30px, 260px); opacity: 0; }
+    }
+
+    @keyframes rainFall2 {
+      0% { transform: translate(170px, -40px); opacity: 0; }
+      20% { opacity: 0.8; }
+      90% { opacity: 0.8; }
+      100% { transform: translate(140px, 260px); opacity: 0; }
+    }
+
+    @keyframes rainFall3 {
+      0% { transform: translate(290px, -40px); opacity: 0; }
+      20% { opacity: 0.9; }
+      90% { opacity: 0.9; }
+      100% { transform: translate(260px, 260px); opacity: 0; }
+    }
+
+    @keyframes rainFall4 {
+      0% { transform: translate(420px, -40px); opacity: 0; }
+      20% { opacity: 0.85; }
+      90% { opacity: 0.85; }
+      100% { transform: translate(390px, 260px); opacity: 0; }
+    }
+
+    @keyframes rainFall5 {
+      0% { transform: translate(560px, -40px); opacity: 0; }
+      20% { opacity: 0.8; }
+      90% { opacity: 0.8; }
+      100% { transform: translate(530px, 260px); opacity: 0; }
+    }
+
+    @keyframes rainFall6 {
+      0% { transform: translate(690px, -40px); opacity: 0; }
+      20% { opacity: 0.9; }
+      90% { opacity: 0.9; }
+      100% { transform: translate(660px, 260px); opacity: 0; }
+    }
+
+    @keyframes rainFall7 {
+      0% { transform: translate(810px, -40px); opacity: 0; }
+      20% { opacity: 0.85; }
+      90% { opacity: 0.85; }
+      100% { transform: translate(780px, 260px); opacity: 0; }
+    }
+
+    @keyframes rainFall8 {
+      0% { transform: translate(910px, -40px); opacity: 0; }
+      20% { opacity: 0.8; }
+      90% { opacity: 0.8; }
+      100% { transform: translate(880px, 260px); opacity: 0; }
+    }
+
+    @keyframes ripplePulse1 {
+      0% { transform: translate(140px, 225px) scale(0.3); opacity: 0; }
+      50% { opacity: 0.8; }
+      100% { transform: translate(140px, 225px) scale(1.3); opacity: 0; }
+    }
+
+    @keyframes ripplePulse2 {
+      0% { transform: translate(390px, 228px) scale(0.3); opacity: 0; }
+      50% { opacity: 0.8; }
+      100% { transform: translate(390px, 228px) scale(1.4); opacity: 0; }
+    }
+
+    @keyframes ripplePulse3 {
+      0% { transform: translate(660px, 224px) scale(0.3); opacity: 0; }
+      50% { opacity: 0.8; }
+      100% { transform: translate(660px, 224px) scale(1.3); opacity: 0; }
+    }
+
+    .rain1 { animation: rainFall1 1.6s linear infinite; }
+    .rain2 { animation: rainFall2 1.8s linear infinite 0.4s; }
+    .rain3 { animation: rainFall3 1.5s linear infinite 0.8s; }
+    .rain4 { animation: rainFall4 1.7s linear infinite 0.2s; }
+    .rain5 { animation: rainFall5 1.6s linear infinite 0.9s; }
+    .rain6 { animation: rainFall6 1.9s linear infinite 0.5s; }
+    .rain7 { animation: rainFall7 1.5s linear infinite 1.1s; }
+    .rain8 { animation: rainFall8 1.7s linear infinite 0.7s; }
+
+    .ripple1 { animation: ripplePulse1 2.2s ease-out infinite 0.3s; }
+    .ripple2 { animation: ripplePulse2 2.5s ease-out infinite 1.0s; }
+    .ripple3 { animation: ripplePulse3 2.1s ease-out infinite 1.6s; }
+
+    .wave-anim-rain { animation: waveFlowRain 8s ease-in-out infinite; }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="920" height="240" rx="14" fill="url(#bgGradRain)" />
+  <rect width="920" height="240" rx="14" fill="none" stroke="rgba(0, 180, 216, 0.4)" stroke-width="1.5" />
+
+  <!-- Ambient Wave Ribbons -->
+  <g class="wave-anim-rain">
+    <path d="M -50 170 Q 180 130 460 175 T 970 160 L 970 240 L -50 240 Z" fill="url(#waveGradRain1)" />
+    <path d="M -50 185 Q 220 150 490 190 T 970 175 L 970 240 L -50 240 Z" fill="url(#waveGradRain2)" />
+  </g>
+
+  <!-- Animated Falling Raindrops -->
+  <g class="rain1"><use href="#rainStreak"/></g>
+  <g class="rain2"><use href="#rainStreak"/></g>
+  <g class="rain3"><use href="#rainStreak"/></g>
+  <g class="rain4"><use href="#rainStreak"/></g>
+  <g class="rain5"><use href="#rainStreak"/></g>
+  <g class="rain6"><use href="#rainStreak"/></g>
+  <g class="rain7"><use href="#rainStreak"/></g>
+  <g class="rain8"><use href="#rainStreak"/></g>
+
+  <!-- Animated Splashes & Ripples at Base -->
+  <g class="ripple1"><use href="#splashRipple"/></g>
+  <g class="ripple2"><use href="#splashRipple"/></g>
+  <g class="ripple3"><use href="#splashRipple"/></g>
+
+  <!-- Top PlayStation OS Brand Mark -->
+  <rect x="36" y="24" width="30" height="30" rx="6" fill="#0077b6" filter="url(#glowRain)"/>
+  <text x="51" y="44" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="14" fill="#ffffff" text-anchor="middle">PS</text>
+
+  <!-- Title & Description Header -->
+  <text x="76" y="44" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="13" fill="#48cae4" letter-spacing="1.5">
+    CYBER-PULSE OS // RAINFALL SEASON ACTIVE
+  </text>
+
+  <g transform="translate(884, 38)">
+    <circle cx="-12" cy="0" r="4" fill="#00ff7f"/>
+    <text x="-24" y="4" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="11" fill="#8bb2e8" text-anchor="end">ONLINE</text>
+  </g>
+
+  <!-- Main Hero Titles -->
+  <text x="460" y="108" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-weight="900" font-size="34" fill="#ffffff" text-anchor="middle" letter-spacing="2">
+    SWAGAT SOURAV DHAR
+  </text>
+
+  <text x="460" y="142" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="14" fill="#90e0ef" text-anchor="middle" letter-spacing="1">
+    IoT Developer · Full-Stack Engineer · TrailGuard / SWAAS · Cyber-Pulse
+  </text>
+
+  <!-- Season Status Tag Pill -->
+  <g transform="translate(460, 184)">
+    <rect x="-140" y="-14" width="280" height="28" rx="14" fill="rgba(0, 119, 182, 0.3)" stroke="#00b4d8" stroke-width="1.2"/>
+    <text x="0" y="4" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="11" fill="#e0f7fa" text-anchor="middle" letter-spacing="0.8">
+      🌧️ NEON RAINFALL (WATER DROPS) ACTIVE
+    </text>
+  </g>
+</svg>

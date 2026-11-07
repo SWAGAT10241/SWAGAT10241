@@ -1,7 +1,9 @@
 <div align="center">
 
-<!-- Accurate dynamic header (no fake senior/architect titles) -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:000a18,50:0070d1,100:00f0ff&height=180&section=header&text=SWAGAT%20SOURAV%20DHAR&fontSize=36&fontColor=ffffff&fontAlignY=35&desc=IoT%20Developer%20%C2%B7%20Full-Stack%20%C2%B7%20TrailGuard%20%2F%20SWAAS&descSize=14&descAlignY=55&animation=fadeIn" width="100%" alt="Swagat Sourav Dhar — IoT Developer" />
+<!-- Dynamic PlayStation OS Seasonal Weather Banner (Auto-synced with calendar season) -->
+<a href="https://swagat10241.github.io/SWAGAT10241/">
+  <img src="./assets/seasonal-weather.svg" width="100%" alt="Swagat Sourav Dhar — PlayStation OS Seasonal Atmosphere" />
+</a>
 
 <br/>
 
@@ -101,6 +103,19 @@ Modern browser arcade simulation & PlayStation Console OS experience built with 
 - **Controls:** `A`/`D` or arrows · `Space` fire · `E` parry · touch buttons on mobile · DualSense vibration  
 
 See [APP.md](./APP.md) and [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md) for full implementation details.
+
+---
+
+### 🌐 Atmospheric Seasonal Weather Engine
+
+The profile and console web application include an ambient seasonal weather system that automatically adapts to the real-world calendar:
+
+| Season | Weather Simulation | Banner & Atmosphere |
+| :--- | :--- | :--- |
+| **❄️ Winter** | Crystalline snowfall & glacial light ribbons | [View Winter Atmosphere](./assets/weather-winter.svg) |
+| **🍂 Autumn** | Tumbling golden amber & crimson leaves *(Current)* | [View Autumn Atmosphere](./assets/weather-autumn.svg) |
+| **🌧️ Rain** | Slanted cyber raindrops & surface ripple splashes | [View Rain Atmosphere](./assets/weather-rain.svg) |
+| **🌸 Spring** | Swaying cherry blossom sakura petals | [View Spring Atmosphere](./assets/weather-spring.svg) |
 
 ---
 

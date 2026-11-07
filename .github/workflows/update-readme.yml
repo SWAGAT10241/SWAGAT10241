@@ -1,4 +1,4 @@
-name: Auto Update Profile README
+name: Auto Update Profile README & Seasonal Weather
 
 on:
   schedule:
@@ -18,15 +18,19 @@ jobs:
         with:
           ref: main
 
-      - name: Update Last Updated Date
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Sync Seasonal Weather Banner
         run: |
-          TODAY=$(date '+%d %B %Y')
-          sed -i -E "s/(<!-- LAST_UPDATED -->).*(<!-- \/LAST_UPDATED -->)/\1Last updated on $TODAY\2/" README.md
+          node scripts/update-season.js
 
       - name: Commit & Push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md
-          git commit -m "chore(profile): auto-update daily timestamp [skip ci]" || echo "No changes to commit"
+          git add assets/seasonal-weather.svg public/seasonal-weather.svg README.md
+          git commit -m "chore(profile): auto-sync seasonal weather banner [skip ci]" || echo "No changes to commit"
           git push origin main

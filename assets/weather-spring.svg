@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 240" width="100%" height="240">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGradSpring" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020816"/>
+      <stop offset="50%" stop-color="#1a0b22"/>
+      <stop offset="100%" stop-color="#2a0d33"/>
+    </linearGradient>
+
+    <linearGradient id="waveGradSpring1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f72585" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#b5179e" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#ff70a6" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <linearGradient id="waveGradSpring2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7209b7" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#ff4d6d" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#ffb3c6" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <!-- Sakura Petal Definition -->
+    <g id="sakuraPetal">
+      <path d="M 0,-12 C 4,-10 9,-4 8,4 C 7,8 2,12 0,14 C -2,12 -7,8 -8,4 C -9,-4 -4,-10 0,-12 Z" />
+    </g>
+
+    <filter id="glowSpring">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes waveFlowSpring {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(-40px); }
+      100% { transform: translateX(0); }
+    }
+
+    @keyframes sakuraFall1 {
+      0% { transform: translate(70px, -20px) rotate(0deg); opacity: 0; }
+      15% { opacity: 0.9; }
+      85% { opacity: 0.9; }
+      100% { transform: translate(180px, 260px) rotate(320deg); opacity: 0; }
+    }
+
+    @keyframes sakuraFall2 {
+      0% { transform: translate(240px, -20px) rotate(45deg); opacity: 0; }
+      15% { opacity: 0.85; }
+      85% { opacity: 0.85; }
+      100% { transform: translate(320px, 260px) rotate(270deg); opacity: 0; }
+    }
+
+    @keyframes sakuraFall3 {
+      0% { transform: translate(430px, -20px) rotate(-30deg); opacity: 0; }
+      15% { opacity: 0.9; }
+      85% { opacity: 0.9; }
+      100% { transform: translate(510px, 260px) rotate(360deg); opacity: 0; }
+    }
+
+    @keyframes sakuraFall4 {
+      0% { transform: translate(620px, -20px) rotate(20deg); opacity: 0; }
+      15% { opacity: 0.85; }
+      85% { opacity: 0.85; }
+      100% { transform: translate(710px, 260px) rotate(290deg); opacity: 0; }
+    }
+
+    @keyframes sakuraFall5 {
+      0% { transform: translate(800px, -20px) rotate(-40deg); opacity: 0; }
+      15% { opacity: 0.9; }
+      85% { opacity: 0.9; }
+      100% { transform: translate(890px, 260px) rotate(340deg); opacity: 0; }
+    }
+
+    .petal1 { animation: sakuraFall1 6.5s ease-in-out infinite; }
+    .petal2 { animation: sakuraFall2 7.2s ease-in-out infinite 1.2s; }
+    .petal3 { animation: sakuraFall3 6.0s ease-in-out infinite 0.7s; }
+    .petal4 { animation: sakuraFall4 7.8s ease-in-out infinite 2.0s; }
+    .petal5 { animation: sakuraFall5 6.8s ease-in-out infinite 1.5s; }
+
+    .wave-anim-spring { animation: waveFlowSpring 8s ease-in-out infinite; }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="920" height="240" rx="14" fill="url(#bgGradSpring)" />
+  <rect width="920" height="240" rx="14" fill="none" stroke="rgba(255, 112, 166, 0.4)" stroke-width="1.5" />
+
+  <!-- Ambient Wave Ribbons -->
+  <g class="wave-anim-spring">
+    <path d="M -50 170 Q 180 130 460 175 T 970 160 L 970 240 L -50 240 Z" fill="url(#waveGradSpring1)" />
+    <path d="M -50 185 Q 220 150 490 190 T 970 175 L 970 240 L -50 240 Z" fill="url(#waveGradSpring2)" />
+  </g>
+
+  <!-- Animated Falling Sakura Petals -->
+  <g class="petal1" fill="#ffb3c6"><use href="#sakuraPetal"/></g>
+  <g class="petal2" fill="#ff70a6"><use href="#sakuraPetal"/></g>
+  <g class="petal3" fill="#ffccd5"><use href="#sakuraPetal"/></g>
+  <g class="petal4" fill="#ff4d6d"><use href="#sakuraPetal"/></g>
+  <g class="petal5" fill="#ffaec9"><use href="#sakuraPetal"/></g>
+
+  <!-- Top PlayStation OS Brand Mark -->
+  <rect x="36" y="24" width="30" height="30" rx="6" fill="#f72585" filter="url(#glowSpring)"/>
+  <text x="51" y="44" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="14" fill="#ffffff" text-anchor="middle">PS</text>
+
+  <!-- Title & Description Header -->
+  <text x="76" y="44" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="13" fill="#ffb3c6" letter-spacing="1.5">
+    CYBER-PULSE OS // SPRING SAKURA ACTIVE
+  </text>
+
+  <g transform="translate(884, 38)">
+    <circle cx="-12" cy="0" r="4" fill="#00ff7f"/>
+    <text x="-24" y="4" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="11" fill="#8bb2e8" text-anchor="end">ONLINE</text>
+  </g>
+
+  <!-- Main Hero Titles -->
+  <text x="460" y="108" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-weight="900" font-size="34" fill="#ffffff" text-anchor="middle" letter-spacing="2">
+    SWAGAT SOURAV DHAR
+  </text>
+
+  <text x="460" y="142" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="14" fill="#ffcad4" text-anchor="middle" letter-spacing="1">
+    IoT Developer · Full-Stack Engineer · TrailGuard / SWAAS · Cyber-Pulse
+  </text>
+
+  <!-- Season Status Tag Pill -->
+  <g transform="translate(460, 184)">
+    <rect x="-140" y="-14" width="280" height="28" rx="14" fill="rgba(247, 37, 133, 0.25)" stroke="#ff70a6" stroke-width="1.2"/>
+    <text x="0" y="4" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="11" fill="#ffe5ec" text-anchor="middle" letter-spacing="0.8">
+      🌸 SPRING SAKURA (PETAL FALL) ACTIVE
+    </text>
+  </g>
+</svg>
