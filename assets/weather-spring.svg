@@ -1,12 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 240" width="100%" height="240">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 220" width="100%" height="220" fill="none">
   <defs>
-    <!-- Background Gradients -->
-    <linearGradient id="bgGradSpring" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#020816"/>
-      <stop offset="50%" stop-color="#1a0b22"/>
-      <stop offset="100%" stop-color="#2a0d33"/>
-    </linearGradient>
-
+    <!-- Wave Gradients for Dark Mode -->
     <linearGradient id="waveGradSpring1" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#f72585" stop-opacity="0.3"/>
       <stop offset="50%" stop-color="#b5179e" stop-opacity="0.45"/>
@@ -23,17 +17,37 @@
     <g id="sakuraPetal">
       <path d="M 0,-12 C 4,-10 9,-4 8,4 C 7,8 2,12 0,14 C -2,12 -7,8 -8,4 C -9,-4 -4,-10 0,-12 Z" />
     </g>
-
-    <filter id="glowSpring">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
 
   <style>
+    /* Default / Light Mode Styles (Bright Mode Compatible) */
+    .hero-title { fill: #0f172a; }
+    .hero-subtitle { fill: #db2777; }
+    .season-pill-bg { fill: rgba(244, 114, 182, 0.12); stroke: #db2777; }
+    .season-pill-text { fill: #be185d; }
+    .wave-line-1 { stroke: rgba(219, 39, 119, 0.45); }
+    .wave-line-2 { stroke: rgba(190, 24, 93, 0.35); }
+    .petal-c1 { fill: #db2777; }
+    .petal-c2 { fill: #e11d48; }
+    .petal-c3 { fill: #be185d; }
+    .petal-c4 { fill: #f43f5e; }
+    .petal-c5 { fill: #e11d48; }
+
+    /* Dark Mode Overrides (Automatic when viewer has dark theme) */
+    @media (prefers-color-scheme: dark) {
+      .hero-title { fill: #ffffff; }
+      .hero-subtitle { fill: #ffcad4; }
+      .season-pill-bg { fill: rgba(247, 37, 133, 0.25); stroke: #ff70a6; }
+      .season-pill-text { fill: #ffe5ec; }
+      .wave-line-1 { stroke: url(#waveGradSpring1); }
+      .wave-line-2 { stroke: url(#waveGradSpring2); }
+      .petal-c1 { fill: #ffb3c6; }
+      .petal-c2 { fill: #ff70a6; }
+      .petal-c3 { fill: #ffccd5; }
+      .petal-c4 { fill: #ff4d6d; }
+      .petal-c5 { fill: #ffaec9; }
+    }
+
     @keyframes waveFlowSpring {
       0% { transform: translateX(0); }
       50% { transform: translateX(-40px); }
@@ -44,35 +58,35 @@
       0% { transform: translate(70px, -20px) rotate(0deg); opacity: 0; }
       15% { opacity: 0.9; }
       85% { opacity: 0.9; }
-      100% { transform: translate(180px, 260px) rotate(320deg); opacity: 0; }
+      100% { transform: translate(180px, 240px) rotate(320deg); opacity: 0; }
     }
 
     @keyframes sakuraFall2 {
       0% { transform: translate(240px, -20px) rotate(45deg); opacity: 0; }
       15% { opacity: 0.85; }
       85% { opacity: 0.85; }
-      100% { transform: translate(320px, 260px) rotate(270deg); opacity: 0; }
+      100% { transform: translate(320px, 240px) rotate(270deg); opacity: 0; }
     }
 
     @keyframes sakuraFall3 {
       0% { transform: translate(430px, -20px) rotate(-30deg); opacity: 0; }
       15% { opacity: 0.9; }
       85% { opacity: 0.9; }
-      100% { transform: translate(510px, 260px) rotate(360deg); opacity: 0; }
+      100% { transform: translate(510px, 240px) rotate(360deg); opacity: 0; }
     }
 
     @keyframes sakuraFall4 {
       0% { transform: translate(620px, -20px) rotate(20deg); opacity: 0; }
       15% { opacity: 0.85; }
       85% { opacity: 0.85; }
-      100% { transform: translate(710px, 260px) rotate(290deg); opacity: 0; }
+      100% { transform: translate(710px, 240px) rotate(290deg); opacity: 0; }
     }
 
     @keyframes sakuraFall5 {
       0% { transform: translate(800px, -20px) rotate(-40deg); opacity: 0; }
       15% { opacity: 0.9; }
       85% { opacity: 0.9; }
-      100% { transform: translate(890px, 260px) rotate(340deg); opacity: 0; }
+      100% { transform: translate(890px, 240px) rotate(340deg); opacity: 0; }
     }
 
     .petal1 { animation: sakuraFall1 6.5s ease-in-out infinite; }
@@ -84,51 +98,33 @@
     .wave-anim-spring { animation: waveFlowSpring 8s ease-in-out infinite; }
   </style>
 
-  <!-- Background Base -->
-  <rect width="920" height="240" rx="14" fill="url(#bgGradSpring)" />
-  <rect width="920" height="240" rx="14" fill="none" stroke="rgba(255, 112, 166, 0.4)" stroke-width="1.5" />
-
-  <!-- Ambient Wave Ribbons -->
+  <!-- Ambient Wave Ribbons (Borderless, Transparent) -->
   <g class="wave-anim-spring">
-    <path d="M -50 170 Q 180 130 460 175 T 970 160 L 970 240 L -50 240 Z" fill="url(#waveGradSpring1)" />
-    <path d="M -50 185 Q 220 150 490 190 T 970 175 L 970 240 L -50 240 Z" fill="url(#waveGradSpring2)" />
+    <path class="wave-line-1" d="M -50 150 Q 180 110 460 155 T 970 140" stroke-width="3" fill="none" />
+    <path class="wave-line-2" d="M -50 168 Q 220 130 490 170 T 970 155" stroke-width="2.5" fill="none" />
   </g>
 
   <!-- Animated Falling Sakura Petals -->
-  <g class="petal1" fill="#ffb3c6"><use href="#sakuraPetal"/></g>
-  <g class="petal2" fill="#ff70a6"><use href="#sakuraPetal"/></g>
-  <g class="petal3" fill="#ffccd5"><use href="#sakuraPetal"/></g>
-  <g class="petal4" fill="#ff4d6d"><use href="#sakuraPetal"/></g>
-  <g class="petal5" fill="#ffaec9"><use href="#sakuraPetal"/></g>
+  <g class="petal1 petal-c1"><use href="#sakuraPetal"/></g>
+  <g class="petal2 petal-c2"><use href="#sakuraPetal"/></g>
+  <g class="petal3 petal-c3"><use href="#sakuraPetal"/></g>
+  <g class="petal4 petal-c4"><use href="#sakuraPetal"/></g>
+  <g class="petal5 petal-c5"><use href="#sakuraPetal"/></g>
 
-  <!-- Top PlayStation OS Brand Mark -->
-  <rect x="36" y="24" width="30" height="30" rx="6" fill="#f72585" filter="url(#glowSpring)"/>
-  <text x="51" y="44" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="14" fill="#ffffff" text-anchor="middle">PS</text>
-
-  <!-- Title & Description Header -->
-  <text x="76" y="44" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="13" fill="#ffb3c6" letter-spacing="1.5">
-    CYBER-PULSE OS // SPRING SAKURA ACTIVE
-  </text>
-
-  <g transform="translate(884, 38)">
-    <circle cx="-12" cy="0" r="4" fill="#00ff7f"/>
-    <text x="-24" y="4" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="11" fill="#8bb2e8" text-anchor="end">ONLINE</text>
+  <!-- Season Status Tag Pill -->
+  <g transform="translate(460, 42)">
+    <rect class="season-pill-bg" x="-160" y="-14" width="320" height="28" rx="14" stroke-width="1.2"/>
+    <text class="season-pill-text" x="0" y="4.5" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="11" text-anchor="middle" letter-spacing="1.2">
+      🌸 SPRING SAKURA // PETAL BLOOM ACTIVE
+    </text>
   </g>
 
   <!-- Main Hero Titles -->
-  <text x="460" y="108" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-weight="900" font-size="34" fill="#ffffff" text-anchor="middle" letter-spacing="2">
+  <text class="hero-title" x="460" y="110" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-weight="900" font-size="38" text-anchor="middle" letter-spacing="2">
     SWAGAT SOURAV DHAR
   </text>
 
-  <text x="460" y="142" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="14" fill="#ffcad4" text-anchor="middle" letter-spacing="1">
+  <text class="hero-subtitle" x="460" y="146" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="14" text-anchor="middle" letter-spacing="1.2">
     IoT Developer · Full-Stack Engineer · TrailGuard / SWAAS · Cyber-Pulse
   </text>
-
-  <!-- Season Status Tag Pill -->
-  <g transform="translate(460, 184)">
-    <rect x="-140" y="-14" width="280" height="28" rx="14" fill="rgba(247, 37, 133, 0.25)" stroke="#ff70a6" stroke-width="1.2"/>
-    <text x="0" y="4" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="11" fill="#ffe5ec" text-anchor="middle" letter-spacing="0.8">
-      🌸 SPRING SAKURA (PETAL FALL) ACTIVE
-    </text>
-  </g>
 </svg>

@@ -8,13 +8,27 @@
     </linearGradient>
 
     <g id="miniCrystal">
-      <circle cx="0" cy="0" r="1.5" fill="#ffffff" />
-      <line x1="-5" y1="0" x2="5" y2="0" stroke="#e1f5fe" stroke-width="0.8" />
-      <line x1="0" y1="-5" x2="0" y2="5" stroke="#e1f5fe" stroke-width="0.8" />
+      <circle cx="0" cy="0" r="1.5" class="snow-core" />
+      <line x1="-5" y1="0" x2="5" y2="0" class="snow-branch" stroke-width="0.8" />
+      <line x1="0" y1="-5" x2="0" y2="5" class="snow-branch" stroke-width="0.8" />
     </g>
   </defs>
 
   <style>
+    /* Light Mode */
+    .div-wave-winter { stroke: rgba(2, 132, 199, 0.45); }
+    .div-dot-winter { fill: #0284c7; stroke: #0284c7; }
+    .snow-core { fill: #0284c7; }
+    .snow-branch { stroke: #0284c7; }
+
+    /* Dark Mode */
+    @media (prefers-color-scheme: dark) {
+      .div-wave-winter { stroke: url(#divWaveWinter); }
+      .div-dot-winter { fill: #00f0ff; stroke: #00f0ff; }
+      .snow-core { fill: #ffffff; }
+      .snow-branch { stroke: #e1f5fe; }
+    }
+
     @keyframes divSnow1 {
       0% { transform: translate(140px, -15px); opacity: 0; }
       20% { opacity: 0.95; }
@@ -40,9 +54,9 @@
   </style>
 
   <!-- Ambient Wave Line Divider -->
-  <path d="M 20 40 Q 240 18 460 42 T 900 38" stroke="url(#divWaveWinter)" stroke-width="2.5" fill="none" />
-  <circle cx="460" cy="42" r="3" fill="#00f0ff" />
-  <circle cx="460" cy="42" r="6" stroke="#00f0ff" stroke-width="1" fill="none" />
+  <path class="div-wave-winter" d="M 20 40 Q 240 18 460 42 T 900 38" stroke-width="2.5" fill="none" />
+  <circle class="div-dot-winter" cx="460" cy="42" r="3" />
+  <circle class="div-dot-winter" cx="460" cy="42" r="6" stroke-width="1" fill="none" />
 
   <!-- Drifting Snowflakes Across Divider -->
   <g class="d-snow1"><use href="#miniCrystal"/></g>

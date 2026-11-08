@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 220" width="100%" height="220" fill="none">
   <defs>
+    <!-- Wave Gradients for Dark Mode -->
     <linearGradient id="waveRain1" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#0077b6" stop-opacity="0.25"/>
       <stop offset="50%" stop-color="#00b4d8" stop-opacity="0.45"/>
@@ -12,16 +13,40 @@
       <stop offset="100%" stop-color="#48cae4" stop-opacity="0.2"/>
     </linearGradient>
 
+    <!-- Raindrop Definition -->
     <g id="rainDrop">
-      <line x1="0" y1="0" x2="-4" y2="28" stroke="#00f0ff" stroke-width="1.6" stroke-linecap="round" />
+      <line class="rain-streak" x1="0" y1="0" x2="-4" y2="28" stroke-width="1.8" stroke-linecap="round" />
     </g>
 
+    <!-- Ripple Circle Definition -->
     <g id="splashCircle">
-      <ellipse cx="0" cy="0" rx="12" ry="3.5" fill="none" stroke="#48cae4" stroke-width="1.2" />
+      <ellipse class="splash-ring" cx="0" cy="0" rx="14" ry="4" fill="none" stroke-width="1.2" />
     </g>
   </defs>
 
   <style>
+    /* Default / Light Mode Styles (Bright Mode Compatible) */
+    .hero-title { fill: #0f172a; }
+    .hero-subtitle { fill: #0284c7; }
+    .season-pill-bg { fill: rgba(2, 132, 199, 0.12); stroke: #0284c7; }
+    .season-pill-text { fill: #0369a1; }
+    .wave-line-1 { stroke: rgba(2, 132, 199, 0.45); }
+    .wave-line-2 { stroke: rgba(14, 165, 233, 0.35); }
+    .rain-streak { stroke: #0284c7; }
+    .splash-ring { stroke: #0284c7; }
+
+    /* Dark Mode Overrides (Automatic when viewer has dark theme) */
+    @media (prefers-color-scheme: dark) {
+      .hero-title { fill: #ffffff; }
+      .hero-subtitle { fill: #90e0ef; }
+      .season-pill-bg { fill: rgba(0, 119, 182, 0.25); stroke: #00b4d8; }
+      .season-pill-text { fill: #e0f7fa; }
+      .wave-line-1 { stroke: url(#waveRain1); }
+      .wave-line-2 { stroke: url(#waveRain2); }
+      .rain-streak { stroke: #00f0ff; }
+      .splash-ring { stroke: #48cae4; }
+    }
+
     @keyframes waveFloatRain {
       0% { transform: translateX(0); }
       50% { transform: translateX(-35px); }
@@ -91,8 +116,8 @@
 
   <!-- Ambient Wave Ribbons (Borderless, Transparent) -->
   <g class="wave-float-rain">
-    <path d="M -40 150 Q 180 110 460 155 T 960 140" stroke="url(#waveRain1)" stroke-width="3" fill="none" />
-    <path d="M -40 168 Q 220 130 490 170 T 960 155" stroke="url(#waveRain2)" stroke-width="2.5" fill="none" />
+    <path class="wave-line-1" d="M -40 150 Q 180 110 460 155 T 960 140" stroke-width="3" fill="none" />
+    <path class="wave-line-2" d="M -40 168 Q 220 130 490 170 T 960 155" stroke-width="2.5" fill="none" />
   </g>
 
   <!-- Animated Falling Raindrops Across Full Width -->
@@ -107,20 +132,20 @@
   <g class="rip1"><use href="#splashCircle"/></g>
   <g class="rip2"><use href="#splashCircle"/></g>
 
-  <!-- PlayStation OS Pill Header -->
+  <!-- Season Status Tag Pill -->
   <g transform="translate(460, 42)">
-    <rect x="-170" y="-14" width="340" height="28" rx="14" fill="rgba(0, 119, 182, 0.25)" stroke="#00b4d8" stroke-width="1.2"/>
-    <text x="0" y="4.5" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="11" fill="#e0f7fa" text-anchor="middle" letter-spacing="1.2">
+    <rect class="season-pill-bg" x="-170" y="-14" width="340" height="28" rx="14" stroke-width="1.2"/>
+    <text class="season-pill-text" x="0" y="4.5" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="11" text-anchor="middle" letter-spacing="1.2">
       🌧️ RAINFALL SEASON // PRECIPITATION ACTIVE
     </text>
   </g>
 
   <!-- Main Hero Titles -->
-  <text x="460" y="110" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-weight="900" font-size="38" fill="#ffffff" text-anchor="middle" letter-spacing="2">
+  <text class="hero-title" x="460" y="110" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-weight="900" font-size="38" text-anchor="middle" letter-spacing="2">
     SWAGAT SOURAV DHAR
   </text>
 
-  <text x="460" y="146" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="14" fill="#90e0ef" text-anchor="middle" letter-spacing="1.2">
+  <text class="hero-subtitle" x="460" y="146" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="14" text-anchor="middle" letter-spacing="1.2">
     IoT Developer · Full-Stack Engineer · TrailGuard / SWAAS · Cyber-Pulse
   </text>
 </svg>

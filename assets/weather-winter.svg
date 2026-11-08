@@ -14,19 +14,43 @@
 
     <!-- Crystal Snowflake -->
     <g id="crystalFlake">
-      <circle cx="0" cy="0" r="2.5" fill="#ffffff" />
-      <line x1="-8" y1="0" x2="8" y2="0" stroke="#e1f5fe" stroke-width="1.2" />
-      <line x1="0" y1="-8" x2="0" y2="8" stroke="#e1f5fe" stroke-width="1.2" />
-      <line x1="-6" y1="-6" x2="6" y2="6" stroke="#b3e5fc" stroke-width="1" />
-      <line x1="-6" y1="6" x2="6" y2="-6" stroke="#b3e5fc" stroke-width="1" />
+      <circle cx="0" cy="0" r="2.5" class="snow-core" />
+      <line x1="-8" y1="0" x2="8" y2="0" class="snow-branch" stroke-width="1.2" />
+      <line x1="0" y1="-8" x2="0" y2="8" class="snow-branch" stroke-width="1.2" />
+      <line x1="-6" y1="-6" x2="6" y2="6" class="snow-branch-sub" stroke-width="1" />
+      <line x1="-6" y1="6" x2="6" y2="-6" class="snow-branch-sub" stroke-width="1" />
     </g>
 
     <g id="softFlake">
-      <circle cx="0" cy="0" r="3" fill="#ffffff" />
+      <circle cx="0" cy="0" r="3" class="snow-core" />
     </g>
   </defs>
 
   <style>
+    /* Default / Light Mode Styles (Bright Mode Compatible) */
+    .hero-title { fill: #0f172a; }
+    .hero-subtitle { fill: #0284c7; }
+    .season-pill-bg { fill: rgba(0, 112, 209, 0.12); stroke: #0284c7; }
+    .season-pill-text { fill: #0369a1; }
+    .wave-line-1 { stroke: rgba(2, 132, 199, 0.45); }
+    .wave-line-2 { stroke: rgba(0, 112, 209, 0.4); }
+    .snow-core { fill: #0284c7; }
+    .snow-branch { stroke: #0284c7; }
+    .snow-branch-sub { stroke: #38bdf8; }
+
+    /* Dark Mode Overrides */
+    @media (prefers-color-scheme: dark) {
+      .hero-title { fill: #ffffff; }
+      .hero-subtitle { fill: #80d8ff; }
+      .season-pill-bg { fill: rgba(0, 112, 209, 0.25); stroke: #00f0ff; }
+      .season-pill-text { fill: #e0f7fa; }
+      .wave-line-1 { stroke: url(#waveWinter1); }
+      .wave-line-2 { stroke: url(#waveWinter2); }
+      .snow-core { fill: #ffffff; }
+      .snow-branch { stroke: #e1f5fe; }
+      .snow-branch-sub { stroke: #b3e5fc; }
+    }
+
     @keyframes waveFloatWinter {
       0% { transform: translateX(0); }
       50% { transform: translateX(-35px); }
@@ -87,10 +111,10 @@
     .wave-float-winter { animation: waveFloatWinter 9s ease-in-out infinite; }
   </style>
 
-  <!-- Ambient Wave Ribbons (Borderless, Transparent) -->
+  <!-- Ambient Wave Ribbons -->
   <g class="wave-float-winter">
-    <path d="M -40 150 Q 180 110 460 155 T 960 140" stroke="url(#waveWinter1)" stroke-width="3" fill="none" />
-    <path d="M -40 168 Q 220 130 490 170 T 960 155" stroke="url(#waveWinter2)" stroke-width="2.5" fill="none" />
+    <path class="wave-line-1" d="M -40 150 Q 180 110 460 155 T 960 140" stroke-width="3" fill="none" />
+    <path class="wave-line-2" d="M -40 168 Q 220 130 490 170 T 960 155" stroke-width="2.5" fill="none" />
   </g>
 
   <!-- Animated Snowflakes Across Full Width -->
@@ -104,18 +128,18 @@
 
   <!-- PlayStation OS Pill Header -->
   <g transform="translate(460, 42)">
-    <rect x="-170" y="-14" width="340" height="28" rx="14" fill="rgba(0, 112, 209, 0.25)" stroke="#00f0ff" stroke-width="1.2"/>
-    <text x="0" y="4.5" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="11" fill="#e0f7fa" text-anchor="middle" letter-spacing="1.2">
+    <rect class="season-pill-bg" x="-170" y="-14" width="340" height="28" rx="14" stroke-width="1.2"/>
+    <text class="season-pill-text" x="0" y="4.5" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="11" text-anchor="middle" letter-spacing="1.2">
       ❄️ WINTER SEASON // SNOWFALL ACTIVE
     </text>
   </g>
 
-  <!-- Main Hero Titles -->
-  <text x="460" y="110" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-weight="900" font-size="38" fill="#ffffff" text-anchor="middle" letter-spacing="2">
+  <!-- Main Hero Titles with Automatic Light/Dark Adaptive Colors -->
+  <text class="hero-title" x="460" y="110" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-weight="900" font-size="38" text-anchor="middle" letter-spacing="2">
     SWAGAT SOURAV DHAR
   </text>
 
-  <text x="460" y="146" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="14" fill="#80d8ff" text-anchor="middle" letter-spacing="1.2">
+  <text class="hero-subtitle" x="460" y="146" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="14" text-anchor="middle" letter-spacing="1.2">
     IoT Developer · Full-Stack Engineer · TrailGuard / SWAAS · Cyber-Pulse
   </text>
 </svg>

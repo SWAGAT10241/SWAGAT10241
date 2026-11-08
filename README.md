@@ -7,7 +7,13 @@
 
 <br/><br/>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&duration=2600&pause=1100&color=00F0FF&center=true&vCenter=true&width=640&lines=Building+TrailGuard+%2F+SWAAS+wearable+ecosystem;ESP32+%E2%80%A2+React+%E2%80%A2+Node.js+%E2%80%A2+Vite;B.Tech+CSE+(Internet+of+Things);Hardware+%E2%80%A2+Full-Stack+%E2%80%A2+Creative+Code;Open+to+collaborations+%26+internships)](https://github.com/SWAGAT10241)
+<a href="https://github.com/SWAGAT10241">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&duration=2600&pause=1100&color=00F0FF&center=true&vCenter=true&width=640&lines=Building+TrailGuard+%2F+SWAAS+wearable+ecosystem;ESP32+%E2%80%A2+React+%E2%80%A2+Node.js+%E2%80%A2+Vite;B.Tech+CSE+(Internet+of+Things);Hardware+%E2%80%A2+Full-Stack+%E2%80%A2+Creative+Code;Open+to+collaborations+%26+internships" />
+    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&duration=2600&pause=1100&color=0070D1&center=true&vCenter=true&width=640&lines=Building+TrailGuard+%2F+SWAAS+wearable+ecosystem;ESP32+%E2%80%A2+React+%E2%80%A2+Node.js+%E2%80%A2+Vite;B.Tech+CSE+(Internet+of+Things);Hardware+%E2%80%A2+Full-Stack+%E2%80%A2+Creative+Code;Open+to+collaborations+%26+internships" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&duration=2600&pause=1100&color=0070D1&center=true&vCenter=true&width=640&lines=Building+TrailGuard+%2F+SWAAS+wearable+ecosystem;ESP32+%E2%80%A2+React+%E2%80%A2+Node.js+%E2%80%A2+Vite;B.Tech+CSE+(Internet+of+Things);Hardware+%E2%80%A2+Full-Stack+%E2%80%A2+Creative+Code;Open+to+collaborations+%26+internships" alt="Typing SVG" />
+  </picture>
+</a>
 
 <p>
   <a href="https://www.linkedin.com/in/swagat-sourav-dhar"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
@@ -90,12 +96,24 @@ A high-performance browser arcade simulation and PlayStation-themed console OS p
 
 <div align="center">
 
-<img height="160" src="https://github-readme-stats.vercel.app/api?username=SWAGAT10241&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub stats" />
-<img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=SWAGAT10241&layout=compact&theme=tokyonight&hide_border=true" alt="Top languages" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=SWAGAT10241&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
+  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=SWAGAT10241&show_icons=true&theme=default&hide_border=true&count_private=true" />
+  <img height="160" src="https://github-readme-stats.vercel.app/api?username=SWAGAT10241&show_icons=true&theme=default&hide_border=true&count_private=true" alt="GitHub stats" />
+</picture>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=SWAGAT10241&layout=compact&theme=tokyonight&hide_border=true" />
+  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=SWAGAT10241&layout=compact&theme=default&hide_border=true" />
+  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=SWAGAT10241&layout=compact&theme=default&hide_border=true" alt="Top languages" />
+</picture>
 
 <br/>
 
-<img src="https://streak-stats.demolab.com?user=SWAGAT10241&theme=tokyonight&hide_border=true" alt="Contribution streak" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=SWAGAT10241&theme=tokyonight&hide_border=true" />
+  <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com?user=SWAGAT10241&theme=default&hide_border=true" />
+  <img src="https://streak-stats.demolab.com?user=SWAGAT10241&theme=default&hide_border=true" alt="Contribution streak" />
+</picture>
 
 </div>
 

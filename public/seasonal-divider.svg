@@ -9,15 +9,25 @@
 
     <g id="miniLeaf">
       <path d="M 0,-10 C 3,-6 7,-5 9,0 C 6,3 3,6 0,9 C -3,6 -6,3 -9,0 C -7,-5 -3,-6 0,-10 Z" />
-      <line x1="0" y1="-8" x2="0" y2="10" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" />
+      <line x1="0" y1="-8" x2="0" y2="10" stroke="rgba(255,255,255,0.45)" stroke-width="0.8" />
     </g>
   </defs>
 
   <style>
+    /* Light Mode */
+    .div-wave { stroke: rgba(234, 88, 12, 0.45); }
+    .div-center-dot { fill: #ea580c; stroke: #ea580c; }
+
+    /* Dark Mode */
+    @media (prefers-color-scheme: dark) {
+      .div-wave { stroke: url(#divWaveAutumn); }
+      .div-center-dot { fill: #ff9100; stroke: #ff9100; }
+    }
+
     @keyframes divDrift1 {
       0% { transform: translate(120px, -15px) rotate(0deg); opacity: 0; }
-      20% { opacity: 0.9; }
-      80% { opacity: 0.9; }
+      20% { opacity: 0.95; }
+      80% { opacity: 0.95; }
       100% { transform: translate(220px, 95px) rotate(220deg); opacity: 0; }
     }
     @keyframes divDrift2 {
@@ -28,8 +38,8 @@
     }
     @keyframes divDrift3 {
       0% { transform: translate(750px, -15px) rotate(-30deg); opacity: 0; }
-      20% { opacity: 0.9; }
-      80% { opacity: 0.9; }
+      20% { opacity: 0.95; }
+      80% { opacity: 0.95; }
       100% { transform: translate(840px, 95px) rotate(260deg); opacity: 0; }
     }
 
@@ -39,12 +49,12 @@
   </style>
 
   <!-- Ambient Wave Line Divider -->
-  <path d="M 20 40 Q 240 18 460 42 T 900 38" stroke="url(#divWaveAutumn)" stroke-width="2.5" fill="none" />
-  <circle cx="460" cy="42" r="3" fill="#ff9100" />
-  <circle cx="460" cy="42" r="6" stroke="#ff9100" stroke-width="1" fill="none" />
+  <path class="div-wave" d="M 20 40 Q 240 18 460 42 T 900 38" stroke-width="2.5" fill="none" />
+  <circle class="div-center-dot" cx="460" cy="42" r="3" />
+  <circle class="div-center-dot" cx="460" cy="42" r="6" stroke-width="1" fill="none" />
 
   <!-- Drifting Leaves Across Divider -->
-  <g class="d-leaf1" fill="#d84315"><use href="#miniLeaf"/></g>
-  <g class="d-leaf2" fill="#ff8f00"><use href="#miniLeaf"/></g>
-  <g class="d-leaf3" fill="#ef6c00"><use href="#miniLeaf"/></g>
+  <g class="d-leaf1" fill="#c2410c"><use href="#miniLeaf"/></g>
+  <g class="d-leaf2" fill="#d97706"><use href="#miniLeaf"/></g>
+  <g class="d-leaf3" fill="#ea580c"><use href="#miniLeaf"/></g>
 </svg>

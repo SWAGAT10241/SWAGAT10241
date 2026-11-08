@@ -25,7 +25,7 @@ if (month === 11 || month === 0 || month === 1) {
   seasonName = 'Winter Frost (Snow Fall)';
 } else if (month >= 2 && month <= 4) {
   activeHeaderFile = 'weather-spring.svg';
-  activeDividerFile = 'divider-autumn.svg';
+  activeDividerFile = 'divider-spring.svg';
   seasonName = 'Spring Sakura (Petal Fall)';
 } else if (month >= 5 && month <= 7) {
   activeHeaderFile = 'weather-rain.svg';
