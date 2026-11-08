@@ -5,10 +5,11 @@
 export const SEASONS = Object.freeze({
   AUTO: 'auto',
   WINTER: 'winter',
-  AUTUMN: 'autumn',
-  RAIN: 'rain',
   SPRING: 'spring',
   SUMMER: 'summer',
+  RAIN: 'rain',
+  AUTUMN: 'autumn',
+  PREWINTER: 'prewinter',
   WAVES: 'waves',
 });
 
@@ -78,6 +79,19 @@ export const SEASON_PRESETS = Object.freeze({
       'rgba(33, 158, 188, 0.28)',
     ],
   },
+  [SEASONS.PREWINTER]: {
+    id: SEASONS.PREWINTER,
+    label: 'Hemanta Frost',
+    icon: '🌌',
+    description: 'Frosted amber foliage, twilight aurora streams, and crystalline dew',
+    tag: 'Frosted Aurora',
+    waveColors: [
+      'rgba(0, 240, 255, 0.2)',
+      'rgba(56, 189, 248, 0.25)',
+      'rgba(245, 158, 11, 0.25)',
+      'rgba(168, 85, 247, 0.28)',
+    ],
+  },
   [SEASONS.WAVES]: {
     id: SEASONS.WAVES,
     label: 'PlayStation Classic',
@@ -95,7 +109,14 @@ export const SEASON_PRESETS = Object.freeze({
 
 /**
  * Resolves the active season ID based on user preference or real-world calendar
- * @param {string} preference 'auto' | 'winter' | 'autumn' | 'rain' | 'spring' | 'summer' | 'waves'
+ * 6-Season Cycle (Traditional Shada Ritu):
+ * 0, 1   (Jan, Feb): Shishira / Deep Winter Frost
+ * 2, 3   (Mar, Apr): Vasanta / Spring Sakura
+ * 4, 5   (May, Jun): Grishma / Summer Solstice
+ * 6, 7   (Jul, Aug): Varsha / Monsoon Rain
+ * 8, 9   (Sep, Oct): Sharad / Early Autumn
+ * 10, 11 (Nov, Dec): Hemanta / Pre-Winter Frost
+ * @param {string} preference
  * @returns {string} Effective season ID
  */
 export function resolveActiveSeason(preference = SEASONS.AUTO) {
@@ -106,15 +127,21 @@ export function resolveActiveSeason(preference = SEASONS.AUTO) {
   // Auto-detect based on current calendar month (0 = January, 11 = December)
   const currentMonth = new Date().getMonth();
 
-  if (currentMonth === 11 || currentMonth === 0 || currentMonth === 1) {
+  if (currentMonth === 0 || currentMonth === 1) {
     return SEASONS.WINTER;
   }
-  if (currentMonth >= 2 && currentMonth <= 4) {
+  if (currentMonth === 2 || currentMonth === 3) {
     return SEASONS.SPRING;
   }
-  if (currentMonth >= 5 && currentMonth <= 7) {
+  if (currentMonth === 4 || currentMonth === 5) {
     return SEASONS.SUMMER;
   }
-  // September (8), October (9), November (10)
-  return SEASONS.AUTUMN;
+  if (currentMonth === 6 || currentMonth === 7) {
+    return SEASONS.RAIN;
+  }
+  if (currentMonth === 8 || currentMonth === 9) {
+    return SEASONS.AUTUMN;
+  }
+  // November (10), December (11)
+  return SEASONS.PREWINTER;
 }

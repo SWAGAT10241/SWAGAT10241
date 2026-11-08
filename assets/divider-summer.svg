@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 80" width="100%" height="80" fill="none">
+  <defs>
+    <linearGradient id="divWaveSummer" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0070d1" stop-opacity="0.1"/>
+      <stop offset="30%" stop-color="#ffb703" stop-opacity="0.5"/>
+      <stop offset="70%" stop-color="#fb8500" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0.1"/>
+    </linearGradient>
+
+    <g id="miniFirefly">
+      <circle class="mini-ff-glow" cx="0" cy="0" r="5" />
+      <circle class="mini-ff-core" cx="0" cy="0" r="2.2" />
+    </g>
+  </defs>
+
+  <style>
+    /* Default / Light Mode */
+    .div-wave { stroke: rgba(245, 158, 11, 0.45); }
+    .div-center-dot { fill: #d97706; stroke: #d97706; }
+    .mini-ff-core { fill: #d97706; }
+    .mini-ff-glow { fill: rgba(245, 158, 11, 0.35); }
+
+    /* Dark Mode */
+    @media (prefers-color-scheme: dark) {
+      .div-wave { stroke: url(#divWaveSummer); }
+      .div-center-dot { fill: #facc15; stroke: #facc15; }
+      .mini-ff-core { fill: #ffffff; }
+      .mini-ff-glow { fill: rgba(250, 204, 21, 0.6); }
+    }
+
+    @keyframes divFf1 {
+      0% { transform: translate(140px, 60px) scale(0.6); opacity: 0; }
+      35% { opacity: 0.95; transform: translate(170px, 25px) scale(1.1); }
+      75% { opacity: 0.95; transform: translate(150px, 8px) scale(0.9); }
+      100% { transform: translate(190px, -15px) scale(0.5); opacity: 0; }
+    }
+    @keyframes divFf2 {
+      0% { transform: translate(450px, 65px) scale(0.7); opacity: 0; }
+      30% { opacity: 1; transform: translate(480px, 20px) scale(1.2); }
+      70% { opacity: 1; transform: translate(440px, 10px) scale(0.9); }
+      100% { transform: translate(470px, -15px) scale(0.5); opacity: 0; }
+    }
+    @keyframes divFf3 {
+      0% { transform: translate(750px, 60px) scale(0.6); opacity: 0; }
+      35% { opacity: 0.95; transform: translate(780px, 22px) scale(1.1); }
+      75% { opacity: 0.95; transform: translate(740px, 8px) scale(0.9); }
+      100% { transform: translate(770px, -15px) scale(0.5); opacity: 0; }
+    }
+
+    .d-ff1 { animation: divFf1 4.8s ease-in-out infinite; }
+    .d-ff2 { animation: divFf2 5.5s ease-in-out infinite 1.2s; }
+    .d-ff3 { animation: divFf3 5.0s ease-in-out infinite 2.2s; }
+  </style>
+
+  <!-- Ambient Wave Line Divider -->
+  <path class="div-wave" d="M 20 40 Q 240 18 460 42 T 900 38" stroke-width="2.5" fill="none" />
+  <circle class="div-center-dot" cx="460" cy="42" r="3" />
+  <circle class="div-center-dot" cx="460" cy="42" r="6" stroke-width="1" fill="none" />
+
+  <!-- Floating Fireflies Across Divider -->
+  <g class="d-ff1"><use href="#miniFirefly"/></g>
+  <g class="d-ff2"><use href="#miniFirefly"/></g>
+  <g class="d-ff3"><use href="#miniFirefly"/></g>
+</svg>

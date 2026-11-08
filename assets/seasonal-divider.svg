@@ -1,51 +1,57 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 80" width="100%" height="80" fill="none">
   <defs>
-    <linearGradient id="divWaveAutumn" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="divWavePreWinter" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.1"/>
-      <stop offset="30%" stop-color="#ff9100" stop-opacity="0.5"/>
-      <stop offset="70%" stop-color="#ff5722" stop-opacity="0.5"/>
-      <stop offset="100%" stop-color="#0070d1" stop-opacity="0.1"/>
+      <stop offset="30%" stop-color="#38bdf8" stop-opacity="0.5"/>
+      <stop offset="70%" stop-color="#f59e0b" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0.1"/>
     </linearGradient>
 
-    <g id="miniLeaf">
+    <g id="miniFrostedLeaf">
       <path d="M 0,-10 C 3,-6 7,-5 9,0 C 6,3 3,6 0,9 C -3,6 -6,3 -9,0 C -7,-5 -3,-6 0,-10 Z" />
-      <line x1="0" y1="-8" x2="0" y2="10" stroke="rgba(255,255,255,0.45)" stroke-width="0.8" />
+      <line x1="0" y1="-8" x2="0" y2="10" stroke="rgba(255,255,255,0.6)" stroke-width="0.8" />
     </g>
   </defs>
 
   <style>
-    /* Light Mode */
-    .div-wave { stroke: rgba(234, 88, 12, 0.45); }
-    .div-center-dot { fill: #ea580c; stroke: #ea580c; }
+    /* Default / Light Mode */
+    .div-wave { stroke: rgba(2, 132, 199, 0.45); }
+    .div-center-dot { fill: #0284c7; stroke: #0284c7; }
+    .mini-pw1 { fill: #b45309; }
+    .mini-pw2 { fill: #c2410c; }
+    .mini-pw3 { fill: #0284c7; }
 
     /* Dark Mode */
     @media (prefers-color-scheme: dark) {
-      .div-wave { stroke: url(#divWaveAutumn); }
-      .div-center-dot { fill: #ff9100; stroke: #ff9100; }
+      .div-wave { stroke: url(#divWavePreWinter); }
+      .div-center-dot { fill: #38bdf8; stroke: #38bdf8; }
+      .mini-pw1 { fill: #f59e0b; }
+      .mini-pw2 { fill: #fbbf24; }
+      .mini-pw3 { fill: #00f0ff; }
     }
 
-    @keyframes divDrift1 {
-      0% { transform: translate(120px, -15px) rotate(0deg); opacity: 0; }
+    @keyframes divDriftPW1 {
+      0% { transform: translate(130px, -15px) rotate(0deg); opacity: 0; }
       20% { opacity: 0.95; }
       80% { opacity: 0.95; }
-      100% { transform: translate(220px, 95px) rotate(220deg); opacity: 0; }
+      100% { transform: translate(230px, 95px) rotate(220deg); opacity: 0; }
     }
-    @keyframes divDrift2 {
+    @keyframes divDriftPW2 {
       0% { transform: translate(450px, -15px) rotate(40deg); opacity: 0; }
       20% { opacity: 0.95; }
       80% { opacity: 0.95; }
       100% { transform: translate(520px, 95px) rotate(-190deg); opacity: 0; }
     }
-    @keyframes divDrift3 {
+    @keyframes divDriftPW3 {
       0% { transform: translate(750px, -15px) rotate(-30deg); opacity: 0; }
       20% { opacity: 0.95; }
       80% { opacity: 0.95; }
       100% { transform: translate(840px, 95px) rotate(260deg); opacity: 0; }
     }
 
-    .d-leaf1 { animation: divDrift1 5.5s ease-in-out infinite; }
-    .d-leaf2 { animation: divDrift2 6.2s ease-in-out infinite 1.2s; }
-    .d-leaf3 { animation: divDrift3 5.8s ease-in-out infinite 2.5s; }
+    .d-pw1 { animation: divDriftPW1 5.5s ease-in-out infinite; }
+    .d-pw2 { animation: divDriftPW2 6.2s ease-in-out infinite 1.2s; }
+    .d-pw3 { animation: divDriftPW3 5.8s ease-in-out infinite 2.5s; }
   </style>
 
   <!-- Ambient Wave Line Divider -->
@@ -54,7 +60,7 @@
   <circle class="div-center-dot" cx="460" cy="42" r="6" stroke-width="1" fill="none" />
 
   <!-- Drifting Leaves Across Divider -->
-  <g class="d-leaf1" fill="#c2410c"><use href="#miniLeaf"/></g>
-  <g class="d-leaf2" fill="#d97706"><use href="#miniLeaf"/></g>
-  <g class="d-leaf3" fill="#ea580c"><use href="#miniLeaf"/></g>
+  <g class="d-pw1 mini-pw1"><use href="#miniFrostedLeaf"/></g>
+  <g class="d-pw2 mini-pw2"><use href="#miniFrostedLeaf"/></g>
+  <g class="d-pw3 mini-pw3"><use href="#miniFrostedLeaf"/></g>
 </svg>

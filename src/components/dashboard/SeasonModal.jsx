@@ -21,10 +21,11 @@ export function SeasonModal({ isOpen, onClose }) {
 
   const seasonKeys = [
     SEASONS.WINTER,
-    SEASONS.AUTUMN,
-    SEASONS.RAIN,
     SEASONS.SPRING,
     SEASONS.SUMMER,
+    SEASONS.RAIN,
+    SEASONS.AUTUMN,
+    SEASONS.PREWINTER,
     SEASONS.WAVES,
   ];
 

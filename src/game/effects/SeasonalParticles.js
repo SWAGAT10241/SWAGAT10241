@@ -57,6 +57,9 @@ export class SeasonalParticles {
       case SEASONS.SUMMER:
         this.createSummerPool(40);
         break;
+      case SEASONS.PREWINTER:
+        this.createPrewinterPool(46);
+        break;
       case SEASONS.WAVES:
       default:
         // No weather particles in waves mode
@@ -448,6 +451,109 @@ export class SeasonalParticles {
   }
 
   /* ==========================================================================
+     6. PRE-WINTER: Frosted Leaves & Twilight Aurora Crystals
+     ========================================================================== */
+  createPrewinterPool(count) {
+    const frostedPalettes = [
+      '#f59e0b', // Amber Glow
+      '#d97706', // Burnished Gold
+      '#b45309', // Deep Russet
+      '#ea580c', // Frosted Coral
+      '#38bdf8', // Glacial Frost Cyan
+      '#00f0ff', // Electric Aurora Ice
+    ];
+
+    for (let i = 0; i < count; i++) {
+      const isStar = Math.random() > 0.6; // 40% frost stars, 60% leaves
+      this.particles.push({
+        x: Math.random() * this.width,
+        y: Math.random() * this.height,
+        size: isStar ? Math.random() * 3 + 2 : Math.random() * 8 + 8,
+        speedY: isStar ? Math.random() * 0.9 + 0.4 : Math.random() * 1.4 + 0.8,
+        speedX: Math.random() * 0.8 - 0.4,
+        angle: Math.random() * Math.PI * 2,
+        angularSpeed: (Math.random() - 0.5) * 0.03,
+        tilt: Math.random() * Math.PI * 2,
+        tiltSpeed: Math.random() * 0.03 + 0.015,
+        color: frostedPalettes[Math.floor(Math.random() * frostedPalettes.length)],
+        alpha: Math.random() * 0.4 + 0.5,
+        isStar,
+      });
+    }
+  }
+
+  updatePrewinter() {
+    this.windTimer++;
+    if (this.windTimer > 180) {
+      this.windTarget = (Math.random() - 0.4) * 1.0;
+      this.windTimer = 0;
+    }
+    this.wind += (this.windTarget - this.wind) * 0.02;
+
+    for (const p of this.particles) {
+      p.angle += p.angularSpeed;
+      p.tilt += p.tiltSpeed;
+      p.y += p.speedY + Math.sin(p.tilt) * 0.3;
+      p.x += Math.sin(p.angle) * 0.8 + this.wind;
+
+      if (p.y > this.height + 25) {
+        p.y = -25;
+        p.x = Math.random() * this.width;
+      }
+      if (p.x > this.width + 30) p.x = -30;
+      if (p.x < -30) p.x = this.width + 30;
+    }
+  }
+
+  drawPrewinter(ctx) {
+    for (const p of this.particles) {
+      ctx.save();
+      ctx.globalAlpha = p.alpha;
+      ctx.translate(p.x, p.y);
+
+      if (p.isStar) {
+        // Twinkling 4-point frost star
+        ctx.fillStyle = p.color;
+        ctx.shadowColor = 'rgba(0, 240, 255, 0.6)';
+        ctx.shadowBlur = 6;
+        ctx.beginPath();
+        for (let j = 0; j < 4; j++) {
+          ctx.rotate(Math.PI / 2);
+          ctx.lineTo(p.size, 0);
+          ctx.lineTo(p.size * 0.25, p.size * 0.25);
+        }
+        ctx.closePath();
+        ctx.fill();
+      } else {
+        // Frosted leaf with tumbling effect
+        ctx.rotate(p.angle);
+        ctx.scale(Math.cos(p.tilt), 1);
+        ctx.fillStyle = p.color;
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.35)';
+        ctx.shadowBlur = 4;
+
+        ctx.beginPath();
+        ctx.moveTo(0, -p.size);
+        ctx.quadraticCurveTo(p.size * 0.7, -p.size * 0.3, p.size * 0.85, 0);
+        ctx.quadraticCurveTo(p.size * 0.5, p.size * 0.6, 0, p.size);
+        ctx.quadraticCurveTo(-p.size * 0.5, p.size * 0.6, -p.size * 0.85, 0);
+        ctx.quadraticCurveTo(-p.size * 0.7, -p.size * 0.3, 0, -p.size);
+        ctx.fill();
+
+        // Icy frost spine
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(0, -p.size * 0.75);
+        ctx.lineTo(0, p.size * 0.75);
+        ctx.stroke();
+      }
+
+      ctx.restore();
+    }
+  }
+
+  /* ==========================================================================
      Master Update & Render
      ========================================================================== */
   update() {
@@ -466,6 +572,9 @@ export class SeasonalParticles {
         break;
       case SEASONS.SUMMER:
         this.updateSummer();
+        break;
+      case SEASONS.PREWINTER:
+        this.updatePrewinter();
         break;
       case SEASONS.WAVES:
       default:
@@ -489,6 +598,9 @@ export class SeasonalParticles {
         break;
       case SEASONS.SUMMER:
         this.drawSummer(ctx);
+        break;
+      case SEASONS.PREWINTER:
+        this.drawPrewinter(ctx);
         break;
       case SEASONS.WAVES:
       default:

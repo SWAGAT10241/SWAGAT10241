@@ -97,14 +97,14 @@ A high-performance browser arcade simulation and PlayStation-themed console OS p
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=SWAGAT10241&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
-  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=SWAGAT10241&show_icons=true&theme=default&hide_border=true&count_private=true" />
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=SWAGAT10241&show_icons=true&theme=default&hide_border=true&count_private=true" alt="GitHub stats" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api?username=SWAGAT10241&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
+  <source media="(prefers-color-scheme: light)" srcset="https://github-stats-extended.vercel.app/api?username=SWAGAT10241&show_icons=true&theme=default&hide_border=true&count_private=true" />
+  <img height="160" src="https://github-stats-extended.vercel.app/api?username=SWAGAT10241&show_icons=true&theme=default&hide_border=true&count_private=true" alt="GitHub stats" />
 </picture>
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=SWAGAT10241&layout=compact&theme=tokyonight&hide_border=true" />
-  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=SWAGAT10241&layout=compact&theme=default&hide_border=true" />
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=SWAGAT10241&layout=compact&theme=default&hide_border=true" alt="Top languages" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/top-langs/?username=SWAGAT10241&layout=compact&theme=tokyonight&hide_border=true" />
+  <source media="(prefers-color-scheme: light)" srcset="https://github-stats-extended.vercel.app/api/top-langs/?username=SWAGAT10241&layout=compact&theme=default&hide_border=true" />
+  <img height="160" src="https://github-stats-extended.vercel.app/api/top-langs/?username=SWAGAT10241&layout=compact&theme=default&hide_border=true" alt="Top languages" />
 </picture>
 
 <br/>

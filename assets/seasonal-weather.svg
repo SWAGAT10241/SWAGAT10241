@@ -1,144 +1,144 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 220" width="100%" height="220" fill="none">
   <defs>
-    <!-- Wave Gradients for Dark Mode -->
-    <linearGradient id="waveAutumn1" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ff5722" stop-opacity="0.3"/>
-      <stop offset="50%" stop-color="#ff9800" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#ffb300" stop-opacity="0.2"/>
+    <!-- Wave Gradients for Dark Mode (Aurora & Twilight Frost) -->
+    <linearGradient id="wavePreWinter1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0.2"/>
     </linearGradient>
 
-    <linearGradient id="waveAutumn2" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="wavePreWinter2" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#0070d1" stop-opacity="0.25"/>
-      <stop offset="50%" stop-color="#ff9100" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#f59e0b" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"/>
     </linearGradient>
 
-    <!-- Maple Leaf -->
-    <g id="mapleLeaf">
-      <path d="M 0,-16 C 5,-10 11,-8 14,0 C 9,4 5,9 0,14 C -5,9 -9,4 -14,0 C -11,-8 -5,-10 0,-16 Z" />
-      <path d="M 0,-12 L 0,15" stroke="rgba(255,255,255,0.45)" stroke-width="1.2" fill="none" />
-      <path d="M 0,-4 L 6,1" stroke="rgba(255,255,255,0.35)" stroke-width="0.8" fill="none" />
-      <path d="M 0,-4 L -6,1" stroke="rgba(255,255,255,0.35)" stroke-width="0.8" fill="none" />
+    <!-- Frosted Amber Leaf -->
+    <g id="frostedLeaf">
+      <path d="M 0,-15 C 5,-9 10,-7 13,0 C 8,4 4,8 0,13 C -4,8 -8,4 -13,0 C -10,-7 -5,-9 0,-15 Z" />
+      <path d="M 0,-11 L 0,14" stroke="rgba(255,255,255,0.6)" stroke-width="1.2" fill="none" />
+      <circle cx="0" cy="-6" r="1.5" class="frost-crystal" />
+      <circle cx="5" cy="2" r="1.3" class="frost-crystal" />
+      <circle cx="-5" cy="2" r="1.3" class="frost-crystal" />
     </g>
 
-    <!-- Oak Leaf -->
-    <g id="oakLeaf">
-      <ellipse cx="0" cy="0" rx="6" ry="12" />
-      <line x1="0" y1="-10" x2="0" y2="13" stroke="rgba(255,255,255,0.4)" stroke-width="1" />
+    <!-- Twilight Frost Glimmer -->
+    <g id="frostStar">
+      <polygon class="frost-glimmer" points="0,-7 2,-2 7,0 2,2 0,7 -2,2 -7,0 -2,-2" />
     </g>
   </defs>
 
   <style>
     /* Default / Light Mode Styles (Bright Mode Compatible) */
     .hero-title { fill: #0f172a; }
-    .hero-subtitle { fill: #b45309; }
-    .season-pill-bg { fill: rgba(255, 112, 67, 0.12); stroke: #ea580c; }
-    .season-pill-text { fill: #9a3412; }
-    .wave-line-1 { stroke: rgba(234, 88, 12, 0.45); }
-    .wave-line-2 { stroke: rgba(2, 132, 199, 0.4); }
+    .hero-subtitle { fill: #0284c7; }
+    .season-pill-bg { fill: rgba(14, 165, 233, 0.12); stroke: #0284c7; }
+    .season-pill-text { fill: #0369a1; }
+    .wave-line-1 { stroke: rgba(2, 132, 199, 0.45); }
+    .wave-line-2 { stroke: rgba(180, 83, 9, 0.35); }
+    .leaf-f1 { fill: #b45309; }
+    .leaf-f2 { fill: #c2410c; }
+    .leaf-f3 { fill: #d97706; }
+    .frost-crystal { fill: #0284c7; }
+    .frost-glimmer { fill: #0284c7; }
 
     /* Dark Mode Overrides (Automatic when viewer has dark theme) */
     @media (prefers-color-scheme: dark) {
       .hero-title { fill: #ffffff; }
-      .hero-subtitle { fill: #ffd180; }
-      .season-pill-bg { fill: rgba(255, 112, 67, 0.22); stroke: #ff9100; }
-      .season-pill-text { fill: #ffe0b2; }
-      .wave-line-1 { stroke: url(#waveAutumn1); }
-      .wave-line-2 { stroke: url(#waveAutumn2); }
+      .hero-subtitle { fill: #7dd3fc; }
+      .season-pill-bg { fill: rgba(14, 165, 233, 0.22); stroke: #38bdf8; }
+      .season-pill-text { fill: #e0f2fe; }
+      .wave-line-1 { stroke: url(#wavePreWinter1); }
+      .wave-line-2 { stroke: url(#wavePreWinter2); }
+      .leaf-f1 { fill: #f59e0b; }
+      .leaf-f2 { fill: #fbbf24; }
+      .leaf-f3 { fill: #f97316; }
+      .frost-crystal { fill: #00f0ff; }
+      .frost-glimmer { fill: #00f0ff; }
     }
 
-    @keyframes waveFloat {
+    @keyframes waveFloatPreWinter {
       0% { transform: translateX(0); }
       50% { transform: translateX(-35px); }
       100% { transform: translateX(0); }
     }
 
-    @keyframes leafDrift1 {
-      0% { transform: translate(50px, -30px) rotate(0deg) scale(0.9); opacity: 0; }
-      15% { opacity: 0.95; }
-      85% { opacity: 0.95; }
-      100% { transform: translate(150px, 250px) rotate(280deg) scale(0.9); opacity: 0; }
-    }
-    @keyframes leafDrift2 {
-      0% { transform: translate(210px, -30px) rotate(45deg) scale(1.1); opacity: 0; }
-      15% { opacity: 0.9; }
-      85% { opacity: 0.9; }
-      100% { transform: translate(320px, 250px) rotate(390deg) scale(1.1); opacity: 0; }
-    }
-    @keyframes leafDrift3 {
-      0% { transform: translate(430px, -30px) rotate(20deg) scale(0.85); opacity: 0; }
-      15% { opacity: 0.95; }
-      85% { opacity: 0.95; }
-      100% { transform: translate(360px, 250px) rotate(-220deg) scale(0.85); opacity: 0; }
-    }
-    @keyframes leafDrift4 {
-      0% { transform: translate(630px, -30px) rotate(-30deg) scale(1); opacity: 0; }
-      15% { opacity: 0.9; }
-      85% { opacity: 0.9; }
-      100% { transform: translate(740px, 250px) rotate(240deg) scale(1); opacity: 0; }
-    }
-    @keyframes leafDrift5 {
-      0% { transform: translate(810px, -30px) rotate(10deg) scale(0.95); opacity: 0; }
-      15% { opacity: 0.95; }
-      85% { opacity: 0.95; }
-      100% { transform: translate(890px, 250px) rotate(320deg) scale(0.95); opacity: 0; }
-    }
-    @keyframes leafDrift6 {
-      0% { transform: translate(120px, -30px) rotate(100deg) scale(0.8); opacity: 0; }
-      20% { opacity: 0.85; }
-      80% { opacity: 0.85; }
-      100% { transform: translate(30px, 250px) rotate(360deg) scale(0.8); opacity: 0; }
-    }
-    @keyframes leafDrift7 {
-      0% { transform: translate(510px, -30px) rotate(0deg) scale(1.15); opacity: 0; }
+    @keyframes frostedDrift1 {
+      0% { transform: translate(70px, -30px) rotate(0deg); opacity: 0; }
       20% { opacity: 0.95; }
-      80% { opacity: 0.95; }
-      100% { transform: translate(600px, 250px) rotate(310deg) scale(1.15); opacity: 0; }
+      85% { opacity: 0.95; }
+      100% { transform: translate(170px, 240px) rotate(240deg); opacity: 0; }
     }
-    @keyframes leafDrift8 {
-      0% { transform: translate(710px, -30px) rotate(-50deg) scale(0.75); opacity: 0; }
+    @keyframes frostedDrift2 {
+      0% { transform: translate(250px, -30px) rotate(40deg); opacity: 0; }
       20% { opacity: 0.9; }
-      80% { opacity: 0.9; }
-      100% { transform: translate(800px, 250px) rotate(210deg) scale(0.75); opacity: 0; }
+      85% { opacity: 0.9; }
+      100% { transform: translate(320px, 240px) rotate(-220deg); opacity: 0; }
+    }
+    @keyframes frostedDrift3 {
+      0% { transform: translate(500px, -30px) rotate(-30deg); opacity: 0; }
+      20% { opacity: 0.95; }
+      85% { opacity: 0.95; }
+      100% { transform: translate(580px, 240px) rotate(260deg); opacity: 0; }
+    }
+    @keyframes frostedDrift4 {
+      0% { transform: translate(750px, -30px) rotate(50deg); opacity: 0; }
+      20% { opacity: 0.9; }
+      85% { opacity: 0.9; }
+      100% { transform: translate(840px, 240px) rotate(-240deg); opacity: 0; }
     }
 
-    .l1 { animation: leafDrift1 7s ease-in-out infinite; }
-    .l2 { animation: leafDrift2 8.5s ease-in-out infinite 1.5s; }
-    .l3 { animation: leafDrift3 6.8s ease-in-out infinite 0.7s; }
-    .l4 { animation: leafDrift4 9s ease-in-out infinite 2.2s; }
-    .l5 { animation: leafDrift5 7.5s ease-in-out infinite 3s; }
-    .l6 { animation: leafDrift6 8.2s ease-in-out infinite 4s; }
-    .l7 { animation: leafDrift7 6.5s ease-in-out infinite 3.5s; }
-    .l8 { animation: leafDrift8 7.8s ease-in-out infinite 5s; }
+    @keyframes starTwinkle1 {
+      0%, 100% { transform: translate(130px, 160px) scale(0.4); opacity: 0.3; }
+      50% { transform: translate(130px, 160px) scale(1.1); opacity: 1; }
+    }
+    @keyframes starTwinkle2 {
+      0%, 100% { transform: translate(420px, 80px) scale(0.3); opacity: 0.2; }
+      50% { transform: translate(420px, 80px) scale(1.2); opacity: 1; }
+    }
+    @keyframes starTwinkle3 {
+      0%, 100% { transform: translate(700px, 150px) scale(0.4); opacity: 0.3; }
+      50% { transform: translate(700px, 150px) scale(1.1); opacity: 1; }
+    }
 
-    .wave-float { animation: waveFloat 9s ease-in-out infinite; }
+    .pw-leaf1 { animation: frostedDrift1 6.8s ease-in-out infinite; }
+    .pw-leaf2 { animation: frostedDrift2 7.5s ease-in-out infinite 1.2s; }
+    .pw-leaf3 { animation: frostedDrift3 6.4s ease-in-out infinite 2.0s; }
+    .pw-leaf4 { animation: frostedDrift4 7.2s ease-in-out infinite 0.7s; }
+
+    .tw1 { animation: starTwinkle1 3.2s ease-in-out infinite; }
+    .tw2 { animation: starTwinkle2 4.0s ease-in-out infinite 1.0s; }
+    .tw3 { animation: starTwinkle3 3.6s ease-in-out infinite 0.5s; }
+
+    .wave-float-pw { animation: waveFloatPreWinter 9s ease-in-out infinite; }
   </style>
 
-  <!-- Ambient Wave Ribbons -->
-  <g class="wave-float">
+  <!-- Ambient Wave Ribbons (Borderless, Transparent) -->
+  <g class="wave-float-pw">
     <path class="wave-line-1" d="M -40 150 Q 180 110 460 155 T 960 140" stroke-width="3" fill="none" />
     <path class="wave-line-2" d="M -40 168 Q 220 130 490 170 T 960 155" stroke-width="2.5" fill="none" />
   </g>
 
-  <!-- Animated Falling Autumn Leaves (Vivid in both dark & bright light modes) -->
-  <g class="l1" fill="#c2410c"><use href="#mapleLeaf"/></g>
-  <g class="l2" fill="#d97706"><use href="#mapleLeaf"/></g>
-  <g class="l3" fill="#ea580c"><use href="#oakLeaf"/></g>
-  <g class="l4" fill="#b45309"><use href="#mapleLeaf"/></g>
-  <g class="l5" fill="#9a3412"><use href="#oakLeaf"/></g>
-  <g class="l6" fill="#b91c1c"><use href="#mapleLeaf"/></g>
-  <g class="l7" fill="#d97706"><use href="#oakLeaf"/></g>
-  <g class="l8" fill="#c2410c"><use href="#mapleLeaf"/></g>
+  <!-- Animated Falling Frosted Leaves Across Full Width -->
+  <g class="pw-leaf1 leaf-f1"><use href="#frostedLeaf"/></g>
+  <g class="pw-leaf2 leaf-f2"><use href="#frostedLeaf"/></g>
+  <g class="pw-leaf3 leaf-f3"><use href="#frostedLeaf"/></g>
+  <g class="pw-leaf4 leaf-f1"><use href="#frostedLeaf"/></g>
 
-  <!-- PlayStation OS Pill Header -->
+  <!-- Twinkling Frost Glimmer Stars -->
+  <g class="tw1"><use href="#frostStar"/></g>
+  <g class="tw2"><use href="#frostStar"/></g>
+  <g class="tw3"><use href="#frostStar"/></g>
+
+  <!-- Season Status Tag Pill -->
   <g transform="translate(460, 42)">
-    <rect class="season-pill-bg" x="-170" y="-14" width="340" height="28" rx="14" stroke-width="1.2"/>
+    <rect class="season-pill-bg" x="-185" y="-14" width="370" height="28" rx="14" stroke-width="1.2"/>
     <text class="season-pill-text" x="0" y="4.5" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="11" text-anchor="middle" letter-spacing="1.2">
-      🍂 AUTUMN SEASON // FOLIAGE DRIFT ACTIVE
+      🌌 PRE-WINTER FROST // HEMANTA AURORA ACTIVE
     </text>
   </g>
 
-  <!-- Main Hero Titles with Automatic Light/Dark Adaptive Colors -->
+  <!-- Main Hero Titles -->
   <text class="hero-title" x="460" y="110" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-weight="900" font-size="38" text-anchor="middle" letter-spacing="2">
     SWAGAT SOURAV DHAR
   </text>

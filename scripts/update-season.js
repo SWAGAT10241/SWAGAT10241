@@ -19,22 +19,40 @@ let activeHeaderFile = 'weather-autumn.svg';
 let activeDividerFile = 'divider-autumn.svg';
 let seasonName = 'Autumn Foliage (Leaf Fall)';
 
-if (month === 11 || month === 0 || month === 1) {
+/**
+ * 6-Season Cycle (Traditional Shada Ritu & Climatological Cycle):
+ * 0, 1   (Jan, Feb): Shishira / Deep Winter Frost (Snow Fall)
+ * 2, 3   (Mar, Apr): Vasanta / Spring Sakura (Petal Bloom)
+ * 4, 5   (May, Jun): Grishma / Summer Solstice (Solar Fireflies)
+ * 6, 7   (Jul, Aug): Varsha / Monsoon Rain (Water Drops)
+ * 8, 9   (Sep, Oct): Sharad / Early Autumn (Golden Leaf Fall)
+ * 10, 11 (Nov, Dec): Hemanta / Pre-Winter Frost (Frosted Amber & Aurora)
+ */
+if (month === 0 || month === 1) {
   activeHeaderFile = 'weather-winter.svg';
   activeDividerFile = 'divider-winter.svg';
-  seasonName = 'Winter Frost (Snow Fall)';
-} else if (month >= 2 && month <= 4) {
+  seasonName = 'Shishira / Deep Winter Frost (Snow Fall)';
+} else if (month === 2 || month === 3) {
   activeHeaderFile = 'weather-spring.svg';
   activeDividerFile = 'divider-spring.svg';
-  seasonName = 'Spring Sakura (Petal Fall)';
-} else if (month >= 5 && month <= 7) {
+  seasonName = 'Vasanta / Spring Sakura (Petal Bloom)';
+} else if (month === 4 || month === 5) {
+  activeHeaderFile = 'weather-summer.svg';
+  activeDividerFile = 'divider-summer.svg';
+  seasonName = 'Grishma / Summer Solstice (Solar Fireflies)';
+} else if (month === 6 || month === 7) {
   activeHeaderFile = 'weather-rain.svg';
   activeDividerFile = 'divider-rain.svg';
-  seasonName = 'Neon Rainfall (Water Drops)';
-} else {
+  seasonName = 'Varsha / Monsoon Rain (Water Drops)';
+} else if (month === 8 || month === 9) {
   activeHeaderFile = 'weather-autumn.svg';
   activeDividerFile = 'divider-autumn.svg';
-  seasonName = 'Autumn Foliage (Leaf Fall)';
+  seasonName = 'Sharad / Early Autumn (Golden Leaf Fall)';
+} else {
+  // month === 10 || month === 11 (Nov, Dec)
+  activeHeaderFile = 'weather-prewinter.svg';
+  activeDividerFile = 'divider-prewinter.svg';
+  seasonName = 'Hemanta / Pre-Winter Frost (Frosted Amber & Aurora)';
 }
 
 // 1. Sync Header
