@@ -928,3 +928,17 @@
   }
 }
 
+/* tsParticles Interactive Layer */
+.tsparticles-wrapper {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tsparticles-wrapper canvas {
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none;
+}
+
