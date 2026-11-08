@@ -13,18 +13,40 @@
       <stop offset="100%" stop-color="#00f0ff" stop-opacity="0.2"/>
     </linearGradient>
 
-    <!-- Maple Leaf -->
-    <g id="mapleLeaf">
-      <path d="M 0,-16 C 5,-10 11,-8 14,0 C 9,4 5,9 0,14 C -5,9 -9,4 -14,0 C -11,-8 -5,-10 0,-16 Z" />
-      <path d="M 0,-12 L 0,15" stroke="rgba(255,255,255,0.45)" stroke-width="1.2" fill="none" />
-      <path d="M 0,-4 L 6,1" stroke="rgba(255,255,255,0.35)" stroke-width="0.8" fill="none" />
-      <path d="M 0,-4 L -6,1" stroke="rgba(255,255,255,0.35)" stroke-width="0.8" fill="none" />
+    <!-- Hyper-Realistic Botanical Maple Leaf -->
+    <g id="botanicalMapleLeaf">
+      <!-- 5-Lobed Serrated Blade -->
+      <path d="M 0,-24 
+               C 2,-20 5,-17 7,-16 C 6,-14 9,-13 13,-12 C 11,-9 15,-6 19,-4 C 16,-2 18,1 17,5 C 13,4 12,8 10,12 C 7,10 5,11 3,14 C 1,16 0,17 0,18
+               C 0,17 -1,16 -3,14 C -5,11 -7,10 -10,12 C -12,8 -13,4 -17,5 C -18,1 -16,-2 -19,-4 C -15,-6 -11,-9 -13,-12 C -9,-13 -6,-14 -7,-16 C -5,-17 -2,-20 0,-24 Z" />
+      <!-- Petiole (Stem) -->
+      <path d="M 0,16 Q 1,22 3,26" stroke="rgba(120,53,15,0.75)" stroke-width="1.4" stroke-linecap="round" fill="none" />
+      <!-- Primary and Secondary Venation Architecture -->
+      <path d="M 0,16 L 0,-18" stroke="rgba(255,255,255,0.6)" stroke-width="1.2" stroke-linecap="round" fill="none" />
+      <path d="M 0,6 Q 7,-1 14,-3" stroke="rgba(255,255,255,0.45)" stroke-width="0.9" fill="none" />
+      <path d="M 0,6 Q -7,-1 -14,-3" stroke="rgba(255,255,255,0.45)" stroke-width="0.9" fill="none" />
+      <path d="M 0,11 Q 6,8 10,9" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" fill="none" />
+      <path d="M 0,11 Q -6,8 -10,9" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" fill="none" />
+      <path d="M 0,-3 Q 4,-8 7,-12" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" fill="none" />
+      <path d="M 0,-3 Q -4,-8 -7,-12" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" fill="none" />
     </g>
 
-    <!-- Oak Leaf -->
-    <g id="oakLeaf">
-      <ellipse cx="0" cy="0" rx="6" ry="12" />
-      <line x1="0" y1="-10" x2="0" y2="13" stroke="rgba(255,255,255,0.4)" stroke-width="1" />
+    <!-- Hyper-Realistic Botanical Oak Leaf -->
+    <g id="botanicalOakLeaf">
+      <!-- Undulating Sinuous Lobes -->
+      <path d="M 0,-22 
+               C 4,-20 8,-17 7,-14 C 11,-12 11,-7 8,-4 C 12,-2 12,4 8,7 C 11,10 9,14 5,16 C 3,17 1,18 0,18
+               C -1,18 -3,17 -5,16 C -9,14 -11,10 -8,7 C -12,4 -12,-2 -8,-4 C -11,-7 -11,-12 -7,-14 C -8,-17 -4,-20 0,-22 Z" />
+      <!-- Stem -->
+      <path d="M 0,16 Q -1,21 -2,25" stroke="rgba(120,53,15,0.75)" stroke-width="1.3" stroke-linecap="round" fill="none" />
+      <!-- Central Rib & Lateral Veins -->
+      <path d="M 0,16 L 0,-17" stroke="rgba(255,255,255,0.55)" stroke-width="1.1" stroke-linecap="round" fill="none" />
+      <path d="M 0,9 Q 5,7 7,5" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" fill="none" />
+      <path d="M 0,9 Q -5,7 -7,5" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" fill="none" />
+      <path d="M 0,0 Q 6,-3 8,-5" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" fill="none" />
+      <path d="M 0,0 Q -6,-3 -8,-5" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" fill="none" />
+      <path d="M 0,-8 Q 4,-12 6,-14" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" fill="none" />
+      <path d="M 0,-8 Q -4,-12 -6,-14" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" fill="none" />
     </g>
   </defs>
 
@@ -36,6 +58,11 @@
     .season-pill-text { fill: #9a3412; }
     .wave-line-1 { stroke: rgba(234, 88, 12, 0.45); }
     .wave-line-2 { stroke: rgba(2, 132, 199, 0.4); }
+    .leaf-c1 { fill: #c2410c; }
+    .leaf-c2 { fill: #d97706; }
+    .leaf-c3 { fill: #ea580c; }
+    .leaf-c4 { fill: #b45309; }
+    .leaf-c5 { fill: #9a3412; }
 
     /* Dark Mode Overrides (Automatic when viewer has dark theme) */
     @media (prefers-color-scheme: dark) {
@@ -45,100 +72,91 @@
       .season-pill-text { fill: #ffe0b2; }
       .wave-line-1 { stroke: url(#waveAutumn1); }
       .wave-line-2 { stroke: url(#waveAutumn2); }
+      .leaf-c1 { fill: #ff5722; }
+      .leaf-c2 { fill: #ff9800; }
+      .leaf-c3 { fill: #ffb300; }
+      .leaf-c4 { fill: #ff7043; }
+      .leaf-c5 { fill: #ffa726; }
     }
 
-    @keyframes waveFloat {
+    @keyframes waveFloatAutumn {
       0% { transform: translateX(0); }
       50% { transform: translateX(-35px); }
       100% { transform: translateX(0); }
     }
 
-    @keyframes leafDrift1 {
-      0% { transform: translate(50px, -30px) rotate(0deg) scale(0.9); opacity: 0; }
-      15% { opacity: 0.95; }
-      85% { opacity: 0.95; }
-      100% { transform: translate(150px, 250px) rotate(280deg) scale(0.9); opacity: 0; }
-    }
-    @keyframes leafDrift2 {
-      0% { transform: translate(210px, -30px) rotate(45deg) scale(1.1); opacity: 0; }
-      15% { opacity: 0.9; }
-      85% { opacity: 0.9; }
-      100% { transform: translate(320px, 250px) rotate(390deg) scale(1.1); opacity: 0; }
-    }
-    @keyframes leafDrift3 {
-      0% { transform: translate(430px, -30px) rotate(20deg) scale(0.85); opacity: 0; }
-      15% { opacity: 0.95; }
-      85% { opacity: 0.95; }
-      100% { transform: translate(360px, 250px) rotate(-220deg) scale(0.85); opacity: 0; }
-    }
-    @keyframes leafDrift4 {
-      0% { transform: translate(630px, -30px) rotate(-30deg) scale(1); opacity: 0; }
-      15% { opacity: 0.9; }
-      85% { opacity: 0.9; }
-      100% { transform: translate(740px, 250px) rotate(240deg) scale(1); opacity: 0; }
-    }
-    @keyframes leafDrift5 {
-      0% { transform: translate(810px, -30px) rotate(10deg) scale(0.95); opacity: 0; }
-      15% { opacity: 0.95; }
-      85% { opacity: 0.95; }
-      100% { transform: translate(890px, 250px) rotate(320deg) scale(0.95); opacity: 0; }
-    }
-    @keyframes leafDrift6 {
-      0% { transform: translate(120px, -30px) rotate(100deg) scale(0.8); opacity: 0; }
-      20% { opacity: 0.85; }
-      80% { opacity: 0.85; }
-      100% { transform: translate(30px, 250px) rotate(360deg) scale(0.8); opacity: 0; }
-    }
-    @keyframes leafDrift7 {
-      0% { transform: translate(510px, -30px) rotate(0deg) scale(1.15); opacity: 0; }
-      20% { opacity: 0.95; }
-      80% { opacity: 0.95; }
-      100% { transform: translate(600px, 250px) rotate(310deg) scale(1.15); opacity: 0; }
-    }
-    @keyframes leafDrift8 {
-      0% { transform: translate(710px, -30px) rotate(-50deg) scale(0.75); opacity: 0; }
-      20% { opacity: 0.9; }
-      80% { opacity: 0.9; }
-      100% { transform: translate(800px, 250px) rotate(210deg) scale(0.75); opacity: 0; }
+    /* 3D Realistic Tumbling Leaf Animations */
+    @keyframes tumbleFall1 {
+      0% { transform: translate(60px, -35px) rotate(15deg) scaleX(1); opacity: 0; }
+      20% { opacity: 0.95; transform: translate(110px, 35px) rotate(65deg) scaleX(0.45); }
+      45% { transform: translate(80px, 105px) rotate(135deg) scaleX(0.9); }
+      70% { opacity: 0.95; transform: translate(140px, 175px) rotate(220deg) scaleX(0.4); }
+      100% { transform: translate(120px, 255px) rotate(310deg) scaleX(0.8); opacity: 0; }
     }
 
-    .l1 { animation: leafDrift1 7s ease-in-out infinite; }
-    .l2 { animation: leafDrift2 8.5s ease-in-out infinite 1.5s; }
-    .l3 { animation: leafDrift3 6.8s ease-in-out infinite 0.7s; }
-    .l4 { animation: leafDrift4 9s ease-in-out infinite 2.2s; }
-    .l5 { animation: leafDrift5 7.5s ease-in-out infinite 3s; }
-    .l6 { animation: leafDrift6 8.2s ease-in-out infinite 4s; }
-    .l7 { animation: leafDrift7 6.5s ease-in-out infinite 3.5s; }
-    .l8 { animation: leafDrift8 7.8s ease-in-out infinite 5s; }
+    @keyframes tumbleFall2 {
+      0% { transform: translate(220px, -35px) rotate(-25deg) scaleX(0.9); opacity: 0; }
+      20% { opacity: 0.95; transform: translate(265px, 40px) rotate(30deg) scaleX(0.35); }
+      50% { transform: translate(235px, 115px) rotate(110deg) scaleX(0.85); }
+      75% { opacity: 0.95; transform: translate(285px, 185px) rotate(190deg) scaleX(0.4); }
+      100% { transform: translate(260px, 255px) rotate(275deg) scaleX(0.75); opacity: 0; }
+    }
 
-    .wave-float { animation: waveFloat 9s ease-in-out infinite; }
+    @keyframes tumbleFall3 {
+      0% { transform: translate(450px, -35px) rotate(40deg) scaleX(0.85); opacity: 0; }
+      20% { opacity: 0.95; transform: translate(490px, 35px) rotate(105deg) scaleX(0.35); }
+      45% { transform: translate(460px, 110px) rotate(175deg) scaleX(0.95); }
+      75% { opacity: 0.95; transform: translate(520px, 180px) rotate(260deg) scaleX(0.4); }
+      100% { transform: translate(490px, 255px) rotate(340deg) scaleX(0.85); opacity: 0; }
+    }
+
+    @keyframes tumbleFall4 {
+      0% { transform: translate(660px, -35px) rotate(-15deg) scaleX(0.95); opacity: 0; }
+      20% { opacity: 0.95; transform: translate(620px, 40px) rotate(-75deg) scaleX(0.4); }
+      50% { transform: translate(675px, 115px) rotate(-155deg) scaleX(0.9); }
+      75% { opacity: 0.95; transform: translate(630px, 185px) rotate(-235deg) scaleX(0.35); }
+      100% { transform: translate(685px, 255px) rotate(-315deg) scaleX(0.8); opacity: 0; }
+    }
+
+    @keyframes tumbleFall5 {
+      0% { transform: translate(820px, -35px) rotate(30deg) scaleX(0.9); opacity: 0; }
+      20% { opacity: 0.95; transform: translate(855px, 40px) rotate(95deg) scaleX(0.35); }
+      50% { transform: translate(815px, 115px) rotate(165deg) scaleX(0.85); }
+      75% { opacity: 0.95; transform: translate(860px, 185px) rotate(245deg) scaleX(0.4); }
+      100% { transform: translate(835px, 255px) rotate(325deg) scaleX(0.75); opacity: 0; }
+    }
+
+    .l1 { animation: tumbleFall1 6.8s ease-in-out infinite; }
+    .l2 { animation: tumbleFall2 7.4s ease-in-out infinite 1.2s; }
+    .l3 { animation: tumbleFall3 6.3s ease-in-out infinite 2.1s; }
+    .l4 { animation: tumbleFall4 7.6s ease-in-out infinite 0.7s; }
+    .l5 { animation: tumbleFall5 6.9s ease-in-out infinite 1.8s; }
+
+    .wave-float-autumn { animation: waveFloatAutumn 8.5s ease-in-out infinite; }
   </style>
 
-  <!-- Ambient Wave Ribbons -->
-  <g class="wave-float">
+  <!-- Ambient Wave Ribbons (Borderless, Transparent) -->
+  <g class="wave-float-autumn">
     <path class="wave-line-1" d="M -40 150 Q 180 110 460 155 T 960 140" stroke-width="3" fill="none" />
     <path class="wave-line-2" d="M -40 168 Q 220 130 490 170 T 960 155" stroke-width="2.5" fill="none" />
   </g>
 
-  <!-- Animated Falling Autumn Leaves (Vivid in both dark & bright light modes) -->
-  <g class="l1" fill="#c2410c"><use href="#mapleLeaf"/></g>
-  <g class="l2" fill="#d97706"><use href="#mapleLeaf"/></g>
-  <g class="l3" fill="#ea580c"><use href="#oakLeaf"/></g>
-  <g class="l4" fill="#b45309"><use href="#mapleLeaf"/></g>
-  <g class="l5" fill="#9a3412"><use href="#oakLeaf"/></g>
-  <g class="l6" fill="#b91c1c"><use href="#mapleLeaf"/></g>
-  <g class="l7" fill="#d97706"><use href="#oakLeaf"/></g>
-  <g class="l8" fill="#c2410c"><use href="#mapleLeaf"/></g>
+  <!-- Hyper-Realistic Botanical Falling Leaves with 3D Tumbling -->
+  <g class="l1 leaf-c1"><use href="#botanicalMapleLeaf"/></g>
+  <g class="l2 leaf-c2"><use href="#botanicalOakLeaf"/></g>
+  <g class="l3 leaf-c3"><use href="#botanicalMapleLeaf"/></g>
+  <g class="l4 leaf-c4"><use href="#botanicalOakLeaf"/></g>
+  <g class="l5 leaf-c5"><use href="#botanicalMapleLeaf"/></g>
 
-  <!-- PlayStation OS Pill Header -->
+  <!-- Season Status Tag Pill -->
   <g transform="translate(460, 42)">
-    <rect class="season-pill-bg" x="-170" y="-14" width="340" height="28" rx="14" stroke-width="1.2"/>
+    <rect class="season-pill-bg" x="-165" y="-14" width="330" height="28" rx="14" stroke-width="1.2"/>
     <text class="season-pill-text" x="0" y="4.5" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="11" text-anchor="middle" letter-spacing="1.2">
-      🍂 AUTUMN SEASON // FOLIAGE DRIFT ACTIVE
+      🍂 AUTUMN FOLIAGE // BOTANICAL DRIFT ACTIVE
     </text>
   </g>
 
-  <!-- Main Hero Titles with Automatic Light/Dark Adaptive Colors -->
+  <!-- Main Hero Titles -->
   <text class="hero-title" x="460" y="110" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-weight="900" font-size="38" text-anchor="middle" letter-spacing="2">
     SWAGAT SOURAV DHAR
   </text>

@@ -112,27 +112,48 @@ export class SeasonalParticles {
     for (const p of this.particles) {
       ctx.save();
       ctx.globalAlpha = p.alpha;
+      ctx.translate(p.x, p.y);
 
       if (p.isCrystal && p.radius > 2) {
-        // Draw 6-point crystal snowflake
+        // Draw 6-arm dendritic fractal snowflake
         ctx.strokeStyle = '#e0f4ff';
-        ctx.lineWidth = 1.2;
-        ctx.translate(p.x, p.y);
+        ctx.fillStyle = '#ffffff';
+        ctx.lineWidth = 1.3;
+        ctx.shadowColor = '#00f0ff';
+        ctx.shadowBlur = 8;
         ctx.rotate(p.wobble);
-        for (let branch = 0; branch < 3; branch++) {
+
+        const armLen = p.radius * 3.5;
+        // Central facet
+        ctx.beginPath();
+        ctx.arc(0, 0, p.radius * 0.7, 0, Math.PI * 2);
+        ctx.fill();
+
+        for (let b = 0; b < 6; b++) {
           ctx.beginPath();
-          ctx.moveTo(-p.radius * 2, 0);
-          ctx.lineTo(p.radius * 2, 0);
+          ctx.moveTo(0, 0);
+          ctx.lineTo(0, -armLen);
+          // Inner chevron branches
+          ctx.moveTo(0, -armLen * 0.45);
+          ctx.lineTo(-armLen * 0.3, -armLen * 0.65);
+          ctx.moveTo(0, -armLen * 0.45);
+          ctx.lineTo(armLen * 0.3, -armLen * 0.65);
+          // Outer chevron branches
+          ctx.moveTo(0, -armLen * 0.75);
+          ctx.lineTo(-armLen * 0.25, -armLen * 0.95);
+          ctx.moveTo(0, -armLen * 0.75);
+          ctx.lineTo(armLen * 0.25, -armLen * 0.95);
           ctx.stroke();
+
           ctx.rotate(Math.PI / 3);
         }
       } else {
-        // Soft round snowflake with ice-blue halo
+        // Soft glowing crystalline snowflake
         ctx.fillStyle = '#ffffff';
         ctx.shadowColor = '#00f0ff';
         ctx.shadowBlur = 6;
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.arc(0, 0, p.radius, 0, Math.PI * 2);
         ctx.fill();
       }
 
@@ -199,42 +220,78 @@ export class SeasonalParticles {
       ctx.globalAlpha = p.alpha;
       ctx.translate(p.x, p.y);
       ctx.rotate(p.angle);
-      // 3D tumbling effect via horizontal scale
+      // 3D realistic tumbling tilt
       ctx.scale(Math.cos(p.tilt), 1);
 
       ctx.fillStyle = p.color;
-      ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
-      ctx.shadowBlur = 4;
+      ctx.shadowColor = 'rgba(0, 0, 0, 0.45)';
+      ctx.shadowBlur = 5;
 
+      const s = p.size;
       if (p.type === 'maple') {
-        // Pointed maple leaf path
+        // 5-Lobed Botanical Maple Leaf
         ctx.beginPath();
-        ctx.moveTo(0, -p.size);
-        ctx.quadraticCurveTo(p.size * 0.7, -p.size * 0.3, p.size * 0.9, 0);
-        ctx.quadraticCurveTo(p.size * 0.6, p.size * 0.4, 0, p.size * 0.8);
-        ctx.quadraticCurveTo(-p.size * 0.6, p.size * 0.4, -p.size * 0.9, 0);
-        ctx.quadraticCurveTo(-p.size * 0.7, -p.size * 0.3, 0, -p.size);
+        ctx.moveTo(0, -s);
+        ctx.bezierCurveTo(s * 0.1, -s * 0.8, s * 0.3, -s * 0.7, s * 0.35, -s * 0.65);
+        ctx.bezierCurveTo(s * 0.45, -s * 0.5, s * 0.75, -s * 0.35, s * 0.8, -s * 0.2);
+        ctx.bezierCurveTo(s * 0.7, -s * 0.05, s * 0.85, s * 0.15, s * 0.75, s * 0.3);
+        ctx.bezierCurveTo(s * 0.55, s * 0.25, s * 0.5, s * 0.45, s * 0.4, s * 0.6);
+        ctx.bezierCurveTo(s * 0.25, s * 0.5, s * 0.15, s * 0.65, 0, s * 0.75);
+        ctx.bezierCurveTo(-s * 0.15, s * 0.65, -s * 0.25, s * 0.5, -s * 0.4, s * 0.6);
+        ctx.bezierCurveTo(-s * 0.5, s * 0.45, -s * 0.55, s * 0.25, -s * 0.75, s * 0.3);
+        ctx.bezierCurveTo(-s * 0.85, s * 0.15, -s * 0.7, -s * 0.05, -s * 0.8, -s * 0.2);
+        ctx.bezierCurveTo(-s * 0.75, -s * 0.35, -s * 0.45, -s * 0.5, -s * 0.35, -s * 0.65);
+        ctx.bezierCurveTo(-s * 0.3, -s * 0.7, -s * 0.1, -s * 0.8, 0, -s);
         ctx.closePath();
         ctx.fill();
 
-        // Leaf stem vein
-        ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+        // Stem & Veins
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.45)';
         ctx.lineWidth = 1;
         ctx.beginPath();
-        ctx.moveTo(0, -p.size * 0.8);
-        ctx.lineTo(0, p.size * 0.9);
+        ctx.moveTo(0, s * 0.95);
+        ctx.lineTo(0, -s * 0.75);
+        // Primary Side Veins
+        ctx.moveTo(0, s * 0.2);
+        ctx.lineTo(s * 0.55, -s * 0.15);
+        ctx.moveTo(0, s * 0.2);
+        ctx.lineTo(-s * 0.55, -s * 0.15);
+        ctx.moveTo(0, s * 0.4);
+        ctx.lineTo(s * 0.3, s * 0.4);
+        ctx.moveTo(0, s * 0.4);
+        ctx.lineTo(-s * 0.3, s * 0.4);
         ctx.stroke();
       } else {
-        // Rounded oak leaf path
+        // Multi-Lobed Sinuous Oak Leaf
         ctx.beginPath();
-        ctx.ellipse(0, 0, p.size * 0.5, p.size * 0.85, 0, 0, Math.PI * 2);
+        ctx.moveTo(0, -s);
+        ctx.bezierCurveTo(s * 0.25, -s * 0.9, s * 0.45, -s * 0.75, s * 0.4, -s * 0.6);
+        ctx.bezierCurveTo(s * 0.6, -s * 0.5, s * 0.6, -s * 0.25, s * 0.45, -s * 0.15);
+        ctx.bezierCurveTo(s * 0.65, -s * 0.05, s * 0.65, s * 0.25, s * 0.45, s * 0.35);
+        ctx.bezierCurveTo(s * 0.55, s * 0.45, s * 0.45, s * 0.65, s * 0.25, s * 0.75);
+        ctx.lineTo(0, s * 0.85);
+        ctx.lineTo(-s * 0.25, s * 0.75);
+        ctx.bezierCurveTo(-s * 0.45, s * 0.65, -s * 0.55, s * 0.45, -s * 0.45, s * 0.35);
+        ctx.bezierCurveTo(-s * 0.65, s * 0.25, -s * 0.65, -s * 0.05, -s * 0.45, -s * 0.15);
+        ctx.bezierCurveTo(-s * 0.6, -s * 0.25, -s * 0.6, -s * 0.5, -s * 0.4, -s * 0.6);
+        ctx.bezierCurveTo(-s * 0.45, -s * 0.75, -s * 0.25, -s * 0.9, 0, -s);
+        ctx.closePath();
         ctx.fill();
 
-        ctx.strokeStyle = 'rgba(255, 255, 255, 0.25)';
+        // Stem & Alternating Lateral Veins
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
         ctx.lineWidth = 1;
         ctx.beginPath();
-        ctx.moveTo(0, -p.size * 0.75);
-        ctx.lineTo(0, p.size * 0.8);
+        ctx.moveTo(0, s * 0.95);
+        ctx.lineTo(0, -s * 0.8);
+        ctx.moveTo(0, -s * 0.35);
+        ctx.lineTo(s * 0.35, -s * 0.45);
+        ctx.moveTo(0, -s * 0.15);
+        ctx.lineTo(-s * 0.35, -s * 0.25);
+        ctx.moveTo(0, s * 0.1);
+        ctx.lineTo(s * 0.35, 0);
+        ctx.moveTo(0, s * 0.3);
+        ctx.lineTo(-s * 0.35, s * 0.2);
         ctx.stroke();
       }
 
@@ -512,40 +569,61 @@ export class SeasonalParticles {
       ctx.translate(p.x, p.y);
 
       if (p.isStar) {
-        // Twinkling 4-point frost star
+        // Twinkling 8-point crystalline frost star
         ctx.fillStyle = p.color;
-        ctx.shadowColor = 'rgba(0, 240, 255, 0.6)';
-        ctx.shadowBlur = 6;
+        ctx.shadowColor = 'rgba(0, 240, 255, 0.75)';
+        ctx.shadowBlur = 8;
         ctx.beginPath();
-        for (let j = 0; j < 4; j++) {
-          ctx.rotate(Math.PI / 2);
+        for (let j = 0; j < 8; j++) {
+          ctx.rotate(Math.PI / 4);
           ctx.lineTo(p.size, 0);
-          ctx.lineTo(p.size * 0.25, p.size * 0.25);
+          ctx.lineTo(p.size * 0.28, p.size * 0.28);
         }
         ctx.closePath();
         ctx.fill();
+
+        ctx.fillStyle = '#ffffff';
+        ctx.beginPath();
+        ctx.arc(0, 0, p.size * 0.35, 0, Math.PI * 2);
+        ctx.fill();
       } else {
-        // Frosted leaf with tumbling effect
+        // Frosted Botanical Maple Leaf with 3D tumbling
         ctx.rotate(p.angle);
         ctx.scale(Math.cos(p.tilt), 1);
         ctx.fillStyle = p.color;
-        ctx.shadowColor = 'rgba(0, 0, 0, 0.35)';
-        ctx.shadowBlur = 4;
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.45)';
+        ctx.shadowBlur = 5;
 
+        const s = p.size;
         ctx.beginPath();
-        ctx.moveTo(0, -p.size);
-        ctx.quadraticCurveTo(p.size * 0.7, -p.size * 0.3, p.size * 0.85, 0);
-        ctx.quadraticCurveTo(p.size * 0.5, p.size * 0.6, 0, p.size);
-        ctx.quadraticCurveTo(-p.size * 0.5, p.size * 0.6, -p.size * 0.85, 0);
-        ctx.quadraticCurveTo(-p.size * 0.7, -p.size * 0.3, 0, -p.size);
+        ctx.moveTo(0, -s);
+        ctx.bezierCurveTo(s * 0.1, -s * 0.8, s * 0.3, -s * 0.7, s * 0.35, -s * 0.65);
+        ctx.bezierCurveTo(s * 0.45, -s * 0.5, s * 0.75, -s * 0.35, s * 0.8, -s * 0.2);
+        ctx.bezierCurveTo(s * 0.7, -s * 0.05, s * 0.85, s * 0.15, s * 0.75, s * 0.3);
+        ctx.bezierCurveTo(s * 0.55, s * 0.25, s * 0.5, s * 0.45, s * 0.4, s * 0.6);
+        ctx.bezierCurveTo(s * 0.25, s * 0.5, s * 0.15, s * 0.65, 0, s * 0.75);
+        ctx.bezierCurveTo(-s * 0.15, s * 0.65, -s * 0.25, s * 0.5, -s * 0.4, s * 0.6);
+        ctx.bezierCurveTo(-s * 0.5, s * 0.45, -s * 0.55, s * 0.25, -s * 0.75, s * 0.3);
+        ctx.bezierCurveTo(-s * 0.85, s * 0.15, -s * 0.7, -s * 0.05, -s * 0.8, -s * 0.2);
+        ctx.bezierCurveTo(-s * 0.75, -s * 0.35, -s * 0.45, -s * 0.5, -s * 0.35, -s * 0.65);
+        ctx.bezierCurveTo(-s * 0.3, -s * 0.7, -s * 0.1, -s * 0.8, 0, -s);
+        ctx.closePath();
         ctx.fill();
 
-        // Icy frost spine
-        ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+        // Glacial Frost Veins
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.55)';
         ctx.lineWidth = 1;
         ctx.beginPath();
-        ctx.moveTo(0, -p.size * 0.75);
-        ctx.lineTo(0, p.size * 0.75);
+        ctx.moveTo(0, s * 0.95);
+        ctx.lineTo(0, -s * 0.75);
+        ctx.moveTo(0, s * 0.2);
+        ctx.lineTo(s * 0.55, -s * 0.15);
+        ctx.moveTo(0, s * 0.2);
+        ctx.lineTo(-s * 0.55, -s * 0.15);
+        ctx.moveTo(0, s * 0.4);
+        ctx.lineTo(s * 0.3, s * 0.4);
+        ctx.moveTo(0, s * 0.4);
+        ctx.lineTo(-s * 0.3, s * 0.4);
         ctx.stroke();
       }
 

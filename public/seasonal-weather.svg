@@ -13,23 +13,57 @@
       <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"/>
     </linearGradient>
 
-    <!-- Frosted Amber Leaf -->
-    <g id="frostedLeaf">
-      <path d="M 0,-15 C 5,-9 10,-7 13,0 C 8,4 4,8 0,13 C -4,8 -8,4 -13,0 C -10,-7 -5,-9 0,-15 Z" />
-      <path d="M 0,-11 L 0,14" stroke="rgba(255,255,255,0.6)" stroke-width="1.2" fill="none" />
-      <circle cx="0" cy="-6" r="1.5" class="frost-crystal" />
-      <circle cx="5" cy="2" r="1.3" class="frost-crystal" />
-      <circle cx="-5" cy="2" r="1.3" class="frost-crystal" />
+    <!-- Hyper-Realistic Botanical Frosted Maple Leaf -->
+    <g id="botanicalMapleLeaf">
+      <!-- 5-Lobed Serrated Blade -->
+      <path d="M 0,-24 
+               C 2,-20 5,-17 7,-16 C 6,-14 9,-13 13,-12 C 11,-9 15,-6 19,-4 C 16,-2 18,1 17,5 C 13,4 12,8 10,12 C 7,10 5,11 3,14 C 1,16 0,17 0,18
+               C 0,17 -1,16 -3,14 C -5,11 -7,10 -10,12 C -12,8 -13,4 -17,5 C -18,1 -16,-2 -19,-4 C -15,-6 -11,-9 -13,-12 C -9,-13 -6,-14 -7,-16 C -5,-17 -2,-20 0,-24 Z" />
+      <!-- Petiole (Stem) -->
+      <path d="M 0,16 Q 1,22 3,26" stroke="rgba(120,53,15,0.75)" stroke-width="1.4" stroke-linecap="round" fill="none" />
+      <!-- Delicately Branching Primary & Secondary Veins -->
+      <path d="M 0,16 L 0,-18" stroke="rgba(255,255,255,0.6)" stroke-width="1.2" stroke-linecap="round" fill="none" />
+      <path d="M 0,6 Q 7,-1 14,-3" stroke="rgba(255,255,255,0.45)" stroke-width="0.9" fill="none" />
+      <path d="M 0,6 Q -7,-1 -14,-3" stroke="rgba(255,255,255,0.45)" stroke-width="0.9" fill="none" />
+      <path d="M 0,11 Q 6,8 10,9" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" fill="none" />
+      <path d="M 0,11 Q -6,8 -10,9" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" fill="none" />
+      <path d="M 0,-3 Q 4,-8 7,-12" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" fill="none" />
+      <path d="M 0,-3 Q -4,-8 -7,-12" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" fill="none" />
+      <!-- Frost Dew Glimmer Specks -->
+      <circle cx="-3" cy="-7" r="1.3" class="frost-crystal" />
+      <circle cx="5" cy="1" r="1.2" class="frost-crystal" />
+      <circle cx="-7" cy="4" r="1.1" class="frost-crystal" />
     </g>
 
-    <!-- Twilight Frost Glimmer -->
+    <!-- Hyper-Realistic Botanical Frosted Oak Leaf -->
+    <g id="botanicalOakLeaf">
+      <!-- Undulating Sinuous Lobes -->
+      <path d="M 0,-22 
+               C 4,-20 8,-17 7,-14 C 11,-12 11,-7 8,-4 C 12,-2 12,4 8,7 C 11,10 9,14 5,16 C 3,17 1,18 0,18
+               C -1,18 -3,17 -5,16 C -9,14 -11,10 -8,7 C -12,4 -12,-2 -8,-4 C -11,-7 -11,-12 -7,-14 C -8,-17 -4,-20 0,-22 Z" />
+      <!-- Stem -->
+      <path d="M 0,16 Q -1,21 -2,25" stroke="rgba(120,53,15,0.75)" stroke-width="1.3" stroke-linecap="round" fill="none" />
+      <!-- Venation -->
+      <path d="M 0,16 L 0,-17" stroke="rgba(255,255,255,0.55)" stroke-width="1.1" stroke-linecap="round" fill="none" />
+      <path d="M 0,9 Q 5,7 7,5" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" fill="none" />
+      <path d="M 0,9 Q -5,7 -7,5" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" fill="none" />
+      <path d="M 0,0 Q 6,-3 8,-5" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" fill="none" />
+      <path d="M 0,0 Q -6,-3 -8,-5" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" fill="none" />
+      <path d="M 0,-8 Q 4,-12 6,-14" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" fill="none" />
+      <path d="M 0,-8 Q -4,-12 -6,-14" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" fill="none" />
+      <circle cx="2" cy="-4" r="1.3" class="frost-crystal" />
+      <circle cx="-4" cy="6" r="1.2" class="frost-crystal" />
+    </g>
+
+    <!-- Crystalline 8-Point Frost Star -->
     <g id="frostStar">
-      <polygon class="frost-glimmer" points="0,-7 2,-2 7,0 2,2 0,7 -2,2 -7,0 -2,-2" />
+      <polygon class="frost-glimmer" points="0,-8 2,-2 8,0 2,2 0,8 -2,2 -8,0 -2,-2" />
+      <circle cx="0" cy="0" r="1.6" fill="#ffffff" />
     </g>
   </defs>
 
   <style>
-    /* Default / Light Mode Styles (Bright Mode Compatible) */
+    /* Default / Light Mode Styles (Bright Mode High-Contrast) */
     .hero-title { fill: #0f172a; }
     .hero-subtitle { fill: #0284c7; }
     .season-pill-bg { fill: rgba(14, 165, 233, 0.12); stroke: #0284c7; }
@@ -39,6 +73,7 @@
     .leaf-f1 { fill: #b45309; }
     .leaf-f2 { fill: #c2410c; }
     .leaf-f3 { fill: #d97706; }
+    .leaf-f4 { fill: #9a3412; }
     .frost-crystal { fill: #0284c7; }
     .frost-glimmer { fill: #0284c7; }
 
@@ -53,6 +88,7 @@
       .leaf-f1 { fill: #f59e0b; }
       .leaf-f2 { fill: #fbbf24; }
       .leaf-f3 { fill: #f97316; }
+      .leaf-f4 { fill: #d97706; }
       .frost-crystal { fill: #00f0ff; }
       .frost-glimmer { fill: #00f0ff; }
     }
@@ -63,48 +99,65 @@
       100% { transform: translateX(0); }
     }
 
-    @keyframes frostedDrift1 {
-      0% { transform: translate(70px, -30px) rotate(0deg); opacity: 0; }
-      20% { opacity: 0.95; }
-      85% { opacity: 0.95; }
-      100% { transform: translate(170px, 240px) rotate(240deg); opacity: 0; }
+    /* 3D Realistic Tumbling Leaf Animations */
+    @keyframes tumbleDrift1 {
+      0% { transform: translate(60px, -35px) rotate(15deg) scaleX(1); opacity: 0; }
+      20% { opacity: 0.95; transform: translate(110px, 35px) rotate(65deg) scaleX(0.45); }
+      45% { transform: translate(80px, 105px) rotate(135deg) scaleX(0.9); }
+      70% { opacity: 0.95; transform: translate(140px, 175px) rotate(220deg) scaleX(0.4); }
+      100% { transform: translate(120px, 255px) rotate(310deg) scaleX(0.8); opacity: 0; }
     }
-    @keyframes frostedDrift2 {
-      0% { transform: translate(250px, -30px) rotate(40deg); opacity: 0; }
-      20% { opacity: 0.9; }
-      85% { opacity: 0.9; }
-      100% { transform: translate(320px, 240px) rotate(-220deg); opacity: 0; }
+
+    @keyframes tumbleDrift2 {
+      0% { transform: translate(220px, -35px) rotate(-25deg) scaleX(0.9); opacity: 0; }
+      20% { opacity: 0.95; transform: translate(265px, 40px) rotate(30deg) scaleX(0.35); }
+      50% { transform: translate(235px, 115px) rotate(110deg) scaleX(0.85); }
+      75% { opacity: 0.95; transform: translate(285px, 185px) rotate(190deg) scaleX(0.4); }
+      100% { transform: translate(260px, 255px) rotate(275deg) scaleX(0.75); opacity: 0; }
     }
-    @keyframes frostedDrift3 {
-      0% { transform: translate(500px, -30px) rotate(-30deg); opacity: 0; }
-      20% { opacity: 0.95; }
-      85% { opacity: 0.95; }
-      100% { transform: translate(580px, 240px) rotate(260deg); opacity: 0; }
+
+    @keyframes tumbleDrift3 {
+      0% { transform: translate(450px, -35px) rotate(40deg) scaleX(0.85); opacity: 0; }
+      20% { opacity: 0.95; transform: translate(490px, 35px) rotate(105deg) scaleX(0.35); }
+      45% { transform: translate(460px, 110px) rotate(175deg) scaleX(0.95); }
+      75% { opacity: 0.95; transform: translate(520px, 180px) rotate(260deg) scaleX(0.4); }
+      100% { transform: translate(490px, 255px) rotate(340deg) scaleX(0.85); opacity: 0; }
     }
-    @keyframes frostedDrift4 {
-      0% { transform: translate(750px, -30px) rotate(50deg); opacity: 0; }
-      20% { opacity: 0.9; }
-      85% { opacity: 0.9; }
-      100% { transform: translate(840px, 240px) rotate(-240deg); opacity: 0; }
+
+    @keyframes tumbleDrift4 {
+      0% { transform: translate(660px, -35px) rotate(-15deg) scaleX(0.95); opacity: 0; }
+      20% { opacity: 0.95; transform: translate(620px, 40px) rotate(-75deg) scaleX(0.4); }
+      50% { transform: translate(675px, 115px) rotate(-155deg) scaleX(0.9); }
+      75% { opacity: 0.95; transform: translate(630px, 185px) rotate(-235deg) scaleX(0.35); }
+      100% { transform: translate(685px, 255px) rotate(-315deg) scaleX(0.8); opacity: 0; }
+    }
+
+    @keyframes tumbleDrift5 {
+      0% { transform: translate(820px, -35px) rotate(30deg) scaleX(0.9); opacity: 0; }
+      20% { opacity: 0.95; transform: translate(855px, 40px) rotate(95deg) scaleX(0.35); }
+      50% { transform: translate(815px, 115px) rotate(165deg) scaleX(0.85); }
+      75% { opacity: 0.95; transform: translate(860px, 185px) rotate(245deg) scaleX(0.4); }
+      100% { transform: translate(835px, 255px) rotate(325deg) scaleX(0.75); opacity: 0; }
     }
 
     @keyframes starTwinkle1 {
-      0%, 100% { transform: translate(130px, 160px) scale(0.4); opacity: 0.3; }
-      50% { transform: translate(130px, 160px) scale(1.1); opacity: 1; }
+      0%, 100% { transform: translate(140px, 160px) scale(0.35); opacity: 0.25; }
+      50% { transform: translate(140px, 160px) scale(1.2); opacity: 1; }
     }
     @keyframes starTwinkle2 {
-      0%, 100% { transform: translate(420px, 80px) scale(0.3); opacity: 0.2; }
-      50% { transform: translate(420px, 80px) scale(1.2); opacity: 1; }
+      0%, 100% { transform: translate(430px, 75px) scale(0.3); opacity: 0.2; }
+      50% { transform: translate(430px, 75px) scale(1.25); opacity: 1; }
     }
     @keyframes starTwinkle3 {
-      0%, 100% { transform: translate(700px, 150px) scale(0.4); opacity: 0.3; }
-      50% { transform: translate(700px, 150px) scale(1.1); opacity: 1; }
+      0%, 100% { transform: translate(720px, 155px) scale(0.35); opacity: 0.25; }
+      50% { transform: translate(720px, 155px) scale(1.2); opacity: 1; }
     }
 
-    .pw-leaf1 { animation: frostedDrift1 6.8s ease-in-out infinite; }
-    .pw-leaf2 { animation: frostedDrift2 7.5s ease-in-out infinite 1.2s; }
-    .pw-leaf3 { animation: frostedDrift3 6.4s ease-in-out infinite 2.0s; }
-    .pw-leaf4 { animation: frostedDrift4 7.2s ease-in-out infinite 0.7s; }
+    .tumble1 { animation: tumbleDrift1 6.8s ease-in-out infinite; }
+    .tumble2 { animation: tumbleDrift2 7.4s ease-in-out infinite 1.2s; }
+    .tumble3 { animation: tumbleDrift3 6.3s ease-in-out infinite 2.1s; }
+    .tumble4 { animation: tumbleDrift4 7.6s ease-in-out infinite 0.7s; }
+    .tumble5 { animation: tumbleDrift5 6.9s ease-in-out infinite 1.8s; }
 
     .tw1 { animation: starTwinkle1 3.2s ease-in-out infinite; }
     .tw2 { animation: starTwinkle2 4.0s ease-in-out infinite 1.0s; }
@@ -119,11 +172,12 @@
     <path class="wave-line-2" d="M -40 168 Q 220 130 490 170 T 960 155" stroke-width="2.5" fill="none" />
   </g>
 
-  <!-- Animated Falling Frosted Leaves Across Full Width -->
-  <g class="pw-leaf1 leaf-f1"><use href="#frostedLeaf"/></g>
-  <g class="pw-leaf2 leaf-f2"><use href="#frostedLeaf"/></g>
-  <g class="pw-leaf3 leaf-f3"><use href="#frostedLeaf"/></g>
-  <g class="pw-leaf4 leaf-f1"><use href="#frostedLeaf"/></g>
+  <!-- Hyper-Realistic Botanical Falling Leaves with 3D Tumbling -->
+  <g class="tumble1 leaf-f1"><use href="#botanicalMapleLeaf"/></g>
+  <g class="tumble2 leaf-f2"><use href="#botanicalOakLeaf"/></g>
+  <g class="tumble3 leaf-f3"><use href="#botanicalMapleLeaf"/></g>
+  <g class="tumble4 leaf-f4"><use href="#botanicalOakLeaf"/></g>
+  <g class="tumble5 leaf-f2"><use href="#botanicalMapleLeaf"/></g>
 
   <!-- Twinkling Frost Glimmer Stars -->
   <g class="tw1"><use href="#frostStar"/></g>
