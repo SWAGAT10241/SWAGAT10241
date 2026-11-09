@@ -46,6 +46,20 @@ export function BackgroundWaves() {
     const particles = new SeasonalParticles(canvas.width, canvas.height, seasonRef.current);
     particleEngineRef.current = particles;
 
+    const onMouseMove = (e) => {
+      particles.onMouseMove(e.clientX, e.clientY);
+    };
+    const onMouseLeave = () => {
+      particles.onPointerLeave();
+    };
+    const onClick = (e) => {
+      particles.onClick(e.clientX, e.clientY);
+    };
+
+    window.addEventListener('mousemove', onMouseMove, { passive: true });
+    window.addEventListener('mouseleave', onMouseLeave, { passive: true });
+    window.addEventListener('click', onClick, { passive: true });
+
     const render = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       step += 0.015;
@@ -84,6 +98,9 @@ export function BackgroundWaves() {
     return () => {
       cancelAnimationFrame(rafId);
       window.removeEventListener('resize', resize);
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('mouseleave', onMouseLeave);
+      window.removeEventListener('click', onClick);
     };
   }, []);
 

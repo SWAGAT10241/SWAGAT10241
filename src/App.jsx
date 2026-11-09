@@ -9,7 +9,6 @@ import { ErrorBoundary } from './components/common/ErrorBoundary.jsx';
 import { Header } from './components/layout/Header.jsx';
 import { Footer } from './components/layout/Footer.jsx';
 import { BackgroundWaves } from './components/layout/BackgroundWaves.jsx';
-import { InteractiveParticles } from './components/layout/InteractiveParticles.jsx';
 import { Dashboard } from './components/dashboard/Dashboard.jsx';
 import { GameView } from './components/game/GameView.jsx';
 import { Toast } from './components/common/Toast.jsx';
@@ -22,7 +21,6 @@ function MainShell() {
     <div className="app-root-shell">
       <CustomCursor />
       <BackgroundWaves />
-      <InteractiveParticles />
 
       {currentScreen === SCREENS.DASHBOARD && (
         <>

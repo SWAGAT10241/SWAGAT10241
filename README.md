@@ -35,6 +35,7 @@ I'm **Swagat Sourav Dhar**, a Computer Science engineer specializing in **IoT & 
 - 🛠️ **Embedded & Hardware:** ESP32 firmware, biometric/environmental sensor telemetry, GPS logging, 3D CAD modeling
 - 💻 **Full-Stack Engineering:** High-performance React 18 & Node.js/Express architectures, WebSockets streaming, MongoDB
 - 🚀 **Flagship Platform:** [TrailGuard / SWAAS](https://github.com/SWAGAT10241/Smart-Wearable) — smart wearable assistance, fall detection & health monitoring ecosystem
+- 📦 **Open-Source:** [seasonal-particles](https://github.com/SWAGAT10241/seasonal-particles) — zero-dependency 60 FPS atmospheric particle engine with cursor repulsion & 3D aerodynamics
 - 🎮 **Creative Code:** [Cyber-Pulse: Void Breaker](https://swagat10241.github.io/SWAGAT10241/) — PlayStation OS browser arcade with procedural Web Audio & seasonal weather
 
 <img src="./assets/seasonal-divider.svg" width="100%" alt="Seasonal Divider" />
@@ -72,6 +73,22 @@ A high-performance browser arcade simulation and PlayStation-themed console OS p
 [![Play Demo](https://img.shields.io/badge/▶_Launch_Simulation-0070D1?style=for-the-badge&logo=playstation&logoColor=white)](https://swagat10241.github.io/SWAGAT10241/)
 [![App Documentation](https://img.shields.io/badge/Documentation-APP.md-181717?style=for-the-badge&logo=markdown&logoColor=white)](./APP.md)
 [![Architecture Specs](https://img.shields.io/badge/Architecture-docs%2FARCHITECTURE.md-00f0ff?style=for-the-badge&logo=react&logoColor=black)](./docs/ARCHITECTURE.md)
+
+</div>
+
+<img src="./assets/seasonal-divider.svg" width="100%" alt="Seasonal Divider" />
+
+### 📦 Open-Source Libraries
+
+| Package | Scope & Architecture | Highlights |
+| :--- | :--- | :--- |
+| [**seasonal-particles**](https://github.com/SWAGAT10241/seasonal-particles) | Zero-dependency 60 FPS Canvas 2D seasonal atmospheric particle engine | **Cursor repulsion**, **click shockwaves**, 3D botanical leaf venation, 6 seasonal presets |
+
+<div align="center">
+
+[![Repository](https://img.shields.io/badge/GitHub-seasonal--particles-0070D1?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SWAGAT10241/seasonal-particles)
+[![Zero Dependencies](https://img.shields.io/badge/dependencies-0%20(Zero!)-success?style=for-the-badge)](https://github.com/SWAGAT10241/seasonal-particles)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](https://github.com/SWAGAT10241/seasonal-particles/blob/main/LICENSE)
 
 </div>
 
