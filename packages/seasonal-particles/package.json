@@ -1,36 +1,45 @@
 {
   "name": "@swagat10241/seasonal-particles",
   "version": "1.0.0",
-  "description": "Ultra-lightweight, zero-dependency, 60fps seasonal atmospheric particle engine with interactive cursor repulsion, click shockwaves, and 3D aerodynamic physics for React and Canvas 2D.",
+  "description": "Ultra-lightweight, zero-dependency, 60fps seasonal atmospheric particle engine with interactive cursor repulsion, click shockwaves, and 3D aerodynamic physics for React, Next.js, Vue, and Canvas 2D.",
   "main": "src/index.js",
   "module": "src/index.js",
   "types": "src/types.d.ts",
   "type": "module",
   "author": "Swagat Sourav Dhar <swagatsourav10241@gmail.com>",
   "license": "MIT",
+  "homepage": "https://swagat10241.github.io/seasonal-particles/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SWAGAT10241/seasonal-particles.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SWAGAT10241/seasonal-particles/issues"
+  },
   "keywords": [
     "particles",
     "canvas",
     "seasonal",
+    "shada-ritu",
     "snow",
     "autumn-leaves",
     "rain",
     "sakura",
     "fireflies",
     "cursor-repulsion",
+    "shockwave",
     "physics",
     "60fps",
     "zero-dependency",
-    "react"
+    "react",
+    "vue",
+    "svelte",
+    "nextjs"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/SWAGAT10241/SWAGAT10241.git",
-    "directory": "packages/seasonal-particles"
-  },
   "files": [
     "src",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "docs"
   ]
 }

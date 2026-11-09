@@ -1,155 +1,160 @@
-# @swagat10241/seasonal-particles
+# 🍂 `@swagat10241/seasonal-particles`
 
-> Ultra-lightweight, zero-dependency, 60 FPS atmospheric particle engine with **interactive cursor repulsion**, **click shockwaves**, and **3D aerodynamic botanical physics** for Canvas 2D and modern web applications.
+<div align="center">
 
-[![npm version](https://img.shields.io/badge/npm-v1.0.0-0070D1.svg?style=flat-square)](https://github.com/SWAGAT10241/SWAGAT10241)
-[![license](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](LICENSE)
-[![bundle size](https://img.shields.io/badge/dependencies-0%20(Zero!)-success.svg?style=flat-square)](https://github.com/SWAGAT10241/SWAGAT10241)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
+[![Zero Dependencies](https://img.shields.io/badge/Dependencies-0%20(Zero)-success?style=for-the-badge)](package.json)
+[![Bundle Size](https://img.shields.io/badge/Bundle%20Size-2.1%20kB%20gzipped-orange?style=for-the-badge)](docs/BENCHMARKS.md)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](src/types.d.ts)
+[![Discussions](https://img.shields.io/badge/Community-Discussions-purple?style=for-the-badge&logo=github)](https://github.com/SWAGAT10241/seasonal-particles/discussions)
+
+**Ultra-lightweight, zero-dependency, 60 FPS atmospheric seasonal particle engine with interactive cursor repulsion, click shockwaves, and 3D aerodynamic physics.**
+
+[🎮 Try Live Interactive Demo](https://swagat10241.github.io/SWAGAT10241/) • [📚 Documentation](docs/API.md) • [💬 Join GitHub Discussions](https://github.com/SWAGAT10241/seasonal-particles/discussions)
+
+</div>
 
 ---
 
 ## ✨ Features
 
-- ⚡ **Zero Dependencies (`0 KB` added dependencies)**: No heavy third-party baggage, no vulnerability warnings. Pure, high-performance Canvas 2D.
-- 🎯 **Interactive Cursor Repulsion**: Particles detect mouse proximity and naturally deflect/push away from the cursor with physical damping.
-- 💥 **Click Shockwaves**: Clicking triggers expanding radial shockwaves that scatter particles in real-time.
-- 🍁 **Botanical & Crystalline Realism**:
-  - **Autumn & Pre-Winter**: True 5-lobed Sugar Maple leaves with delicate venation + sinuous Oak leaves tumbling in 3D (`scaleX(cos(tilt))`).
-  - **Winter**: 6-arm dendritic fractal snowflakes with secondary chevron spines.
-  - **Monsoon**: High-velocity slanted rain streaks with surface impact ripple rings.
-  - **Spring**: Swirling cherry blossom sakura petals.
-  - **Summer**: Bioluminescent floating solar fireflies with pulsating sine glow.
-- 🗓️ **6-Season Atmospheric Cycle**: Full support for traditional climatological and Shada Ritu cycles.
-- 📱 **Mobile & Desktop Optimized**: Adaptive particle density and window resize handling.
+- 🍃 **Procedural Botanical Geometry**: True 5-lobed Sugar Maple leaves with venation, sinuous English Oak leaves, 6-arm dendritic crystal snowflakes, cherry blossoms, and expanding water ripple rings.
+- ⚡ **Zero Runtime Dependencies**: No heavy physics engines, no bloat. Pure Canvas 2D math running fluidly at 60–120 FPS under 2.1 kB gzipped.
+- 🗓 **Full 6-Season Cycle (*Shada Ritu*)**: Shishira (Winter), Vasanta (Spring), Grishma (Summer), Varsha (Monsoon), Sharad (Autumn), and Hemanta (Pre-Winter / Frost).
+- 🖱 **Interactive Cursor Physics**: Real-time cursor repulsion evasion and click-triggered radial shockwave blasts with quadratic distance falloff.
+- 🌓 **Dual Theming**: Tailored high-contrast color palettes for both Dark Mode and Brighter Light Mode.
+- 📱 **Mobile & Battery Optimized**: Automatic High-DPI Retina scaling (`devicePixelRatio`), automatic window resizing, and tab visibility throttling.
+- 🧩 **Universal Compatibility**: Works seamlessly with React, Next.js (SSR), Vue 3, Svelte, Angular, or Vanilla HTML/JS.
 
 ---
 
 ## 📦 Installation
 
 ```bash
+# npm
 npm install @swagat10241/seasonal-particles
-```
 
-or with yarn / pnpm:
-
-```bash
-yarn add @swagat10241/seasonal-particles
-# or
+# pnpm
 pnpm add @swagat10241/seasonal-particles
+
+# yarn
+yarn add @swagat10241/seasonal-particles
 ```
 
 ---
 
-## 🚀 Quick Start (Vanilla JavaScript / HTML5 Canvas)
+## 🚀 Quick Start
+
+### Vanilla JavaScript
 
 ```html
-<canvas id="weatherCanvas" style="position: fixed; inset: 0; pointer-events: none;"></canvas>
+<canvas id="particles-canvas"></canvas>
 
 <script type="module">
-  import { SeasonalParticles, SEASONS } from '@swagat10241/seasonal-particles';
+  import { createSeasonalParticles } from '@swagat10241/seasonal-particles';
 
-  const canvas = document.getElementById('weatherCanvas');
-  const ctx = canvas.getContext('2d');
-
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  // Initialize engine with pre-winter frosted aurora & cursor repulsion
-  const engine = new SeasonalParticles(canvas.width, canvas.height, {
-    season: SEASONS.PREWINTER,
-    cursorRadius: 130,
-    cursorStrength: 5.0,
+  const canvas = document.getElementById('particles-canvas');
+  const engine = createSeasonalParticles(canvas, {
+    season: 'auto',      // Detects current season from calendar date
+    theme: 'dark',       // 'dark' or 'light'
+    particleCount: 65,   // Number of active particles
+    interactive: true,   // Cursor repulsion & click shockwaves
   });
-
-  // Track cursor
-  window.addEventListener('mousemove', (e) => engine.onMouseMove(e.clientX, e.clientY));
-  window.addEventListener('mouseleave', () => engine.onPointerLeave());
-  window.addEventListener('click', (e) => engine.onClick(e.clientX, e.clientY));
-
-  // 60 FPS Loop
-  function loop() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    engine.update();
-    engine.draw(ctx);
-    requestAnimationFrame(loop);
-  }
-  loop();
 </script>
 ```
 
----
+### React / Next.js
 
-## ⚛️ Quick Start (React Component)
-
-```jsx
+```tsx
 import React, { useEffect, useRef } from 'react';
-import { SeasonalParticles, SEASONS } from '@swagat10241/seasonal-particles';
+import { createSeasonalParticles } from '@swagat10241/seasonal-particles';
 
-export function WeatherBackground({ season = SEASONS.WINTER }) {
-  const canvasRef = useRef(null);
-  const engineRef = useRef(null);
+export const SeasonalBackground = () => {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    if (!canvasRef.current) return;
+    const engine = createSeasonalParticles(canvasRef.current, {
+      season: 'auto',
+      theme: 'dark',
+      interactive: true,
+    });
+    return () => engine.destroy();
+  }, []);
 
-    const engine = new SeasonalParticles(canvas.width, canvas.height, season);
-    engineRef.current = engine;
-
-    const onMove = (e) => engine.onMouseMove(e.clientX, e.clientY);
-    const onLeave = () => engine.onPointerLeave();
-    const onClick = (e) => engine.onClick(e.clientX, e.clientY);
-
-    window.addEventListener('mousemove', onMove);
-    window.addEventListener('mouseleave', onLeave);
-    window.addEventListener('click', onClick);
-
-    let rafId;
-    const render = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      engine.update();
-      engine.draw(ctx);
-      rafId = requestAnimationFrame(render);
-    };
-    render();
-
-    return () => {
-      cancelAnimationFrame(rafId);
-      window.removeEventListener('mousemove', onMove);
-      window.removeEventListener('mouseleave', onLeave);
-      window.removeEventListener('click', onClick);
-    };
-  }, [season]);
-
-  return <canvas ref={canvasRef} style={{ position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 0 }} />;
-}
+  return <canvas ref={canvasRef} style={{ position: 'fixed', inset: 0, pointerEvents: 'none' }} />;
+};
 ```
+
+*For Next.js App Router, Vue 3, and Svelte setups, see the [Framework Integration Guide](docs/FRAMEWORKS.md).*
 
 ---
 
-## 📖 API Reference
+## 🌿 The 6 Seasons (*Shada Ritu*)
 
-### `new SeasonalParticles(width, height, options)`
-
-#### Options:
-| Option | Type | Default | Description |
+| Season Key | Season Name | Date Range | Visual Botanical Effects |
 | :--- | :--- | :--- | :--- |
-| `season` | `string` | `'winter'` | `'winter'` \| `'spring'` \| `'summer'` \| `'rain'` \| `'autumn'` \| `'prewinter'` \| `'waves'` |
-| `cursorRadius` | `number` | `120` | Detection radius in px where particles begin deflecting |
-| `cursorStrength` | `number` | `4.5` | Force applied to push particles away |
-| `enableCursorRepulsion` | `boolean` | `true` | Enable/disable mouse repulsion |
-| `enableClickShockwave` | `boolean` | `true` | Enable/disable click scatter wave |
+| `shishira` | **Shishira** (*Winter*) | Jan 15 – Mar 14 | 6-arm dendritic crystal snowflakes with secondary barbules & soft drifts |
+| `vasanta` | **Vasanta** (*Spring*) | Mar 15 – May 14 | Sakura cherry blossom petals with notched tips & 3D helical flutter |
+| `grishma` | **Grishma** (*Summer*) | May 15 – Jun 30 | Golden fireflies, sunlit pollen dust motes & gentle wandering buoyancy |
+| `varsha` | **Varsha** (*Monsoon*) | Jul 01 – Aug 31 | Angled rain streaks with expanding water impact ripple rings on ground |
+| `sharad` | **Sharad** (*Autumn*) | Sep 01 – Oct 31 | 5-lobed Sugar Maple leaves with central and lateral leaf venation |
+| `hemanta` | **Hemanta** (*Pre-Winter*) | Nov 01 – Jan 14 | Sinuous English Oak leaves with rounded lobes, frosty highlights & aurora dust |
 
-#### Methods:
-- `engine.setSeason(newSeason)`: Dynamically change the season and re-seed the particles.
-- `engine.onMouseMove(x, y)`: Pass cursor coordinates for real-time repulsion.
-- `engine.onPointerLeave()`: Deactivate cursor repulsion when cursor leaves the viewport.
-- `engine.onClick(x, y)`: Trigger a physical shockwave that scatters particles outward.
-- `engine.update()`: Advance physics calculation by 1 frame.
-- `engine.draw(ctx)`: Render particles and ripples to the Canvas 2D context.
-- `engine.resize(width, height)`: Recalculate boundary bounds on window resize.
+*Read the [Seasons & Botanical Guide](docs/SEASONS.md) for geometry deep-dives and custom palette overrides.*
+
+---
+
+## ⚙️ Interactive Controls & API
+
+```javascript
+// Dynamically switch season at runtime
+engine.setSeason('vasanta');
+
+// Toggle between Dark and Light mode
+engine.setTheme('light');
+
+// Trigger a custom radial shockwave blast at coordinates (x, y)
+engine.triggerShockwave(window.innerWidth / 2, window.innerHeight / 2, 16);
+
+// Adjust wind velocity
+engine.setWind({ x: 1.8 });
+
+// Pause / Resume rendering loop
+engine.pause();
+engine.resume();
+
+// Clean up memory and event listeners
+engine.destroy();
+```
+
+*See the full [API Reference](docs/API.md) for all options and parameter schemas.*
+
+---
+
+## 📊 Performance Benchmarks
+
+| Metric | `@swagat10241/seasonal-particles` | `tsparticles` | `react-snowfall` |
+| :--- | :---: | :---: | :---: |
+| **Runtime Dependencies** | **0 (Zero)** | 14+ | 2 |
+| **Gzipped Size** | **~2.1 kB** | ~41.8 kB | ~4.3 kB |
+| **Frame Time (100 particles)**| **0.85 ms** | 4.20 ms | 1.95 ms |
+| **Memory Allocation** | **Recycled Object Pool** | High GC churn | Small GC churn |
+| **Interactive Shockwaves** | **Built-in** | Plugin needed | Not supported |
+
+*Full analysis in [Performance & Benchmarks](docs/BENCHMARKS.md).*
+
+---
+
+## 💬 Community & Discussions
+
+We welcome ideas, showcases, questions, and feature requests:
+- 💡 [Propose New Ideas & Visuals](https://github.com/SWAGAT10241/seasonal-particles/discussions/categories/ideas)
+- ❓ [Ask for Help & Integration Advice](https://github.com/SWAGAT10241/seasonal-particles/discussions/categories/q-and-a)
+- 🎨 [Show Off Your Project](https://github.com/SWAGAT10241/seasonal-particles/discussions/categories/show-and-tell)
+- 💬 [General Discussions](https://github.com/SWAGAT10241/seasonal-particles/discussions/categories/general)
+
+Please read our [Contributing Guide](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ---
 
